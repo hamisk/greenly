@@ -1,0 +1,21 @@
+@use './styles/partials/colors' as *;
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: $color-light;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.app {
+    height: 8rem;
+}
