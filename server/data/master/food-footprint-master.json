@@ -1,0 +1,305 @@
+[{
+    "Food": "Apples",
+    "Carbon": 0.43,
+    "pollution": 1.45,
+    "land": 0.63,
+    "water": 180.1,
+    "water-scarcity": 12948.6
+},
+{
+    "Food": "Bananas",
+    "Carbon": 0.86,
+    "pollution": 3.29,
+    "land": 1.93,
+    "water": 114.5,
+    "water-scarcity": 661.9
+},
+{
+    "Food": "Barley",
+    "Carbon": 1.18,
+    "pollution": 2.33,
+    "land": 1.11,
+    "water": 17.1,
+    "water-scarcity": 696.4
+},
+{
+    "Food": "Beef (beef herd)",
+    "Carbon": 99.48,
+    "pollution": 301.41,
+    "land": 326.21,
+    "water": 1451.2,
+    "water-scarcity": 34732.5
+},
+{
+    "Food": "Beef (dairy herd)",
+    "Carbon": 33.3,
+    "pollution": 365.29,
+    "land": 43.24,
+    "water": 2714.3,
+    "water-scarcity": 119805.2
+},
+{
+    "Food": "Beet Sugar",
+    "Carbon": 1.81,
+    "pollution": 5.41,
+    "land": 1.83,
+    "water": 217.7,
+    "water-scarcity": 9493.3
+},
+{
+    "Food": "Berries & Grapes",
+    "Carbon": 1.53,
+    "pollution": 6.12,
+    "land": 2.41,
+    "water": 419.6,
+    "water-scarcity": 21162.1
+},
+{
+    "Food": "Brassicas",
+    "Carbon": 0.51,
+    "pollution": 5.01,
+    "land": 0.55,
+    "water": 119.4,
+    "water-scarcity": 8455.1
+},
+{
+    "Food": "Cane Sugar",
+    "Carbon": 3.2,
+    "pollution": 16.92,
+    "land": 2.04,
+    "water": 620.1,
+    "water-scarcity": 16438.6
+},
+{
+    "Food": "Cassava",
+    "Carbon": 1.32,
+    "pollution": 0.69,
+    "land": 1.81,
+    "water": 0,
+    "water-scarcity": 0
+},
+{
+    "Food": "Cheese",
+    "Carbon": 23.88,
+    "pollution": 98.37,
+    "land": 87.79,
+    "water": 5605.2,
+    "water-scarcity": 180850.6
+},
+{
+    "Food": "Citrus Fruit",
+    "Carbon": 0.39,
+    "pollution": 2.24,
+    "land": 0.86,
+    "water": 82.7,
+    "water-scarcity": 4662.7
+},
+{
+    "Food": "Coffee",
+    "Carbon": 28.53,
+    "pollution": 110.52,
+    "land": 21.62,
+    "water": 25.9,
+    "water-scarcity": 337
+},
+{
+    "Food": "Dark Chocolate",
+    "Carbon": 46.65,
+    "pollution": 87.08,
+    "land": 68.96,
+    "water": 540.6,
+    "water-scarcity": 2879.2
+},
+{
+    "Food": "Eggs",
+    "Carbon": 4.67,
+    "pollution": 21.76,
+    "land": 6.27,
+    "water": 577.7,
+    "water-scarcity": 17982.7
+},
+{
+    "Food": "Fish (farmed)",
+    "Carbon": 13.63,
+    "pollution": 235.12,
+    "land": 8.41,
+    "water": 3691.3,
+    "water-scarcity": 41572.2
+},
+{
+    "Food": "Groundnuts",
+    "Carbon": 3.23,
+    "pollution": 14.14,
+    "land": 9.11,
+    "water": 1852.3,
+    "water-scarcity": 61797.9
+},
+{
+    "Food": "Lamb & Mutton",
+    "Carbon": 39.72,
+    "pollution": 97.13,
+    "land": 369.81,
+    "water": 1802.8,
+    "water-scarcity": 141925
+},
+{
+    "Food": "Maize",
+    "Carbon": 1.7,
+    "pollution": 4.03,
+    "land": 2.94,
+    "water": 215.7,
+    "water-scarcity": 10863.3
+},
+{
+    "Food": "Milk",
+    "Carbon": 3.15,
+    "pollution": 10.65,
+    "land": 8.95,
+    "water": 628.2,
+    "water-scarcity": 19786.3
+},
+{
+    "Food": "Nuts",
+    "Carbon": 0.43,
+    "pollution": 19.15,
+    "land": 12.96,
+    "water": 4133.8,
+    "water-scarcity": 229889.8
+},
+{
+    "Food": "Oatmeal",
+    "Carbon": 2.48,
+    "pollution": 11.23,
+    "land": 7.6,
+    "water": 482.4,
+    "water-scarcity": 18786.2
+},
+{
+    "Food": "Onions & Leeks",
+    "Carbon": 0.5,
+    "pollution": 3.24,
+    "land": 0.39,
+    "water": 14.3,
+    "water-scarcity": 932
+},
+{
+    "Food": "Other Fruit",
+    "Carbon": 1.05,
+    "pollution": 2.43,
+    "land": 0.89,
+    "water": 153.5,
+    "water-scarcity": 9533.1
+},
+{
+    "Food": "Other Pulses",
+    "Carbon": 1.79,
+    "pollution": 17.08,
+    "land": 15.57,
+    "water": 435.7,
+    "water-scarcity": 22477.4
+},
+{
+    "Food": "Other Vegetables",
+    "Carbon": 0.53,
+    "pollution": 2.27,
+    "land": 0.38,
+    "water": 102.5,
+    "water-scarcity": 4911.4
+},
+{
+    "Food": "Peas",
+    "Carbon": 0.98,
+    "pollution": 7.52,
+    "land": 7.46,
+    "water": 396.6,
+    "water-scarcity": 27948.2
+},
+{
+    "Food": "Pig Meat",
+    "Carbon": 12.31,
+    "pollution": 76.38,
+    "land": 17.36,
+    "water": 1795.8,
+    "water-scarcity": 66867.4
+},
+{
+    "Food": "Potatoes",
+    "Carbon": 0.46,
+    "pollution": 3.48,
+    "land": 0.88,
+    "water": 59.1,
+    "water-scarcity": 2754.2
+},
+{
+    "Food": "Poultry Meat",
+    "Carbon": 9.87,
+    "pollution": 48.7,
+    "land": 12.22,
+    "water": 660,
+    "water-scarcity": 14177.9
+},
+{
+    "Food": "Prawns (farmed)",
+    "Carbon": 26.87,
+    "pollution": 227.22,
+    "land": 2.97,
+    "water": 3515.4,
+    "water-scarcity": 127259
+},
+{
+    "Food": "Rice",
+    "Carbon": 4.45,
+    "pollution": 35.07,
+    "land": 2.8,
+    "water": 2248.4,
+    "water-scarcity": 49576.3
+},
+{
+    "Food": "Root Vegetables",
+    "Carbon": 0.43,
+    "pollution": 1.61,
+    "land": 0.33,
+    "water": 28.4,
+    "water-scarcity": 929.2
+},
+{
+    "Food": "Soymilk",
+    "Carbon": 0.98,
+    "pollution": 1.06,
+    "land": 0.66,
+    "water": 27.8,
+    "water-scarcity": 955.6
+},
+{
+    "Food": "Tofu (soybeans)",
+    "Carbon": 3.16,
+    "pollution": 6.16,
+    "land": 3.52,
+    "water": 148.6,
+    "water-scarcity": 5113.2
+},
+{
+    "Food": "Tomatoes",
+    "Carbon": 2.09,
+    "pollution": 7.51,
+    "land": 0.8,
+    "water": 369.8,
+    "water-scarcity": 5335.7
+},
+{
+    "Food": "Wheat & Rye",
+    "Carbon": 1.57,
+    "pollution": 7.16,
+    "land": 3.85,
+    "water": 647.5,
+    "water-scarcity": 33385.6
+},
+{
+    "Food": "Wine",
+    "Carbon": 1.79,
+    "pollution": 4.57,
+    "land": 1.78,
+    "water": 78.9,
+    "water-scarcity": 1149.3
+}
+]

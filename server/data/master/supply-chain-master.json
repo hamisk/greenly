@@ -1,0 +1,431 @@
+[{
+    "food": "Apples",
+    "landUse": 0,
+    "farm": 0.2,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0
+},
+{
+    "food": "Bananas",
+    "landUse": 0,
+    "farm": 0.3,
+    "animalFeed": 0,
+    "processing": 0.1,
+    "transport": 0.3,
+    "retail": 0,
+    "packaging": 0.1
+},
+{
+    "food": "Barley",
+    "landUse": 0,
+    "farm": 0.2,
+    "animalFeed": 0,
+    "processing": 0.1,
+    "transport": 0,
+    "retail": 0.3,
+    "packaging": 0.5
+},
+{
+    "food": "Beef (beef herd)",
+    "landUse": 16.3,
+    "farm": 39.4,
+    "animalFeed": 1.9,
+    "processing": 1.3,
+    "transport": 0.3,
+    "retail": 0.2,
+    "packaging": 0.2
+},
+{
+    "food": "Beef (dairy herd)",
+    "landUse": 0.9,
+    "farm": 15.7,
+    "animalFeed": 2.5,
+    "processing": 1.1,
+    "transport": 0.4,
+    "retail": 0.2,
+    "packaging": 0.3
+},
+{
+    "food": "Beet Sugar",
+    "landUse": 0,
+    "farm": 0.5,
+    "animalFeed": 0,
+    "processing": 0.2,
+    "transport": 0.6,
+    "retail": 0,
+    "packaging": 0.1
+},
+{
+    "food": "Berries & Grapes",
+    "landUse": 0,
+    "farm": 0.7,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.2,
+    "retail": 0,
+    "packaging": 0.2
+},
+{
+    "food": "Brassicas",
+    "landUse": 0,
+    "farm": 0.3,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0
+},
+{
+    "food": "Cane Sugar",
+    "landUse": 1.2,
+    "farm": 0.5,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.8,
+    "retail": 0,
+    "packaging": 0.1
+},
+{
+    "food": "Cassava",
+    "landUse": 0.6,
+    "farm": 0.2,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0
+},
+{
+    "food": "Cheese",
+    "landUse": 4.5,
+    "farm": 13.1,
+    "animalFeed": 2.3,
+    "processing": 0.7,
+    "transport": 0.1,
+    "retail": 0.3,
+    "packaging": 0.2
+},
+{
+    "food": "Citrus Fruit",
+    "landUse": -0.1,
+    "farm": 0.3,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0
+},
+{
+    "food": "Coffee",
+    "landUse": 3.7,
+    "farm": 10.4,
+    "animalFeed": 0,
+    "processing": 0.6,
+    "transport": 0.1,
+    "retail": 0.1,
+    "packaging": 1.6
+},
+{
+    "food": "Dark Chocolate",
+    "landUse": 14.3,
+    "farm": 3.7,
+    "animalFeed": 0,
+    "processing": 0.2,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0.4
+},
+{
+    "food": "Eggs",
+    "landUse": 0.7,
+    "farm": 1.3,
+    "animalFeed": 2.2,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0.2
+},
+{
+    "food": "Fish (farmed)",
+    "landUse": 0.5,
+    "farm": 3.6,
+    "animalFeed": 0.8,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0.1
+},
+{
+    "food": "Groundnuts",
+    "landUse": 0.4,
+    "farm": 1.4,
+    "animalFeed": 0,
+    "processing": 0.4,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0.1
+},
+{
+    "food": "Lamb & Mutton",
+    "landUse": 0.5,
+    "farm": 19.5,
+    "animalFeed": 2.4,
+    "processing": 1.1,
+    "transport": 0.5,
+    "retail": 0.2,
+    "packaging": 0.3
+},
+{
+    "food": "Maize",
+    "landUse": 0.3,
+    "farm": 0.5,
+    "animalFeed": 0,
+    "processing": 0.1,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0.1
+},
+{
+    "food": "Milk",
+    "landUse": 0.5,
+    "farm": 1.5,
+    "animalFeed": 0.2,
+    "processing": 0.1,
+    "transport": 0.1,
+    "retail": 0.3,
+    "packaging": 0.1
+},
+{
+    "food": "Nuts",
+    "landUse": -2.1,
+    "farm": 2.1,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0.1
+},
+{
+    "food": "Oatmeal",
+    "landUse": 0,
+    "farm": 1.4,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0.1
+},
+{
+    "food": "Olive Oil",
+    "landUse": -0.4,
+    "farm": 4.3,
+    "animalFeed": 0,
+    "processing": 0.7,
+    "transport": 0.5,
+    "retail": 0,
+    "packaging": 0.9
+},
+{
+    "food": "Onions & Leeks",
+    "landUse": 0,
+    "farm": 0.2,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0
+},
+{
+    "food": "Other Fruit",
+    "landUse": 0.1,
+    "farm": 0.4,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.2,
+    "retail": 0,
+    "packaging": 0
+},
+{
+    "food": "Other Pulses",
+    "landUse": 0,
+    "farm": 1.1,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0.4
+},
+{
+    "food": "Other Vegetables",
+    "landUse": 0,
+    "farm": 0.2,
+    "animalFeed": 0,
+    "processing": 0.1,
+    "transport": 0.2,
+    "retail": 0,
+    "packaging": 0
+},
+{
+    "food": "Palm Oil",
+    "landUse": 3.1,
+    "farm": 2.1,
+    "animalFeed": 0,
+    "processing": 1.3,
+    "transport": 0.2,
+    "retail": 0,
+    "packaging": 0.9
+},
+{
+    "food": "Peas",
+    "landUse": 0,
+    "farm": 0.7,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0
+},
+{
+    "food": "Pig Meat",
+    "landUse": 1.5,
+    "farm": 1.7,
+    "animalFeed": 2.9,
+    "processing": 0.3,
+    "transport": 0.3,
+    "retail": 0.2,
+    "packaging": 0.3
+},
+{
+    "food": "Potatoes",
+    "landUse": 0,
+    "farm": 0.2,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0
+},
+{
+    "food": "Poultry Meat",
+    "landUse": 2.5,
+    "farm": 0.7,
+    "animalFeed": 1.8,
+    "processing": 0.4,
+    "transport": 0.3,
+    "retail": 0.2,
+    "packaging": 0.2
+},
+{
+    "food": "Rapeseed Oil",
+    "landUse": 0.2,
+    "farm": 2.3,
+    "animalFeed": 0,
+    "processing": 0.2,
+    "transport": 0.2,
+    "retail": 0,
+    "packaging": 0.8
+},
+{
+    "food": "Rice",
+    "landUse": 0,
+    "farm": 3.6,
+    "animalFeed": 0,
+    "processing": 0.1,
+    "transport": 0.1,
+    "retail": 0.1,
+    "packaging": 0.1
+},
+{
+    "food": "Root Vegetables",
+    "landUse": 0,
+    "farm": 0.2,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0
+},
+{
+    "food": "Shrimps (farmed)",
+    "landUse": 0.2,
+    "farm": 8.4,
+    "animalFeed": 2.5,
+    "processing": 0,
+    "transport": 0.2,
+    "retail": 0.2,
+    "packaging": 0.3
+},
+{
+    "food": "Soybean Oil",
+    "landUse": 3.1,
+    "farm": 1.5,
+    "animalFeed": 0,
+    "processing": 0.3,
+    "transport": 0.3,
+    "retail": 0,
+    "packaging": 0.8
+},
+{
+    "food": "Soymilk",
+    "landUse": 0.2,
+    "farm": 0.1,
+    "animalFeed": 0,
+    "processing": 0.2,
+    "transport": 0.1,
+    "retail": 0.3,
+    "packaging": 0.1
+},
+{
+    "food": "Sunflower Oil",
+    "landUse": 0.1,
+    "farm": 2.1,
+    "animalFeed": 0,
+    "processing": 0.2,
+    "transport": 0.2,
+    "retail": 0,
+    "packaging": 0.9
+},
+{
+    "food": "Tofu",
+    "landUse": 1,
+    "farm": 0.5,
+    "animalFeed": 0,
+    "processing": 0.8,
+    "transport": 0.2,
+    "retail": 0.3,
+    "packaging": 0.2
+},
+{
+    "food": "Tomatoes",
+    "landUse": 0.4,
+    "farm": 0.7,
+    "animalFeed": 0,
+    "processing": 0,
+    "transport": 0.2,
+    "retail": 0,
+    "packaging": 0.1
+},
+{
+    "food": "Wheat & Rye",
+    "landUse": 0.1,
+    "farm": 0.8,
+    "animalFeed": 0,
+    "processing": 0.2,
+    "transport": 0.1,
+    "retail": 0.1,
+    "packaging": 0.1
+},
+{
+    "food": "Wine",
+    "landUse": -0.1,
+    "farm": 0.6,
+    "animalFeed": 0,
+    "processing": 0.1,
+    "transport": 0.1,
+    "retail": 0,
+    "packaging": 0.7
+}
+]
