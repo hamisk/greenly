@@ -19,19 +19,19 @@ function ActivityCard(props) {
                 <div className="activity-card__stats-wrapper">
                     <div className="activity-card__stat-graphic">
                         <img src={co2Icon} alt="co2 icon" className="activity-card__stat-icon" />
-                        <p className="activity-card__stat-text">{activity.carbon} kg</p>
+                        <p className="activity-card__stat-text">{activity.carbon.toFixed(1)} kg</p>
                     </div>
                     <div className="activity-card__stat-graphic">
                         <img src={landIcon} alt="land icon" className="activity-card__stat-icon" />
-                        <p className="activity-card__stat-text">{activity.land} m²</p>
+                        <p className="activity-card__stat-text">{activity.land.toFixed(1)} m²</p>
                     </div>
                     <div className="activity-card__stat-graphic">
                         <img src={waterIcon} alt="water icon" className="activity-card__stat-icon" />
-                        <p className="activity-card__stat-text">{activity.water} l</p>
+                        <p className="activity-card__stat-text">{activity.water.toFixed(1)} l</p>
                     </div>
                     <div className="activity-card__stat-graphic">
                         <img src={pollutionIcon} alt="pollutant icon" className="activity-card__stat-icon" />
-                        <p className="activity-card__stat-text">{activity.pollutants} g</p>
+                        <p className="activity-card__stat-text">{activity.pollutants.toFixed(1)} g</p>
                     </div>
                 </div>
             </div>
