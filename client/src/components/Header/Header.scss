@@ -1,8 +1,41 @@
 @use '../../styles/partials/colors' as *;
+
+.header {
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title-logo {
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+
+    &__logo {
+        height: 100%;
+        margin: 0.5rem;
+    }
+
+    &__title {
+        color: $color-light-green;
+        margin: 0.5rem;
+    }
+
+    &__links-wrapper {
+        display: flex;
+    }
+
+    &__link {
+        color: $color-light-green;
+        margin: 0.5rem;
+    }
+}
+
 .primary-nav {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     background-color: $color-light-green;
 
     &__link {
