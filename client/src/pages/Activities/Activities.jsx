@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import { localAPI } from '../../utils/apiUtils';
 import ActivityCard from '../../components/ActivityCard/ActivityCard';
+import './Activities.scss';
 
 export class Activities extends Component {
 
@@ -22,9 +23,13 @@ export class Activities extends Component {
     }
 
     render() {
+        if (!this.state.activities) {
+            return <p>Loading...</p>
+        }
         return (
-            <div>
-                <ActivityCard />
+            <div className="activities__container">
+                {this.state.activities.map(activity => 
+                    <ActivityCard activity={activity} key={activity.id}/>)}
             </div>
         )
     }
