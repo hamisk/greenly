@@ -1,0 +1,13 @@
+@use '../../styles/partials/colors' as *;
+
+.sub-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: $color-strong-green;
+
+    &__link {
+        padding: 1rem;
+        color: $color-light;
+    }
+}

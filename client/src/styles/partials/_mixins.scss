@@ -1,0 +1,20 @@
+@use 'variables' as *;
+@use 'colors' as *;
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+}
+  
+@mixin tablet-1024 {
+    @media screen and (min-width: $tablet-1024-breakpoint) {
+      @content;
+    }
+}
+  
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+      @content;
+    }
+}

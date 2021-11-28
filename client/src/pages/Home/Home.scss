@@ -1,0 +1,84 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/variables' as *;
+
+.summary {
+    margin: 1rem;
+    border-radius: $border-radius;
+    background-color: white;
+    
+    &__header {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        background-color: $color-strong-green;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        margin-left: $spacing-mob;
+        color: $color-light;
+    }
+
+    &__date {
+        margin-right: $spacing-mob;
+        color: $color-light;
+    }
+
+    &__stats-wrapper {
+        // display: flex;
+        margin: 0 1rem;
+    }
+
+    &__subheaders {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__sub {
+        padding: 1rem;
+        width: 8rem;
+    }
+
+    &__stats-rows-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__stat-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__stat-graphic {
+        display: flex;
+        align-items: center;
+    }
+
+    &__stat-icon {
+        width: 3rem;
+    }
+
+    &__stat-numbers-row {
+        display: flex;
+    }
+
+    &__stat-text {
+        margin: 0;
+        font-size: 1rem;
+        width: 8rem;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__add-activity {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    &__add-offset {
+        @extend .summary__add-activity;
+    }
+}
