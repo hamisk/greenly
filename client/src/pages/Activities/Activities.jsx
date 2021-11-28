@@ -27,9 +27,14 @@ export class Activities extends Component {
             return <p>Loading...</p>
         }
         return (
-            <div className="activities__container">
-                {this.state.activities.map(activity => 
+            <div className="activities">
+                <div className="activities__activity-header">
+                    <h2>+ groceries</h2>
+                </div>
+                <div className="activities__container">
+                    {this.state.activities.map(activity => 
                     <ActivityCard activity={activity} key={activity.id}/>)}
+                </div>
             </div>
         )
     }
