@@ -11,7 +11,8 @@ export class Activities extends Component {
 
     state = {
         activities: null,
-        groceriesActive: false
+        groceriesActive: false,
+        summary: null
     }
 
     componentDidMount() {
@@ -44,7 +45,7 @@ export class Activities extends Component {
                         <h2>+ groceries</h2>
                     </button>
                     <div className={this.state.groceriesActive ? "activities__content-expanded" : "activities__content-collapsed"}>
-                        <GroceryTable />
+                        <GroceryTable groceries={this.state.activities}/>
                         {/* {this.state.activities.map(activity => 
                         <ActivityCard activity={activity} key={activity.id}/>)} */}
                     </div>

@@ -1,19 +1,13 @@
 import React from 'react'
 import GroceryListItem from '../GroceryListItem/GroceryListItem'
+import PaginationBar from '../PaginationBar/PaginationBar';
 import './GroceryTable.scss'
 
-function GroceryTable() {
+function GroceryTable( {groceries} ) {
 
-    const gotoPage = () => {}
-    const canPreviousPage = () => {}
-    const previousPage = () => {}
-    const nextPage = () => {}
-    const canNextPage = () => {}
-    const pageCount = 5
-    const pageIndex = 1
-    const pages = [0, 1]
-
-
+    let start = 0;
+    let end = start + 5;
+    let groceriesToDisplay = groceries.slice(start, end);
 
     return (
         <div className="grocery-table">
@@ -25,40 +19,10 @@ function GroceryTable() {
                 <p className="grocery-table__sub">quantity</p>
             </div>
             <ul className="grocery-table__list">
-                <GroceryListItem />
-                <GroceryListItem />
-                <GroceryListItem />
-                <GroceryListItem />
-                <GroceryListItem />
+                {groceriesToDisplay.map(grocery =>
+                <GroceryListItem grocery={grocery} key={grocery.id}/>)}
             </ul>
-            <div className="pagination">
-                <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>{' '}
-                <button onClick={() => previousPage()} disabled={!canPreviousPage}>{'<'}</button>{' '}
-                <button onClick={() => nextPage()} disabled={!canNextPage}>{'>'}</button>{' '}
-                <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>{'>>'}</button>{' '}
-                <span>Page{' '}<strong>{pageIndex + 1} of {pages.length}</strong>{' '}</span>
-                <span>| Go to page:{' '}
-                    <input
-                        type="number"
-                        defaultValue={pageIndex + 1}
-                        onChange={e => {
-                            const page = e.target.value ? Number(e.target.value) - 1 : 0
-                            gotoPage(page)
-                        }}
-                        style={{ width: '100px' }}/>
-                </span>{' '}
-                {/* <select
-                    value={pageSize}
-                    onChange={e => {
-                        setPageSize(Number(e.target.value))
-                    }}>
-                    {[10, 20, 30, 40, 50].map(pageSize => (
-                        <option key={pageSize} value={pageSize}>
-                            Show {pageSize}
-                        </option>
-                    ))}
-                </select> */}
-            </div>
+            <PaginationBar />
         </div>
     )
 }
