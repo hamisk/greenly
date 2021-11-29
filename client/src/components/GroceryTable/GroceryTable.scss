@@ -1,0 +1,62 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/variables' as *;
+
+.grocery-table {
+    background-color: $color-light;
+    width: 100%;
+
+    &__subheaders {
+        display: flex;
+        margin-left: 8rem;
+        width: 25rem;
+        justify-content: space-between;
+    }
+
+    &__sub {
+        margin: 0.5rem;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__list-item {
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+    }
+
+    &__grocery {
+        margin: 0.5rem;
+        width: 7rem;
+    }
+
+    &__grocery-stats {
+        display: flex;
+        // flex-direction: flex-end;
+        justify-content: space-between;
+        width: 20rem;
+    }
+
+    &__grocery-text {
+        margin: 0.5rem;
+    }
+
+    &__qty-input {
+        width: 3rem;
+        margin: 0.5rem;
+        text-align: end;
+        font-size: 1rem;
+
+        &::placeholder {
+            text-align: end;
+        }
+    }
+
+    &__grocery-add {
+        margin-right: 0.5rem;
+        margin-left: auto;
+    }
+}

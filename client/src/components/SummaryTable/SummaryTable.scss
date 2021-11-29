@@ -1,0 +1,29 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/variables' as *;
+
+.table {
+    &__subheaders {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__sub {
+        margin: 0.5rem;
+    }
+
+
+
+    &__totals-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__totals {
+        display: flex;
+    }
+
+    &__totals-text {
+        margin: 0.5rem;
+        font-weight: 600;
+    }
+}
