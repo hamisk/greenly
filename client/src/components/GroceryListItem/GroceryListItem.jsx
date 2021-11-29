@@ -1,8 +1,8 @@
 import React from 'react'
 import './GroceryListItem.scss'
 
-function GroceryListItem({ grocery }) {
-    console.log(grocery)
+function GroceryListItem({ grocery, addToSummary }) {
+    // console.log(grocery)
     return (
         <li className="grocery-item__list-item">
             <p className="grocery-item__grocery">{grocery.food}</p>
@@ -14,9 +14,11 @@ function GroceryListItem({ grocery }) {
             </div>
             <input type="number" className="grocery-item__qty-input" placeholder="1"/>
             <p className="grocery-item__grocery-text">kg</p>
-            <button className="grocery-item__grocery-add">+</button>
+            <button className="grocery-item__grocery-add" onClick={() => {
+                addToSummary(grocery)
+            }}>+</button>
         </li>
     )
 }
 
-export default GroceryListItem
+export default GroceryListItem;

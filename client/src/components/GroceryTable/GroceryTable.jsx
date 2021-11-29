@@ -3,7 +3,7 @@ import GroceryListItem from '../GroceryListItem/GroceryListItem'
 import PaginationBar from '../PaginationBar/PaginationBar';
 import './GroceryTable.scss'
 
-function GroceryTable( {groceries} ) {
+function GroceryTable({ groceries, addToSummary }) {
 
     let start = 0;
     let end = start + 5;
@@ -20,7 +20,7 @@ function GroceryTable( {groceries} ) {
             </div>
             <ul className="grocery-table__list">
                 {groceriesToDisplay.map(grocery =>
-                <GroceryListItem grocery={grocery} key={grocery.id}/>)}
+                <GroceryListItem grocery={grocery} addToSummary={addToSummary} key={grocery.id}/>)}
             </ul>
             <PaginationBar />
         </div>

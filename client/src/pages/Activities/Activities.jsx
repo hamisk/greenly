@@ -2,7 +2,8 @@ import { Component } from 'react';
 import axios from 'axios';
 
 import { localAPI } from '../../utils/apiUtils';
-import ActivityCard from '../../components/ActivityCard/ActivityCard';
+import { round } from '../../utils/utils'
+// import ActivityCard from '../../components/ActivityCard/ActivityCard';
 import './Activities.scss';
 import SummaryTable from '../../components/SummaryTable/SummaryTable';
 import GroceryTable from '../../components/GroceryTable/GroceryTable';
@@ -12,10 +13,10 @@ export class Activities extends Component {
     state = {
         activities: null,
         groceriesActive: false,
-        summary: null
+        summary: []
     }
 
-    componentDidMount() {
+    componentDidMount = () => {
         axios
             .get(localAPI + "footprints")
             .then(response => {
@@ -26,11 +27,39 @@ export class Activities extends Component {
             })
     }
 
-    toggleClass() {
+    toggleClass = () => {
         console.log(this.state)
         const currentState = this.state.groceriesActive;
         this.setState({ groceriesActive: !currentState });
     };
+
+    addToSummary = (groceryItem) => {
+        this.setState({
+            summary: [...this.state.summary, groceryItem]
+        }, () => {
+            console.log(this.state.summary)
+        })
+    }
+
+    getSummaryTotal = () => {
+        let summaryArray = this.state.summary
+        let co2Total = 0;
+        let landTotal = 0;
+        let waterTotal = 0;
+        let pollutantTotal = 0;
+
+        if (summaryArray.length) {
+            summaryArray.forEach(activity => {
+                co2Total += round(activity.carbon);
+                landTotal += round(activity.land);
+                waterTotal += round(activity.water);
+                pollutantTotal += round(activity.pollutants);
+            })
+            return [co2Total, landTotal, waterTotal, pollutantTotal]
+        } else {
+            return [0,0,0,0]
+        }
+    }
 
     render() {
         if (!this.state.activities) {
@@ -41,11 +70,11 @@ export class Activities extends Component {
                 <div className="activities">
                     <h2>Add an activity</h2>
                     <button className={`activities__collapsible ${this.state.groceriesActive ? "activities__active" : ""}`} 
-                        onClick={this.toggleClass.bind(this)}>
+                        onClick={this.toggleClass}>
                         <h2>+ groceries</h2>
                     </button>
                     <div className={this.state.groceriesActive ? "activities__content-expanded" : "activities__content-collapsed"}>
-                        <GroceryTable groceries={this.state.activities}/>
+                        <GroceryTable groceries={this.state.activities} addToSummary={this.addToSummary}/>
                         {/* {this.state.activities.map(activity => 
                         <ActivityCard activity={activity} key={activity.id}/>)} */}
                     </div>
@@ -55,7 +84,7 @@ export class Activities extends Component {
                         <p className="act-summary__title">Activity Summary</p>
                         <p className="act-summary__date">Week Commencing: 11/29/2021</p>
                     </div>
-                    <SummaryTable />
+                    <SummaryTable summary={this.state.summary} totals={this.getSummaryTotal()}/>
 
                 </div>
             </section>
