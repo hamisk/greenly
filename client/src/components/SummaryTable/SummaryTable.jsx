@@ -1,10 +1,11 @@
+import PaginationBar from '../PaginationBar/PaginationBar';
 import SummaryItem from '../SummaryItem/SummaryItem'
 import './SummaryTable.scss'
 
 function SummaryTable({ summary, totals }) {
 
     let start = 0;
-    let end = start + 5;
+    let end = start + 10;
     let summaryToDisplay = summary.slice(start, end);
 
     return (
@@ -20,6 +21,8 @@ function SummaryTable({ summary, totals }) {
                 {summaryToDisplay.map(summary =>
                 <SummaryItem summaryListItem={summary} key={summary.id} />)}
             </div>}
+            {!summary.length > 10 ? "" :
+            <PaginationBar />}
             <div className="summary-table__totals-wrapper">
                 <p className="summary-table__totals-text">Total</p>
                 <div className="summary-table__totals">
