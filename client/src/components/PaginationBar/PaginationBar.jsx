@@ -1,30 +1,35 @@
 import './PaginationBar.scss';
 
-function PaginationBar() {
+function PaginationBar({ fullList, from, goToPage, pageIndex, pageSize }) {
+    // number of items being displayed on each page
+    const pageCount = Math.ceil(fullList.length / pageSize);
 
-    const gotoPage = () => {}
-    const canPreviousPage = () => {}
-    const previousPage = () => {}
-    const nextPage = () => {}
-    const canNextPage = () => {}
-    const pageCount = 5
-    const pageIndex = 1
-    const pages = [0, 1]
+    const canPreviousPage = () => {
+        if(pageIndex === 0) {
+            return false
+        } 
+    }
+    const canNextPage = () => {
+        if(pageIndex > pageCount - 1) {
+            return false
+        }
+    }
 
     return (
         <div className="pagination">
-            <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>{' '}
-            <button onClick={() => previousPage()} disabled={!canPreviousPage}>{'<'}</button>{' '}
-            <button onClick={() => nextPage()} disabled={!canNextPage}>{'>'}</button>{' '}
-            <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>{'>>'}</button>{' '}
-            <span>Page{' '}<strong>{pageIndex + 1} of {pages.length}</strong>{' '}</span>
+            <button onClick={() => goToPage(0)} disabled={!canPreviousPage}>{'<<'}</button>{' '}
+            <button onClick={() => goToPage(pageIndex - 1)} disabled={!canPreviousPage}>{'<'}</button>{' '}
+            <button onClick={() => goToPage(pageIndex + 1)} disabled={!canNextPage}>{'>'}</button>{' '}
+            <button onClick={() => goToPage(pageCount - 1)} disabled={!canNextPage}>{'>>'}</button>{' '}
+            <span>Page{' '}<strong>{pageIndex + 1} of {pageCount}</strong>{' '}</span>
             <span>| Go to page:{' '}
                 <input
                     type="number"
                     defaultValue={pageIndex + 1}
                     onChange={e => {
-                        const page = e.target.value ? Number(e.target.value) - 1 : 0
-                        gotoPage(page)
+                        const page = e.target.value ? Number(e.target.value) - 1 : 0;
+                        console.log(page)
+                        goToPage(page)
                     }}
                     style={{ width: '100px' }}/>
             </span>{' '}

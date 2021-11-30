@@ -20,7 +20,7 @@ export class Activities extends Component {
         axios
             .get(localAPI + "footprints")
             .then(response => {
-                console.log(response)
+                // console.log(response)
                 this.setState({
                     activities: response.data
                 })
@@ -28,12 +28,19 @@ export class Activities extends Component {
     }
 
     toggleClass = () => {
-        console.log(this.state)
         const currentState = this.state.groceriesActive;
         this.setState({ groceriesActive: !currentState });
     };
 
-    addToSummary = (groceryItem) => {
+    addToSummary = (grocery, qty) => {
+
+        let groceryItem = {};
+        groceryItem.food = grocery.food
+        groceryItem.carbon = grocery.carbon * qty
+        groceryItem.land = grocery.land * qty
+        groceryItem.water = grocery.water * qty
+        groceryItem.pollutants = grocery.pollutants * qty
+
         this.setState({
             summary: [...this.state.summary, groceryItem]
         }, () => {
