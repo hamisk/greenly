@@ -1,1 +1,704 @@
-[{"id":"1f883010-e2a0-4d28-b752-63011614c58d","food":"Apples","carbon":0.43,"supplyChain":{"food":"Apples","landUse":0,"farm":0.2,"animalFeed":0,"processing":0,"transport":0.1,"retail":0,"packaging":0},"pollutants":1.45,"land":0.63,"water":180.1,"waterScarcity":12948.6},{"id":"22b0c8a0-cb02-447c-bfb9-b873afda7125","food":"Bananas","carbon":0.86,"supplyChain":{"food":"Bananas","landUse":0,"farm":0.3,"animalFeed":0,"processing":0.1,"transport":0.3,"retail":0,"packaging":0.1},"pollutants":3.29,"land":1.93,"water":114.5,"waterScarcity":661.9},{"id":"79ce9587-ea43-4388-a674-d4d6a4d17792","food":"Barley","carbon":1.18,"supplyChain":{"food":"Barley","landUse":0,"farm":0.2,"animalFeed":0,"processing":0.1,"transport":0,"retail":0.3,"packaging":0.5},"pollutants":2.33,"land":1.11,"water":17.1,"waterScarcity":696.4},{"id":"d8c8ac12-4a96-4643-b301-5770732547de","food":"Beef (beef herd)","carbon":99.48,"supplyChain":{"food":"Beef (beef herd)","landUse":16.3,"farm":39.4,"animalFeed":1.9,"processing":1.3,"transport":0.3,"retail":0.2,"packaging":0.2},"pollutants":301.41,"land":326.21,"water":1451.2,"waterScarcity":34732.5},{"id":"bb60cbcb-c39e-4e09-8524-a6ac874d335d","food":"Beef (dairy herd)","carbon":33.3,"supplyChain":{"food":"Beef (dairy herd)","landUse":0.9,"farm":15.7,"animalFeed":2.5,"processing":1.1,"transport":0.4,"retail":0.2,"packaging":0.3},"pollutants":365.29,"land":43.24,"water":2714.3,"waterScarcity":119805.2},{"id":"aade6bac-1c1f-4a6b-9f88-7c7d32ab5bcd","food":"Beet Sugar","carbon":1.81,"supplyChain":{"food":"Beet Sugar","landUse":0,"farm":0.5,"animalFeed":0,"processing":0.2,"transport":0.6,"retail":0,"packaging":0.1},"pollutants":5.41,"land":1.83,"water":217.7,"waterScarcity":9493.3},{"id":"95ccac74-bf52-415e-a22a-02bd9be61445","food":"Berries & Grapes","carbon":1.53,"supplyChain":{"food":"Berries & Grapes","landUse":0,"farm":0.7,"animalFeed":0,"processing":0,"transport":0.2,"retail":0,"packaging":0.2},"pollutants":6.12,"land":2.41,"water":419.6,"waterScarcity":21162.1},{"id":"4b416fd4-1c5a-4b8a-bfe6-df2174c4a891","food":"Brassicas","carbon":0.51,"supplyChain":{"food":"Brassicas","landUse":0,"farm":0.3,"animalFeed":0,"processing":0,"transport":0.1,"retail":0,"packaging":0},"pollutants":5.01,"land":0.55,"water":119.4,"waterScarcity":8455.1},{"id":"4719b689-5ab3-43ff-9f87-80a04463b1ea","food":"Cane Sugar","carbon":3.2,"supplyChain":{"food":"Cane Sugar","landUse":1.2,"farm":0.5,"animalFeed":0,"processing":0,"transport":0.8,"retail":0,"packaging":0.1},"pollutants":16.92,"land":2.04,"water":620.1,"waterScarcity":16438.6},{"id":"dfc1fcc3-93ce-455f-acb3-8216604e105c","food":"Cassava","carbon":1.32,"supplyChain":{"food":"Cassava","landUse":0.6,"farm":0.2,"animalFeed":0,"processing":0,"transport":0.1,"retail":0,"packaging":0},"pollutants":0.69,"land":1.81,"water":0,"waterScarcity":0},{"id":"a5bfb080-f285-4ac7-a2ec-c460227b6940","food":"Cheese","carbon":23.88,"supplyChain":{"food":"Cheese","landUse":4.5,"farm":13.1,"animalFeed":2.3,"processing":0.7,"transport":0.1,"retail":0.3,"packaging":0.2},"pollutants":98.37,"land":87.79,"water":5605.2,"waterScarcity":180850.6},{"id":"1b722fb8-e194-4b86-bc42-f269091b6b25","food":"Citrus Fruit","carbon":0.39,"supplyChain":{"food":"Citrus Fruit","landUse":-0.1,"farm":0.3,"animalFeed":0,"processing":0,"transport":0.1,"retail":0,"packaging":0},"pollutants":2.24,"land":0.86,"water":82.7,"waterScarcity":4662.7},{"id":"e7d90a15-424e-49a5-a4fa-c6e2d0d60e3b","food":"Coffee","carbon":28.53,"supplyChain":{"food":"Coffee","landUse":3.7,"farm":10.4,"animalFeed":0,"processing":0.6,"transport":0.1,"retail":0.1,"packaging":1.6},"pollutants":110.52,"land":21.62,"water":25.9,"waterScarcity":337},{"id":"e8037e17-6ce6-462f-afe4-570e82b183d6","food":"Dark Chocolate","carbon":46.65,"supplyChain":{"food":"Dark Chocolate","landUse":14.3,"farm":3.7,"animalFeed":0,"processing":0.2,"transport":0.1,"retail":0,"packaging":0.4},"pollutants":87.08,"land":68.96,"water":540.6,"waterScarcity":2879.2},{"id":"75818830-4145-4b6a-990e-a0ded3a10592","food":"Eggs","carbon":4.67,"supplyChain":{"food":"Eggs","landUse":0.7,"farm":1.3,"animalFeed":2.2,"processing":0,"transport":0.1,"retail":0,"packaging":0.2},"pollutants":21.76,"land":6.27,"water":577.7,"waterScarcity":17982.7},{"id":"924ae7e8-9ab2-46ba-88a5-a7f64cfa6b5a","food":"Fish (farmed)","carbon":13.63,"supplyChain":{"food":"Fish (farmed)","landUse":0.5,"farm":3.6,"animalFeed":0.8,"processing":0,"transport":0.1,"retail":0,"packaging":0.1},"pollutants":235.12,"land":8.41,"water":3691.3,"waterScarcity":41572.2},{"id":"59c4a3bd-77c5-44e3-8cd2-beea26b668bb","food":"Groundnuts","carbon":3.23,"supplyChain":{"food":"Groundnuts","landUse":0.4,"farm":1.4,"animalFeed":0,"processing":0.4,"transport":0.1,"retail":0,"packaging":0.1},"pollutants":14.14,"land":9.11,"water":1852.3,"waterScarcity":61797.9},{"id":"a845a098-35ae-494c-be26-4ad4def8dd3c","food":"Lamb & Mutton","carbon":39.72,"supplyChain":{"food":"Lamb & Mutton","landUse":0.5,"farm":19.5,"animalFeed":2.4,"processing":1.1,"transport":0.5,"retail":0.2,"packaging":0.3},"pollutants":97.13,"land":369.81,"water":1802.8,"waterScarcity":141925},{"id":"a7365bef-d999-47bb-aaf5-0a738fd04ea0","food":"Maize","carbon":1.7,"supplyChain":{"food":"Maize","landUse":0.3,"farm":0.5,"animalFeed":0,"processing":0.1,"transport":0.1,"retail":0,"packaging":0.1},"pollutants":4.03,"land":2.94,"water":215.7,"waterScarcity":10863.3},{"id":"fae15e34-8feb-4777-8b5e-1565d3532d63","food":"Milk","carbon":3.15,"supplyChain":{"food":"Milk","landUse":0.5,"farm":1.5,"animalFeed":0.2,"processing":0.1,"transport":0.1,"retail":0.3,"packaging":0.1},"pollutants":10.65,"land":8.95,"water":628.2,"waterScarcity":19786.3},{"id":"e3f2f1d8-0693-4c5d-bbde-f6e3c7ef335f","food":"Nuts","carbon":0.43,"supplyChain":{"food":"Nuts","landUse":-2.1,"farm":2.1,"animalFeed":0,"processing":0,"transport":0.1,"retail":0,"packaging":0.1},"pollutants":19.15,"land":12.96,"water":4133.8,"waterScarcity":229889.8},{"id":"111ccb33-d5f8-4e9b-a086-8b32975fdc9f","food":"Oatmeal","carbon":2.48,"supplyChain":{"food":"Oatmeal","landUse":0,"farm":1.4,"animalFeed":0,"processing":0,"transport":0.1,"retail":0,"packaging":0.1},"pollutants":11.23,"land":7.6,"water":482.4,"waterScarcity":18786.2},{"id":"3c5b423d-0cd6-4b87-b81f-38f0e4b6b210","food":"Onions & Leeks","carbon":0.5,"supplyChain":{"food":"Onions & Leeks","landUse":0,"farm":0.2,"animalFeed":0,"processing":0,"transport":0.1,"retail":0,"packaging":0},"pollutants":3.24,"land":0.39,"water":14.3,"waterScarcity":932},{"id":"21dc9249-f9e4-4878-b204-a15cd02b4f6b","food":"Other Fruit","carbon":1.05,"supplyChain":{"food":"Other Fruit","landUse":0.1,"farm":0.4,"animalFeed":0,"processing":0,"transport":0.2,"retail":0,"packaging":0},"pollutants":2.43,"land":0.89,"water":153.5,"waterScarcity":9533.1},{"id":"7e57bc7f-67b9-42a6-84ec-bb17768173c3","food":"Other Pulses","carbon":1.79,"supplyChain":{"food":"Other Pulses","landUse":0,"farm":1.1,"animalFeed":0,"processing":0,"transport":0.1,"retail":0,"packaging":0.4},"pollutants":17.08,"land":15.57,"water":435.7,"waterScarcity":22477.4},{"id":"4d99bfe4-73c0-4b5a-afe2-e1cdc6e89f80","food":"Other Vegetables","carbon":0.53,"supplyChain":{"food":"Other Vegetables","landUse":0,"farm":0.2,"animalFeed":0,"processing":0.1,"transport":0.2,"retail":0,"packaging":0},"pollutants":2.27,"land":0.38,"water":102.5,"waterScarcity":4911.4},{"id":"8c1a838c-9738-4f19-ba77-e11f6c9c2dbe","food":"Peas","carbon":0.98,"supplyChain":{"food":"Peas","landUse":0,"farm":0.7,"animalFeed":0,"processing":0,"transport":0.1,"retail":0,"packaging":0},"pollutants":7.52,"land":7.46,"water":396.6,"waterScarcity":27948.2},{"id":"66f4c6d2-c2e3-4321-8903-1a523ac2b949","food":"Pig Meat","carbon":12.31,"supplyChain":{"food":"Pig Meat","landUse":1.5,"farm":1.7,"animalFeed":2.9,"processing":0.3,"transport":0.3,"retail":0.2,"packaging":0.3},"pollutants":76.38,"land":17.36,"water":1795.8,"waterScarcity":66867.4},{"id":"216b44b7-afe7-4653-bbcd-3d001c1d0d61","food":"Potatoes","carbon":0.46,"supplyChain":{"food":"Potatoes","landUse":0,"farm":0.2,"animalFeed":0,"processing":0,"transport":0.1,"retail":0,"packaging":0},"pollutants":3.48,"land":0.88,"water":59.1,"waterScarcity":2754.2},{"id":"80988ad4-cad2-4648-88d2-aed0beca03e9","food":"Poultry Meat","carbon":9.87,"supplyChain":{"food":"Poultry Meat","landUse":2.5,"farm":0.7,"animalFeed":1.8,"processing":0.4,"transport":0.3,"retail":0.2,"packaging":0.2},"pollutants":48.7,"land":12.22,"water":660,"waterScarcity":14177.9},{"id":"07b42796-dc27-42b7-a6d8-3263da096d87","food":"Prawns (farmed)","carbon":26.87,"pollutants":227.22,"land":2.97,"water":3515.4,"waterScarcity":127259},{"id":"735ec740-a163-4dfe-9f7f-5d6e652fc2a5","food":"Rice","carbon":4.45,"supplyChain":{"food":"Rice","landUse":0,"farm":3.6,"animalFeed":0,"processing":0.1,"transport":0.1,"retail":0.1,"packaging":0.1},"pollutants":35.07,"land":2.8,"water":2248.4,"waterScarcity":49576.3},{"id":"94391e28-9372-48e2-96ea-2e481553a523","food":"Root Vegetables","carbon":0.43,"supplyChain":{"food":"Root Vegetables","landUse":0,"farm":0.2,"animalFeed":0,"processing":0,"transport":0.1,"retail":0,"packaging":0},"pollutants":1.61,"land":0.33,"water":28.4,"waterScarcity":929.2},{"id":"71ec559d-35ef-45cb-8a29-6b556a06d3b4","food":"Soymilk","carbon":0.98,"supplyChain":{"food":"Soymilk","landUse":0.2,"farm":0.1,"animalFeed":0,"processing":0.2,"transport":0.1,"retail":0.3,"packaging":0.1},"pollutants":1.06,"land":0.66,"water":27.8,"waterScarcity":955.6},{"id":"7877ec5c-a402-4f68-9397-b48f3874c57d","food":"Tofu (soybeans)","carbon":3.16,"pollutants":6.16,"land":3.52,"water":148.6,"waterScarcity":5113.2},{"id":"b5f717b6-7727-456e-801f-56c39c519c99","food":"Tomatoes","carbon":2.09,"supplyChain":{"food":"Tomatoes","landUse":0.4,"farm":0.7,"animalFeed":0,"processing":0,"transport":0.2,"retail":0,"packaging":0.1},"pollutants":7.51,"land":0.8,"water":369.8,"waterScarcity":5335.7},{"id":"68bb67bd-ea2b-4686-8459-4517e366f8c2","food":"Wheat & Rye","carbon":1.57,"supplyChain":{"food":"Wheat & Rye","landUse":0.1,"farm":0.8,"animalFeed":0,"processing":0.2,"transport":0.1,"retail":0.1,"packaging":0.1},"pollutants":7.16,"land":3.85,"water":647.5,"waterScarcity":33385.6},{"id":"4196c1ec-db25-4a02-9728-e7de0efa0c27","food":"Wine","carbon":1.79,"supplyChain":{"food":"Wine","landUse":-0.1,"farm":0.6,"animalFeed":0,"processing":0.1,"transport":0.1,"retail":0,"packaging":0.7},"pollutants":4.57,"land":1.78,"water":78.9,"waterScarcity":1149.3}]
+[
+    {
+        "id": "1f883010-e2a0-4d28-b752-63011614c58d",
+        "food": "Apples",
+        "carbon": 0.43,
+        "supplyChain": {
+            "food": "Apples",
+            "landUse": 0,
+            "farm": 0.2,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0
+        },
+        "pollutants": 1.45,
+        "land": 0.63,
+        "water": 180.1,
+        "waterScarcity": 12948.6
+    },
+    {
+        "id": "22b0c8a0-cb02-447c-bfb9-b873afda7125",
+        "food": "Bananas",
+        "carbon": 0.86,
+        "supplyChain": {
+            "food": "Bananas",
+            "landUse": 0,
+            "farm": 0.3,
+            "animalFeed": 0,
+            "processing": 0.1,
+            "transport": 0.3,
+            "retail": 0,
+            "packaging": 0.1
+        },
+        "pollutants": 3.29,
+        "land": 1.93,
+        "water": 114.5,
+        "waterScarcity": 661.9
+    },
+    {
+        "id": "79ce9587-ea43-4388-a674-d4d6a4d17792",
+        "food": "Barley",
+        "carbon": 1.18,
+        "supplyChain": {
+            "food": "Barley",
+            "landUse": 0,
+            "farm": 0.2,
+            "animalFeed": 0,
+            "processing": 0.1,
+            "transport": 0,
+            "retail": 0.3,
+            "packaging": 0.5
+        },
+        "pollutants": 2.33,
+        "land": 1.11,
+        "water": 17.1,
+        "waterScarcity": 696.4
+    },
+    {
+        "id": "d8c8ac12-4a96-4643-b301-5770732547de",
+        "food": "Beef (beef herd)",
+        "carbon": 99.48,
+        "supplyChain": {
+            "food": "Beef (beef herd)",
+            "landUse": 16.3,
+            "farm": 39.4,
+            "animalFeed": 1.9,
+            "processing": 1.3,
+            "transport": 0.3,
+            "retail": 0.2,
+            "packaging": 0.2
+        },
+        "pollutants": 301.41,
+        "land": 326.21,
+        "water": 1451.2,
+        "waterScarcity": 34732.5
+    },
+    {
+        "id": "bb60cbcb-c39e-4e09-8524-a6ac874d335d",
+        "food": "Beef (dairy herd)",
+        "carbon": 33.3,
+        "supplyChain": {
+            "food": "Beef (dairy herd)",
+            "landUse": 0.9,
+            "farm": 15.7,
+            "animalFeed": 2.5,
+            "processing": 1.1,
+            "transport": 0.4,
+            "retail": 0.2,
+            "packaging": 0.3
+        },
+        "pollutants": 365.29,
+        "land": 43.24,
+        "water": 2714.3,
+        "waterScarcity": 119805.2
+    },
+    {
+        "id": "aade6bac-1c1f-4a6b-9f88-7c7d32ab5bcd",
+        "food": "Beet Sugar",
+        "carbon": 1.81,
+        "supplyChain": {
+            "food": "Beet Sugar",
+            "landUse": 0,
+            "farm": 0.5,
+            "animalFeed": 0,
+            "processing": 0.2,
+            "transport": 0.6,
+            "retail": 0,
+            "packaging": 0.1
+        },
+        "pollutants": 5.41,
+        "land": 1.83,
+        "water": 217.7,
+        "waterScarcity": 9493.3
+    },
+    {
+        "id": "95ccac74-bf52-415e-a22a-02bd9be61445",
+        "food": "Berries & Grapes",
+        "carbon": 1.53,
+        "supplyChain": {
+            "food": "Berries & Grapes",
+            "landUse": 0,
+            "farm": 0.7,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.2,
+            "retail": 0,
+            "packaging": 0.2
+        },
+        "pollutants": 6.12,
+        "land": 2.41,
+        "water": 419.6,
+        "waterScarcity": 21162.1
+    },
+    {
+        "id": "4b416fd4-1c5a-4b8a-bfe6-df2174c4a891",
+        "food": "Brassicas",
+        "carbon": 0.51,
+        "supplyChain": {
+            "food": "Brassicas",
+            "landUse": 0,
+            "farm": 0.3,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0
+        },
+        "pollutants": 5.01,
+        "land": 0.55,
+        "water": 119.4,
+        "waterScarcity": 8455.1
+    },
+    {
+        "id": "4719b689-5ab3-43ff-9f87-80a04463b1ea",
+        "food": "Cane Sugar",
+        "carbon": 3.2,
+        "supplyChain": {
+            "food": "Cane Sugar",
+            "landUse": 1.2,
+            "farm": 0.5,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.8,
+            "retail": 0,
+            "packaging": 0.1
+        },
+        "pollutants": 16.92,
+        "land": 2.04,
+        "water": 620.1,
+        "waterScarcity": 16438.6
+    },
+    {
+        "id": "dfc1fcc3-93ce-455f-acb3-8216604e105c",
+        "food": "Cassava",
+        "carbon": 1.32,
+        "supplyChain": {
+            "food": "Cassava",
+            "landUse": 0.6,
+            "farm": 0.2,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0
+        },
+        "pollutants": 0.69,
+        "land": 1.81,
+        "water": 0,
+        "waterScarcity": 0
+    },
+    {
+        "id": "a5bfb080-f285-4ac7-a2ec-c460227b6940",
+        "food": "Cheese",
+        "carbon": 23.88,
+        "supplyChain": {
+            "food": "Cheese",
+            "landUse": 4.5,
+            "farm": 13.1,
+            "animalFeed": 2.3,
+            "processing": 0.7,
+            "transport": 0.1,
+            "retail": 0.3,
+            "packaging": 0.2
+        },
+        "pollutants": 98.37,
+        "land": 87.79,
+        "water": 5605.2,
+        "waterScarcity": 180850.6
+    },
+    {
+        "id": "1b722fb8-e194-4b86-bc42-f269091b6b25",
+        "food": "Citrus Fruit",
+        "carbon": 0.39,
+        "supplyChain": {
+            "food": "Citrus Fruit",
+            "landUse": -0.1,
+            "farm": 0.3,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0
+        },
+        "pollutants": 2.24,
+        "land": 0.86,
+        "water": 82.7,
+        "waterScarcity": 4662.7
+    },
+    {
+        "id": "e7d90a15-424e-49a5-a4fa-c6e2d0d60e3b",
+        "food": "Coffee",
+        "carbon": 28.53,
+        "supplyChain": {
+            "food": "Coffee",
+            "landUse": 3.7,
+            "farm": 10.4,
+            "animalFeed": 0,
+            "processing": 0.6,
+            "transport": 0.1,
+            "retail": 0.1,
+            "packaging": 1.6
+        },
+        "pollutants": 110.52,
+        "land": 21.62,
+        "water": 25.9,
+        "waterScarcity": 337
+    },
+    {
+        "id": "e8037e17-6ce6-462f-afe4-570e82b183d6",
+        "food": "Dark Chocolate",
+        "carbon": 46.65,
+        "supplyChain": {
+            "food": "Dark Chocolate",
+            "landUse": 14.3,
+            "farm": 3.7,
+            "animalFeed": 0,
+            "processing": 0.2,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0.4
+        },
+        "pollutants": 87.08,
+        "land": 68.96,
+        "water": 540.6,
+        "waterScarcity": 2879.2
+    },
+    {
+        "id": "75818830-4145-4b6a-990e-a0ded3a10592",
+        "food": "Eggs",
+        "carbon": 4.67,
+        "supplyChain": {
+            "food": "Eggs",
+            "landUse": 0.7,
+            "farm": 1.3,
+            "animalFeed": 2.2,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0.2
+        },
+        "pollutants": 21.76,
+        "land": 6.27,
+        "water": 577.7,
+        "waterScarcity": 17982.7
+    },
+    {
+        "id": "924ae7e8-9ab2-46ba-88a5-a7f64cfa6b5a",
+        "food": "Fish (farmed)",
+        "carbon": 13.63,
+        "supplyChain": {
+            "food": "Fish (farmed)",
+            "landUse": 0.5,
+            "farm": 3.6,
+            "animalFeed": 0.8,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0.1
+        },
+        "pollutants": 235.12,
+        "land": 8.41,
+        "water": 3691.3,
+        "waterScarcity": 41572.2
+    },
+    {
+        "id": "59c4a3bd-77c5-44e3-8cd2-beea26b668bb",
+        "food": "Groundnuts",
+        "carbon": 3.23,
+        "supplyChain": {
+            "food": "Groundnuts",
+            "landUse": 0.4,
+            "farm": 1.4,
+            "animalFeed": 0,
+            "processing": 0.4,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0.1
+        },
+        "pollutants": 14.14,
+        "land": 9.11,
+        "water": 1852.3,
+        "waterScarcity": 61797.9
+    },
+    {
+        "id": "a845a098-35ae-494c-be26-4ad4def8dd3c",
+        "food": "Lamb & Mutton",
+        "carbon": 39.72,
+        "supplyChain": {
+            "food": "Lamb & Mutton",
+            "landUse": 0.5,
+            "farm": 19.5,
+            "animalFeed": 2.4,
+            "processing": 1.1,
+            "transport": 0.5,
+            "retail": 0.2,
+            "packaging": 0.3
+        },
+        "pollutants": 97.13,
+        "land": 369.81,
+        "water": 1802.8,
+        "waterScarcity": 141925
+    },
+    {
+        "id": "a7365bef-d999-47bb-aaf5-0a738fd04ea0",
+        "food": "Maize",
+        "carbon": 1.7,
+        "supplyChain": {
+            "food": "Maize",
+            "landUse": 0.3,
+            "farm": 0.5,
+            "animalFeed": 0,
+            "processing": 0.1,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0.1
+        },
+        "pollutants": 4.03,
+        "land": 2.94,
+        "water": 215.7,
+        "waterScarcity": 10863.3
+    },
+    {
+        "id": "fae15e34-8feb-4777-8b5e-1565d3532d63",
+        "food": "Milk",
+        "carbon": 3.15,
+        "supplyChain": {
+            "food": "Milk",
+            "landUse": 0.5,
+            "farm": 1.5,
+            "animalFeed": 0.2,
+            "processing": 0.1,
+            "transport": 0.1,
+            "retail": 0.3,
+            "packaging": 0.1
+        },
+        "pollutants": 10.65,
+        "land": 8.95,
+        "water": 628.2,
+        "waterScarcity": 19786.3
+    },
+    {
+        "id": "e3f2f1d8-0693-4c5d-bbde-f6e3c7ef335f",
+        "food": "Nuts",
+        "carbon": 0.43,
+        "supplyChain": {
+            "food": "Nuts",
+            "landUse": -2.1,
+            "farm": 2.1,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0.1
+        },
+        "pollutants": 19.15,
+        "land": 12.96,
+        "water": 4133.8,
+        "waterScarcity": 229889.8
+    },
+    {
+        "id": "111ccb33-d5f8-4e9b-a086-8b32975fdc9f",
+        "food": "Oatmeal",
+        "carbon": 2.48,
+        "supplyChain": {
+            "food": "Oatmeal",
+            "landUse": 0,
+            "farm": 1.4,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0.1
+        },
+        "pollutants": 11.23,
+        "land": 7.6,
+        "water": 482.4,
+        "waterScarcity": 18786.2
+    },
+    {
+        "id": "3c5b423d-0cd6-4b87-b81f-38f0e4b6b210",
+        "food": "Onions & Leeks",
+        "carbon": 0.5,
+        "supplyChain": {
+            "food": "Onions & Leeks",
+            "landUse": 0,
+            "farm": 0.2,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0
+        },
+        "pollutants": 3.24,
+        "land": 0.39,
+        "water": 14.3,
+        "waterScarcity": 932
+    },
+    {
+        "id": "21dc9249-f9e4-4878-b204-a15cd02b4f6b",
+        "food": "Other Fruit",
+        "carbon": 1.05,
+        "supplyChain": {
+            "food": "Other Fruit",
+            "landUse": 0.1,
+            "farm": 0.4,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.2,
+            "retail": 0,
+            "packaging": 0
+        },
+        "pollutants": 2.43,
+        "land": 0.89,
+        "water": 153.5,
+        "waterScarcity": 9533.1
+    },
+    {
+        "id": "7e57bc7f-67b9-42a6-84ec-bb17768173c3",
+        "food": "Other Pulses",
+        "carbon": 1.79,
+        "supplyChain": {
+            "food": "Other Pulses",
+            "landUse": 0,
+            "farm": 1.1,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0.4
+        },
+        "pollutants": 17.08,
+        "land": 15.57,
+        "water": 435.7,
+        "waterScarcity": 22477.4
+    },
+    {
+        "id": "4d99bfe4-73c0-4b5a-afe2-e1cdc6e89f80",
+        "food": "Other Vegetables",
+        "carbon": 0.53,
+        "supplyChain": {
+            "food": "Other Vegetables",
+            "landUse": 0,
+            "farm": 0.2,
+            "animalFeed": 0,
+            "processing": 0.1,
+            "transport": 0.2,
+            "retail": 0,
+            "packaging": 0
+        },
+        "pollutants": 2.27,
+        "land": 0.38,
+        "water": 102.5,
+        "waterScarcity": 4911.4
+    },
+    {
+        "id": "8c1a838c-9738-4f19-ba77-e11f6c9c2dbe",
+        "food": "Peas",
+        "carbon": 0.98,
+        "supplyChain": {
+            "food": "Peas",
+            "landUse": 0,
+            "farm": 0.7,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0
+        },
+        "pollutants": 7.52,
+        "land": 7.46,
+        "water": 396.6,
+        "waterScarcity": 27948.2
+    },
+    {
+        "id": "66f4c6d2-c2e3-4321-8903-1a523ac2b949",
+        "food": "Pig Meat",
+        "carbon": 12.31,
+        "supplyChain": {
+            "food": "Pig Meat",
+            "landUse": 1.5,
+            "farm": 1.7,
+            "animalFeed": 2.9,
+            "processing": 0.3,
+            "transport": 0.3,
+            "retail": 0.2,
+            "packaging": 0.3
+        },
+        "pollutants": 76.38,
+        "land": 17.36,
+        "water": 1795.8,
+        "waterScarcity": 66867.4
+    },
+    {
+        "id": "216b44b7-afe7-4653-bbcd-3d001c1d0d61",
+        "food": "Potatoes",
+        "carbon": 0.46,
+        "supplyChain": {
+            "food": "Potatoes",
+            "landUse": 0,
+            "farm": 0.2,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0
+        },
+        "pollutants": 3.48,
+        "land": 0.88,
+        "water": 59.1,
+        "waterScarcity": 2754.2
+    },
+    {
+        "id": "80988ad4-cad2-4648-88d2-aed0beca03e9",
+        "food": "Poultry Meat",
+        "carbon": 9.87,
+        "supplyChain": {
+            "food": "Poultry Meat",
+            "landUse": 2.5,
+            "farm": 0.7,
+            "animalFeed": 1.8,
+            "processing": 0.4,
+            "transport": 0.3,
+            "retail": 0.2,
+            "packaging": 0.2
+        },
+        "pollutants": 48.7,
+        "land": 12.22,
+        "water": 660,
+        "waterScarcity": 14177.9
+    },
+    {
+        "id": "07b42796-dc27-42b7-a6d8-3263da096d87",
+        "food": "Prawns (farmed)",
+        "carbon": 26.87,
+        "pollutants": 227.22,
+        "land": 2.97,
+        "water": 3515.4,
+        "waterScarcity": 127259
+    },
+    {
+        "id": "735ec740-a163-4dfe-9f7f-5d6e652fc2a5",
+        "food": "Rice",
+        "carbon": 4.45,
+        "supplyChain": {
+            "food": "Rice",
+            "landUse": 0,
+            "farm": 3.6,
+            "animalFeed": 0,
+            "processing": 0.1,
+            "transport": 0.1,
+            "retail": 0.1,
+            "packaging": 0.1
+        },
+        "pollutants": 35.07,
+        "land": 2.8,
+        "water": 2248.4,
+        "waterScarcity": 49576.3
+    },
+    {
+        "id": "94391e28-9372-48e2-96ea-2e481553a523",
+        "food": "Root Vegetables",
+        "carbon": 0.43,
+        "supplyChain": {
+            "food": "Root Vegetables",
+            "landUse": 0,
+            "farm": 0.2,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0
+        },
+        "pollutants": 1.61,
+        "land": 0.33,
+        "water": 28.4,
+        "waterScarcity": 929.2
+    },
+    {
+        "id": "71ec559d-35ef-45cb-8a29-6b556a06d3b4",
+        "food": "Soymilk",
+        "carbon": 0.98,
+        "supplyChain": {
+            "food": "Soymilk",
+            "landUse": 0.2,
+            "farm": 0.1,
+            "animalFeed": 0,
+            "processing": 0.2,
+            "transport": 0.1,
+            "retail": 0.3,
+            "packaging": 0.1
+        },
+        "pollutants": 1.06,
+        "land": 0.66,
+        "water": 27.8,
+        "waterScarcity": 955.6
+    },
+    {
+        "id": "7877ec5c-a402-4f68-9397-b48f3874c57d",
+        "food": "Tofu (soybeans)",
+        "carbon": 3.16,
+        "pollutants": 6.16,
+        "land": 3.52,
+        "water": 148.6,
+        "waterScarcity": 5113.2
+    },
+    {
+        "id": "b5f717b6-7727-456e-801f-56c39c519c99",
+        "food": "Tomatoes",
+        "carbon": 2.09,
+        "supplyChain": {
+            "food": "Tomatoes",
+            "landUse": 0.4,
+            "farm": 0.7,
+            "animalFeed": 0,
+            "processing": 0,
+            "transport": 0.2,
+            "retail": 0,
+            "packaging": 0.1
+        },
+        "pollutants": 7.51,
+        "land": 0.8,
+        "water": 369.8,
+        "waterScarcity": 5335.7
+    },
+    {
+        "id": "68bb67bd-ea2b-4686-8459-4517e366f8c2",
+        "food": "Wheat & Rye",
+        "carbon": 1.57,
+        "supplyChain": {
+            "food": "Wheat & Rye",
+            "landUse": 0.1,
+            "farm": 0.8,
+            "animalFeed": 0,
+            "processing": 0.2,
+            "transport": 0.1,
+            "retail": 0.1,
+            "packaging": 0.1
+        },
+        "pollutants": 7.16,
+        "land": 3.85,
+        "water": 647.5,
+        "waterScarcity": 33385.6
+    },
+    {
+        "id": "4196c1ec-db25-4a02-9728-e7de0efa0c27",
+        "food": "Wine",
+        "carbon": 1.79,
+        "supplyChain": {
+            "food": "Wine",
+            "landUse": -0.1,
+            "farm": 0.6,
+            "animalFeed": 0,
+            "processing": 0.1,
+            "transport": 0.1,
+            "retail": 0,
+            "packaging": 0.7
+        },
+        "pollutants": 4.57,
+        "land": 1.78,
+        "water": 78.9,
+        "waterScarcity": 1149.3
+    }
+]

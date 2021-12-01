@@ -1,0 +1,1963 @@
+[{
+		"activity": "nappy - per use",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "nappy",
+		"options": "reusable",
+		"carbon": "0.06",
+		"yearly figure": null
+	},
+	{
+		"activity": "nappy - per use",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "nappy",
+		"options": "disposable",
+		"carbon": "0.13",
+		"yearly figure": null
+	},
+	{
+		"activity": "supermarket delivery - per mile",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "mile",
+		"options": "e bike",
+		"carbon": "0.04",
+		"yearly figure": null
+	},
+	{
+		"activity": "supermarket delivery - per mile",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "mile",
+		"options": "e van",
+		"carbon": "0.15",
+		"yearly figure": null
+	},
+	{
+		"activity": "supermarket delivery - per mile",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "mile",
+		"options": "diesel van",
+		"carbon": "0.45",
+		"yearly figure": null
+	},
+	{
+		"activity": "supermarket delivery - per mile",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "mile",
+		"options": "self by car",
+		"carbon": "1",
+		"yearly figure": null
+	},
+	{
+		"activity": "hour of tv/streaming",
+		"category": "digital",
+		"qty": "1",
+		"unit": "hour",
+		"options": "laptop",
+		"carbon": "0.13",
+		"yearly figure": null
+	},
+	{
+		"activity": "hour of tv/streaming",
+		"category": "digital",
+		"qty": "1",
+		"unit": "hour",
+		"options": "55\" led tv",
+		"carbon": "0.2",
+		"yearly figure": null
+	},
+	{
+		"activity": "litre bottle of water",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "bottle",
+		"options": "1 bottle",
+		"carbon": "0.4",
+		"yearly figure": null
+	},
+	{
+		"activity": "oatmeal",
+		"category": "food/beverage",
+		"qty": "250",
+		"unit": "g",
+		"options": "water",
+		"carbon": "0.11",
+		"yearly figure": null
+	},
+	{
+		"activity": "oatmeal",
+		"category": "food/beverage",
+		"qty": "250",
+		"unit": "g",
+		"options": "soya milk,",
+		"carbon": "0.45",
+		"yearly figure": null
+	},
+	{
+		"activity": "oatmeal",
+		"category": "food/beverage",
+		"qty": "250",
+		"unit": "g",
+		"options": "half cows milk + half water",
+		"carbon": "0.45",
+		"yearly figure": null
+	},
+	{
+		"activity": "oatmeal",
+		"category": "food/beverage",
+		"qty": "250",
+		"unit": "g",
+		"options": "cows milk",
+		"carbon": "0.8",
+		"yearly figure": null
+	},
+	{
+		"activity": "toilet roll",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "roll",
+		"options": "recycled",
+		"carbon": "0.45",
+		"yearly figure": null
+	},
+	{
+		"activity": "toilet roll",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "roll",
+		"options": "virgin",
+		"carbon": "0.73",
+		"yearly figure": null
+	},
+	{
+		"activity": "washing dishes",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "load",
+		"options": "by hand, cold water",
+		"carbon": "0",
+		"yearly figure": null
+	},
+	{
+		"activity": "washing dishes",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "load",
+		"options": "dishwasher eco 50 deg",
+		"carbon": "0.47",
+		"yearly figure": null
+	},
+	{
+		"activity": "washing dishes",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "load",
+		"options": "dishwasher intensive 65 deg",
+		"carbon": "0.6",
+		"yearly figure": null
+	},
+	{
+		"activity": "washing dishes",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "load",
+		"options": "lots of water",
+		"carbon": "2",
+		"yearly figure": null
+	},
+	{
+		"activity": "strawberries 250g",
+		"category": "food/beverage",
+		"qty": "250",
+		"unit": "g",
+		"options": "sourced locally",
+		"carbon": "0.49",
+		"yearly figure": null
+	},
+	{
+		"activity": "strawberries 250g",
+		"category": "food/beverage",
+		"qty": "250",
+		"unit": "g",
+		"options": "frozen",
+		"carbon": "0.77",
+		"yearly figure": null
+	},
+	{
+		"activity": "strawberries 250g",
+		"category": "food/beverage",
+		"qty": "250",
+		"unit": "g",
+		"options": "out of season hot house, international",
+		"carbon": "3.65",
+		"yearly figure": null
+	},
+	{
+		"activity": "drive a mile",
+		"category": "transport",
+		"qty": "1",
+		"unit": "mile",
+		"options": "electric",
+		"carbon": "0.18",
+		"yearly figure": null
+	},
+	{
+		"activity": "drive a mile",
+		"category": "transport",
+		"qty": "1",
+		"unit": "mile",
+		"options": "average petrol",
+		"carbon": "0.53",
+		"yearly figure": null
+	},
+	{
+		"activity": "drive a mile",
+		"category": "transport",
+		"qty": "1",
+		"unit": "mile",
+		"options": "suv",
+		"carbon": "1.2",
+		"yearly figure": null
+	},
+	{
+		"activity": "tea",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "cup",
+		"options": "black tea",
+		"carbon": "0.022",
+		"yearly figure": null
+	},
+	{
+		"activity": "tea",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "cup",
+		"options": "tea with soy milk",
+		"carbon": "0.047",
+		"yearly figure": null
+	},
+	{
+		"activity": "tea",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "cup",
+		"options": "tea with cows milk",
+		"carbon": "0.071",
+		"yearly figure": null
+	},
+	{
+		"activity": "coffee",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "cup",
+		"options": "black, instant",
+		"carbon": "0.049",
+		"yearly figure": null
+	},
+	{
+		"activity": "coffee",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "cup",
+		"options": "black - drip/filter",
+		"carbon": "0.087",
+		"yearly figure": null
+	},
+	{
+		"activity": "coffee",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "cup",
+		"options": "large oat milk latte",
+		"carbon": "0.288",
+		"yearly figure": null
+	},
+	{
+		"activity": "coffee",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "cup",
+		"options": "large soy milk latte",
+		"carbon": "0.308",
+		"yearly figure": null
+	},
+	{
+		"activity": "coffee",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "cup",
+		"options": "large cows milk latte",
+		"carbon": "0.55",
+		"yearly figure": null
+	},
+	{
+		"activity": "coffee",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "cup",
+		"options": "disoposable cup",
+		"carbon": "0.11",
+		"yearly figure": null
+	},
+	{
+		"activity": "household waste - 1kg to landfill",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "kg",
+		"options": "avg bin contents",
+		"carbon": "0.59",
+		"yearly figure": null
+	},
+	{
+		"activity": "household waste - 1kg to landfill",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "kg",
+		"options": "aluminium copper",
+		"carbon": "9.1",
+		"yearly figure": null
+	},
+	{
+		"activity": "household waste - 1kg to landfill",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "kg",
+		"options": "per person per year",
+		"carbon": "",
+		"yearly figure": 130
+	},
+	{
+		"activity": "loaf of bread",
+		"category": "food/beverage",
+		"qty": "600",
+		"unit": "g",
+		"options": "local",
+		"carbon": "0.63",
+		"yearly figure": null
+	},
+	{
+		"activity": "beer",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "pint",
+		"options": "local brewed at pub",
+		"carbon": "0.65",
+		"yearly figure": null
+	},
+	{
+		"activity": "beer",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "pint",
+		"options": "local bottled beer from shop",
+		"carbon": "0.78",
+		"yearly figure": null
+	},
+	{
+		"activity": "beer",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "pint",
+		"options": "imported beer at pub",
+		"carbon": "0.91",
+		"yearly figure": null
+	},
+	{
+		"activity": "beer",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "pint",
+		"options": "long distance bottled from shop",
+		"carbon": "1",
+		"yearly figure": null
+	},
+	{
+		"activity": "pizza",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "10\" pizza",
+		"options": "vegan",
+		"carbon": "1",
+		"yearly figure": null
+	},
+	{
+		"activity": "pizza",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "10\" pizza",
+		"options": "margherita",
+		"carbon": "1.4",
+		"yearly figure": null
+	},
+	{
+		"activity": "pizza",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "10\" pizza",
+		"options": "pepperoni with cheese",
+		"carbon": "2.2",
+		"yearly figure": null
+	},
+	{
+		"activity": "pizza",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "10\" pizza",
+		"options": "4 cheese",
+		"carbon": "2.2",
+		"yearly figure": null
+	},
+	{
+		"activity": "pizza",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "10\" pizza",
+		"options": "meat",
+		"carbon": "2.8",
+		"yearly figure": null
+	},
+	{
+		"activity": "pizza",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "10\" pizza",
+		"options": "takeaway box",
+		"carbon": "0.13",
+		"yearly figure": null
+	},
+	{
+		"activity": "pizza",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "10\" pizza",
+		"options": "delivery per mile",
+		"carbon": "0.34",
+		"yearly figure": null
+	},
+	{
+		"activity": "fish",
+		"category": "food/beverage",
+		"qty": "200",
+		"unit": "g",
+		"options": "fresh local mackarel",
+		"carbon": "0.48",
+		"yearly figure": null
+	},
+	{
+		"activity": "fish",
+		"category": "food/beverage",
+		"qty": "200",
+		"unit": "g",
+		"options": "fresh local cod",
+		"carbon": "0.88",
+		"yearly figure": null
+	},
+	{
+		"activity": "fish",
+		"category": "food/beverage",
+		"qty": "200",
+		"unit": "g",
+		"options": "fresh local trout",
+		"carbon": "1.7",
+		"yearly figure": null
+	},
+	{
+		"activity": "fish",
+		"category": "food/beverage",
+		"qty": "200",
+		"unit": "g",
+		"options": "tinned tuna",
+		"carbon": "1.9",
+		"yearly figure": null
+	},
+	{
+		"activity": "fish",
+		"category": "food/beverage",
+		"qty": "200",
+		"unit": "g",
+		"options": "lobster",
+		"carbon": "4.5",
+		"yearly figure": null
+	},
+	{
+		"activity": "reforestation",
+		"category": "offset",
+		"qty": "1",
+		"unit": "£",
+		"options": "rainforest restoration project",
+		"carbon": "-220",
+		"yearly figure": null
+	},
+	{
+		"activity": "solar panels",
+		"category": "offset",
+		"qty": "1",
+		"unit": "£",
+		"options": "solar panels",
+		"carbon": "-2.2",
+		"yearly figure": null
+	},
+	{
+		"activity": "book",
+		"category": "recreation",
+		"qty": "1",
+		"unit": "book",
+		"options": "recycled paper - every copy sold",
+		"carbon": "0.4",
+		"yearly figure": null
+	},
+	{
+		"activity": "book",
+		"category": "recreation",
+		"qty": "1",
+		"unit": "book",
+		"options": "regular paperback",
+		"carbon": "1",
+		"yearly figure": null
+	},
+	{
+		"activity": "kindle / ereader",
+		"category": "electronics",
+		"qty": "1",
+		"unit": "e-reader",
+		"options": "1 ereader",
+		"carbon": "36",
+		"yearly figure": null
+	},
+	{
+		"activity": "milk",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "litre",
+		"options": "oat",
+		"carbon": "0.9",
+		"yearly figure": null
+	},
+	{
+		"activity": "milk",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "litre",
+		"options": "soya",
+		"carbon": "0.97",
+		"yearly figure": null
+	},
+	{
+		"activity": "milk",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "litre",
+		"options": "uk cows milk",
+		"carbon": "2",
+		"yearly figure": null
+	},
+	{
+		"activity": "milk",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "litre",
+		"options": "global average cows milk",
+		"carbon": "3.2",
+		"yearly figure": null
+	},
+	{
+		"activity": "wine",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "litre",
+		"options": "local",
+		"carbon": "1.3",
+		"yearly figure": null
+	},
+	{
+		"activity": "wine",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "litre",
+		"options": "international",
+		"carbon": "1.65",
+		"yearly figure": null
+	},
+	{
+		"activity": "eggs",
+		"category": "food/beverage",
+		"qty": "6",
+		"unit": "large eggs",
+		"options": "6 large",
+		"carbon": "2",
+		"yearly figure": null
+	},
+	{
+		"activity": "day's protein (50g)",
+		"category": "food/beverage",
+		"qty": "50",
+		"unit": "g",
+		"options": "250g mixed nuts",
+		"carbon": "0.13",
+		"yearly figure": null
+	},
+	{
+		"activity": "day's protein (50g)",
+		"category": "food/beverage",
+		"qty": "50",
+		"unit": "g",
+		"options": "800g peas",
+		"carbon": "0.22",
+		"yearly figure": null
+	},
+	{
+		"activity": "day's protein (50g)",
+		"category": "food/beverage",
+		"qty": "50",
+		"unit": "g",
+		"options": "625g of lentils/chicpeas",
+		"carbon": "0.42",
+		"yearly figure": null
+	},
+	{
+		"activity": "day's protein (50g)",
+		"category": "food/beverage",
+		"qty": "50",
+		"unit": "g",
+		"options": "2.5 pints of milk",
+		"carbon": "1.6",
+		"yearly figure": null
+	},
+	{
+		"activity": "day's protein (50g)",
+		"category": "food/beverage",
+		"qty": "50",
+		"unit": "g",
+		"options": "7 large eggs",
+		"carbon": "2.1",
+		"yearly figure": null
+	},
+	{
+		"activity": "day's protein (50g)",
+		"category": "food/beverage",
+		"qty": "50",
+		"unit": "g",
+		"options": "180g chicken",
+		"carbon": "2.8",
+		"yearly figure": null
+	},
+	{
+		"activity": "day's protein (50g)",
+		"category": "food/beverage",
+		"qty": "50",
+		"unit": "g",
+		"options": "220g pork, bacon, ham",
+		"carbon": "3.8",
+		"yearly figure": null
+	},
+	{
+		"activity": "day's protein (50g)",
+		"category": "food/beverage",
+		"qty": "50",
+		"unit": "g",
+		"options": "200g imported king prawns",
+		"carbon": "9",
+		"yearly figure": null
+	},
+	{
+		"activity": "day's protein (50g)",
+		"category": "food/beverage",
+		"qty": "50",
+		"unit": "g",
+		"options": "200g lamb",
+		"carbon": "10",
+		"yearly figure": null
+	},
+	{
+		"activity": "day's protein (50g)",
+		"category": "food/beverage",
+		"qty": "50",
+		"unit": "g",
+		"options": "190g beef",
+		"carbon": "25",
+		"yearly figure": null
+	},
+	{
+		"activity": "laundry",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "8kg load",
+		"options": "wash at 30, line dry",
+		"carbon": "0.33",
+		"yearly figure": null
+	},
+	{
+		"activity": "laundry",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "8kg load",
+		"options": "wash at 40, line dry",
+		"carbon": "0.54",
+		"yearly figure": null
+	},
+	{
+		"activity": "laundry",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "8kg load",
+		"options": "wash at 60 line dry",
+		"carbon": "0.59",
+		"yearly figure": null
+	},
+	{
+		"activity": "laundry",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "8kg load",
+		"options": "wash at 40, tumble dry",
+		"carbon": "2",
+		"yearly figure": null
+	},
+	{
+		"activity": "laundry",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "8kg load",
+		"options": "washer dryer",
+		"carbon": "2.1",
+		"yearly figure": null
+	},
+	{
+		"activity": "cheese",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "kg",
+		"options": "cottage",
+		"carbon": "6.5",
+		"yearly figure": null
+	},
+	{
+		"activity": "cheese",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "kg",
+		"options": "brie",
+		"carbon": "8.8",
+		"yearly figure": null
+	},
+	{
+		"activity": "cheese",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "kg",
+		"options": "mozzarella",
+		"carbon": "10.8",
+		"yearly figure": null
+	},
+	{
+		"activity": "cheese",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "kg",
+		"options": "cheddar",
+		"carbon": "11.8",
+		"yearly figure": null
+	},
+	{
+		"activity": "cheese",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "kg",
+		"options": "parmesan",
+		"carbon": "18.6",
+		"yearly figure": null
+	},
+	{
+		"activity": "cheese",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "kg",
+		"options": "ricotta",
+		"carbon": "22.4",
+		"yearly figure": null
+	},
+	{
+		"activity": "burger - 4 oz",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "burger",
+		"options": "vegan bean",
+		"carbon": "0.36",
+		"yearly figure": null
+	},
+	{
+		"activity": "burger - 4 oz",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "burger",
+		"options": "veggie bean (with cheese)",
+		"carbon": "0.63",
+		"yearly figure": null
+	},
+	{
+		"activity": "burger - 4 oz",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "burger",
+		"options": "cheeseburger",
+		"carbon": "3.2",
+		"yearly figure": null
+	},
+	{
+		"activity": "rice",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "kg",
+		"options": "eco",
+		"carbon": "3",
+		"yearly figure": null
+	},
+	{
+		"activity": "rice",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "kg",
+		"options": "avg",
+		"carbon": "4",
+		"yearly figure": null
+	},
+	{
+		"activity": "rice",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "kg",
+		"options": "poor production",
+		"carbon": "7.1",
+		"yearly figure": null
+	},
+	{
+		"activity": "takeaway curry",
+		"category": "food/beverage",
+		"qty": "4",
+		"unit": "servings",
+		"options": "modest veggie for four people",
+		"carbon": "4",
+		"yearly figure": null
+	},
+	{
+		"activity": "takeaway curry",
+		"category": "food/beverage",
+		"qty": "4",
+		"unit": "servings",
+		"options": "large takeout for four with meat/prawns",
+		"carbon": "24",
+		"yearly figure": null
+	},
+	{
+		"activity": "takeaway curry",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "portion",
+		"options": "naan/chappatis",
+		"carbon": "0.12",
+		"yearly figure": null
+	},
+	{
+		"activity": "takeaway curry",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "portion",
+		"options": "rice",
+		"carbon": "0.3",
+		"yearly figure": null
+	},
+	{
+		"activity": "takeaway curry",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "serving",
+		"options": "veggie dish",
+		"carbon": "1.3",
+		"yearly figure": null
+	},
+	{
+		"activity": "takeaway curry",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "serving",
+		"options": "chicken dish",
+		"carbon": "2.1",
+		"yearly figure": null
+	},
+	{
+		"activity": "takeaway curry",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "serving",
+		"options": "lamb dish",
+		"carbon": "4",
+		"yearly figure": null
+	},
+	{
+		"activity": "takeaway curry",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "serving",
+		"options": "king prawn",
+		"carbon": "5.1",
+		"yearly figure": null
+	},
+	{
+		"activity": "takeaway curry",
+		"category": "food/beverage",
+		"qty": "1",
+		"unit": "mile",
+		"options": "delivery per mile",
+		"carbon": "0.34",
+		"yearly figure": null
+	},
+	{
+		"activity": "plastic per kg",
+		"category": "consumer goods",
+		"qty": "1",
+		"unit": "kg",
+		"options": "PET bottles, made from recycled material, recycled again after use",
+		"carbon": "1.7",
+		"yearly figure": null
+	},
+	{
+		"activity": "plastic per kg",
+		"category": "consumer goods",
+		"qty": "1",
+		"unit": "kg",
+		"options": "polystyrene",
+		"carbon": "3.4",
+		"yearly figure": null
+	},
+	{
+		"activity": "plastic per kg",
+		"category": "consumer goods",
+		"qty": "1",
+		"unit": "kg",
+		"options": "non recycled PET plastic sent to landfill",
+		"carbon": "4.2",
+		"yearly figure": null
+	},
+	{
+		"activity": "plastic per kg",
+		"category": "consumer goods",
+		"qty": "1",
+		"unit": "kg",
+		"options": "non recycled pet incinerated",
+		"carbon": "5.4",
+		"yearly figure": null
+	},
+	{
+		"activity": "plastic per kg",
+		"category": "consumer goods",
+		"qty": "1",
+		"unit": "kg",
+		"options": "nylon",
+		"carbon": "9.1",
+		"yearly figure": null
+	},
+	{
+		"activity": "pair of shoes",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "pair",
+		"options": "rubber crocs",
+		"carbon": "1.5",
+		"yearly figure": null
+	},
+	{
+		"activity": "pair of shoes",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "pair",
+		"options": "synthetic",
+		"carbon": "8",
+		"yearly figure": null
+	},
+	{
+		"activity": "pair of shoes",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "pair",
+		"options": "avg mix",
+		"carbon": "11.5",
+		"yearly figure": null
+	},
+	{
+		"activity": "pair of shoes",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "pair",
+		"options": "all leather",
+		"carbon": "15",
+		"yearly figure": null
+	},
+	{
+		"activity": "pants",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "pair",
+		"options": "polyester 300g",
+		"carbon": "8",
+		"yearly figure": null
+	},
+	{
+		"activity": "pants",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "pair",
+		"options": "acrylic 300g ",
+		"carbon": "11",
+		"yearly figure": null
+	},
+	{
+		"activity": "pants",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "pair",
+		"options": "cotton jeans 600g",
+		"carbon": "19",
+		"yearly figure": null
+	},
+	{
+		"activity": "bag of cement (25kg)",
+		"category": "building/industry",
+		"qty": "25",
+		"unit": "kg",
+		"options": "green alterantive",
+		"carbon": "9",
+		"yearly figure": null
+	},
+	{
+		"activity": "bag of cement (25kg)",
+		"category": "building/industry",
+		"qty": "25",
+		"unit": "kg",
+		"options": "avg",
+		"carbon": "24",
+		"yearly figure": null
+	},
+	{
+		"activity": "gas (50l)",
+		"category": "transport",
+		"qty": "50",
+		"unit": "l",
+		"options": "lpg",
+		"carbon": "108",
+		"yearly figure": null
+	},
+	{
+		"activity": "gas (50l)",
+		"category": "transport",
+		"qty": "50",
+		"unit": "l",
+		"options": "petrol",
+		"carbon": "173",
+		"yearly figure": null
+	},
+	{
+		"activity": "gas (50l)",
+		"category": "transport",
+		"qty": "50",
+		"unit": "l",
+		"options": "diesel",
+		"carbon": "196",
+		"yearly figure": null
+	},
+	{
+		"activity": "jewellery",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "£",
+		"options": "per £ spent",
+		"carbon": "0.46",
+		"yearly figure": null
+	},
+	{
+		"activity": "christmas excess",
+		"category": "shopping",
+		"qty": "1",
+		"unit": "person",
+		"options": "avg",
+		"carbon": "280",
+		"yearly figure": null
+	},
+	{
+		"activity": "insulating loft",
+		"category": "offset",
+		"qty": "1",
+		"unit": "loft",
+		"options": "1 loft",
+		"carbon": "",
+		"yearly figure": -1000
+	},
+	{
+		"activity": "buying a computer",
+		"category": "digital",
+		"qty": "1",
+		"unit": "device",
+		"options": "13\" macbook pro",
+		"carbon": "326",
+		"yearly figure": null
+	},
+	{
+		"activity": "buying a computer",
+		"category": "digital",
+		"qty": "1",
+		"unit": "device",
+		"options": "14\" hp chromebook",
+		"carbon": "329",
+		"yearly figure": null
+	},
+	{
+		"activity": "buying a computer",
+		"category": "digital",
+		"qty": "1",
+		"unit": "device",
+		"options": "15\" dell precision",
+		"carbon": "475",
+		"yearly figure": null
+	},
+	{
+		"activity": "buying a computer",
+		"category": "digital",
+		"qty": "1",
+		"unit": "device",
+		"options": "16\" macbook pro, 1tb",
+		"carbon": "620",
+		"yearly figure": null
+	},
+	{
+		"activity": "using a computer (per hour)",
+		"category": "digital",
+		"qty": "1",
+		"unit": "hour",
+		"options": "13\" macbook pro",
+		"carbon": "0.002",
+		"yearly figure": null
+	},
+	{
+		"activity": "using a computer (per hour)",
+		"category": "digital",
+		"qty": "1",
+		"unit": "hour",
+		"options": "16\" macbook pro",
+		"carbon": "0.003",
+		"yearly figure": null
+	},
+	{
+		"activity": "using a computer (per hour)",
+		"category": "digital",
+		"qty": "1",
+		"unit": "hour",
+		"options": "14\" hp chromebook",
+		"carbon": "0.006",
+		"yearly figure": null
+	},
+	{
+		"activity": "using a computer (per hour)",
+		"category": "digital",
+		"qty": "1",
+		"unit": "hour",
+		"options": "avg efficient laptop",
+		"carbon": "0.01",
+		"yearly figure": null
+	},
+	{
+		"activity": "using a computer (per hour)",
+		"category": "digital",
+		"qty": "1",
+		"unit": "hour",
+		"options": "desktop",
+		"carbon": "0.05",
+		"yearly figure": null
+	},
+	{
+		"activity": "using a computer (per hour)",
+		"category": "digital",
+		"qty": "1",
+		"unit": "hour",
+		"options": "gaming pc",
+		"carbon": "0.068",
+		"yearly figure": null
+	},
+	{
+		"activity": "using a computer (per hour)",
+		"category": "digital",
+		"qty": "1",
+		"unit": "hour",
+		"options": "servers and networks",
+		"carbon": "0.022",
+		"yearly figure": null
+	},
+	{
+		"activity": "having a pet (per year)",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "goldfish",
+		"options": "goldfish",
+		"carbon": "",
+		"yearly figure": 25
+	},
+	{
+		"activity": "having a pet (per year)",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "cat",
+		"options": "avg cat",
+		"carbon": "",
+		"yearly figure": 310
+	},
+	{
+		"activity": "having a pet (per year)",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "dog",
+		"options": "avg dog",
+		"carbon": "",
+		"yearly figure": 770
+	},
+	{
+		"activity": "having a pet (per year)",
+		"category": "domestic",
+		"qty": "1",
+		"unit": "great dane",
+		"options": "great dane",
+		"carbon": "",
+		"yearly figure": 2500
+	},
+	{
+		"activity": "steel (1 tonne)",
+		"category": "building/industry",
+		"qty": "1000",
+		"unit": "kg",
+		"options": "general steel, 100% recycled",
+		"carbon": "400",
+		"yearly figure": null
+	},
+	{
+		"activity": "steel (1 tonne)",
+		"category": "building/industry",
+		"qty": "1000",
+		"unit": "kg",
+		"options": "virgin steel, hydrogen not coal",
+		"carbon": "1100",
+		"yearly figure": null
+	},
+	{
+		"activity": "steel (1 tonne)",
+		"category": "building/industry",
+		"qty": "1000",
+		"unit": "kg",
+		"options": "global average",
+		"carbon": "1.8",
+		"yearly figure": null
+	},
+	{
+		"activity": "nitrogen fertiliser (1 tonne)",
+		"category": "building/industry",
+		"qty": "1000",
+		"unit": "kg",
+		"options": "efficiently made, sparingly spread",
+		"carbon": "2700",
+		"yearly figure": null
+	},
+	{
+		"activity": "nitrogen fertiliser (1 tonne)",
+		"category": "building/industry",
+		"qty": "1000",
+		"unit": "kg",
+		"options": "inefficiently made, used in excess",
+		"carbon": "12300",
+		"yearly figure": null
+	},
+	{
+		"activity": "flight (london to hk return)",
+		"category": "transport",
+		"qty": "1",
+		"unit": "flight",
+		"options": "economy",
+		"carbon": "3.5",
+		"yearly figure": null
+	},
+	{
+		"activity": "flight (london to hk return)",
+		"category": "transport",
+		"qty": "1",
+		"unit": "flight",
+		"options": "premium eco",
+		"carbon": "4.5",
+		"yearly figure": null
+	},
+	{
+		"activity": "flight (london to hk return)",
+		"category": "transport",
+		"qty": "1",
+		"unit": "flight",
+		"options": "business",
+		"carbon": "10",
+		"yearly figure": null
+	},
+	{
+		"activity": "flight (london to hk return)",
+		"category": "transport",
+		"qty": "1",
+		"unit": "flight",
+		"options": "first class",
+		"carbon": "13.9",
+		"yearly figure": null
+	},
+	{
+		"activity": "solar panels",
+		"category": "offset",
+		"qty": "4",
+		"unit": "kw",
+		"options": "4kw domestic array",
+		"carbon": "5000",
+		"yearly figure": null
+	},
+	{
+		"activity": "solar panels",
+		"category": "offset",
+		"qty": "4",
+		"unit": "kw",
+		"options": "annual carbon saving",
+		"carbon": "",
+		"yearly figure": 1200
+	},
+	{
+		"activity": "new car",
+		"category": "transport",
+		"qty": "1",
+		"unit": "vehicle",
+		"options": "citreon c1, peugeot 107 basic",
+		"carbon": "4000",
+		"yearly figure": null
+	},
+	{
+		"activity": "new car",
+		"category": "transport",
+		"qty": "1",
+		"unit": "vehicle",
+		"options": "ford focus",
+		"carbon": "8000",
+		"yearly figure": null
+	},
+	{
+		"activity": "new car",
+		"category": "transport",
+		"qty": "1",
+		"unit": "vehicle",
+		"options": "renault electric",
+		"carbon": "11000",
+		"yearly figure": null
+	},
+	{
+		"activity": "new car",
+		"category": "transport",
+		"qty": "1",
+		"unit": "vehicle",
+		"options": "prius plug in hybrid",
+		"carbon": "12000",
+		"yearly figure": null
+	},
+	{
+		"activity": "new car",
+		"category": "transport",
+		"qty": "1",
+		"unit": "vehicle",
+		"options": "suv",
+		"carbon": "25000",
+		"yearly figure": null
+	},
+	{
+		"activity": "being you",
+		"category": "annual average",
+		"qty": "1",
+		"unit": "person",
+		"options": "malawian",
+		"carbon": "",
+		"yearly figure": 200
+	},
+	{
+		"activity": "being you",
+		"category": "annual average",
+		"qty": "1",
+		"unit": "person",
+		"options": "world average",
+		"carbon": "",
+		"yearly figure": 7000
+	},
+	{
+		"activity": "being you",
+		"category": "annual average",
+		"qty": "1",
+		"unit": "person",
+		"options": "chinese",
+		"carbon": "",
+		"yearly figure": 8000
+	},
+	{
+		"activity": "being you",
+		"category": "annual average",
+		"qty": "1",
+		"unit": "person",
+		"options": "brit",
+		"carbon": "",
+		"yearly figure": 13000
+	},
+	{
+		"activity": "being you",
+		"category": "annual average",
+		"qty": "1",
+		"unit": "person",
+		"options": "australian",
+		"carbon": "",
+		"yearly figure": 20000
+	},
+	{
+		"activity": "being you",
+		"category": "annual average",
+		"qty": "1",
+		"unit": "person",
+		"options": "north american",
+		"carbon": "",
+		"yearly figure": 21000
+	},
+	{
+		"activity": "space tourism",
+		"category": "transport",
+		"qty": "1",
+		"unit": "space flight",
+		"options": "blue origin new shephard",
+		"carbon": "330000",
+		"yearly figure": null
+	},
+	{
+		"activity": "space tourism",
+		"category": "transport",
+		"qty": "1",
+		"unit": "space flight",
+		"options": "spacex falcon 9 to ISS",
+		"carbon": "600000",
+		"yearly figure": null
+	},
+	{
+		"activity": "space tourism",
+		"category": "transport",
+		"qty": "1",
+		"unit": "space flight",
+		"options": "space shuttle",
+		"carbon": "7060000",
+		"yearly figure": null
+	},
+	{
+		"activity": "space tourism",
+		"category": "transport",
+		"qty": "1",
+		"unit": "space flight",
+		"options": "first flight to moon",
+		"carbon": "10300000",
+		"yearly figure": null
+	},
+	{
+		"activity": "cryptocurrencies",
+		"category": "digital",
+		"qty": "1",
+		"unit": "cryptocurrency",
+		"options": "bitcoin in 2019",
+		"carbon": "46 000 000 000",
+		"yearly figure": null
+	},
+	{
+		"activity": "cryptocurrencies",
+		"category": "digital",
+		"qty": "all",
+		"unit": "cryptocurrencies",
+		"options": "all crypto in 2019",
+		"carbon": "68 000 000 000",
+		"yearly figure": null
+	},
+	{
+		"activity": "the cloud, world's data centres",
+		"category": "digital",
+		"qty": "all",
+		"unit": "data centres",
+		"options": "2020",
+		"carbon": "160 000 000 000",
+		"yearly figure": null
+	},
+	{
+		"activity": "wildfire",
+		"category": "disaster",
+		"qty": "1",
+		"unit": "wildfire",
+		"options": "australian bush fire 2019",
+		"carbon": "923 000 000 000",
+		"yearly figure": null
+	},
+	{
+		"activity": "wildfire",
+		"category": "disaster",
+		"qty": "all",
+		"unit": "wildfires",
+		"options": "global wildfires 2019",
+		"carbon": "8 600 000 000 000",
+		"yearly figure": null
+	},
+	{
+		"activity": "war",
+		"category": "disaster",
+		"qty": "1",
+		"unit": "country",
+		"options": "uk military footprint 2019",
+		"carbon": "9 000 000 000",
+		"yearly figure": null
+	},
+	{
+		"activity": "war",
+		"category": "disaster",
+		"qty": "1",
+		"unit": "country",
+		"options": "us military operations 2019",
+		"carbon": "200 000 000 000",
+		"yearly figure": null
+	},
+	{
+		"activity": "reforestation",
+		"category": "offset",
+		"qty": "1",
+		"unit": "hectare",
+		"options": "per hectare",
+		"carbon": "-500 000",
+		"yearly figure": null
+	},
+	{
+		"activity": "reforestation",
+		"category": "offset",
+		"qty": "100",
+		"unit": "m2",
+		"options": "per 100m2",
+		"carbon": "-5000",
+		"yearly figure": null
+	},
+	{
+		"activity": "deforestation",
+		"category": "disaster",
+		"qty": "1",
+		"unit": "hectare",
+		"options": "per hectare",
+		"carbon": "1500 000",
+		"yearly figure": null
+	},
+	{
+		"activity": "deforestation",
+		"category": "disaster",
+		"qty": "1",
+		"unit": "hectare",
+		"options": "global per year",
+		"carbon": "7 500 000 000 000",
+		"yearly figure": null
+	},
+	{
+		"activity": "marine planting",
+		"category": "offset",
+		"qty": "1",
+		"unit": "hectare",
+		"options": "per hectare per year",
+		"carbon": "",
+		"yearly figure": -420
+	},
+	{
+		"activity": "biochar",
+		"category": "offset",
+		"qty": "1",
+		"unit": "hectare",
+		"options": "hectare ",
+		"carbon": "-15000",
+		"yearly figure": null
+	},
+	{
+		"activity": "textile fibres",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.18",
+		"yearly figure": null
+	},
+	{
+		"activity": "clothing",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.09",
+		"yearly figure": null
+	},
+	{
+		"activity": "leather goods",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.15",
+		"yearly figure": null
+	},
+	{
+		"activity": "paper",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.48",
+		"yearly figure": null
+	},
+	{
+		"activity": "printing and publishing",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.37",
+		"yearly figure": null
+	},
+	{
+		"activity": "paints, varnishes, printing ink",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.43",
+		"yearly figure": null
+	},
+	{
+		"activity": "soap, toilet cleaner",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.17",
+		"yearly figure": null
+	},
+	{
+		"activity": "pharmaceuticals",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.15",
+		"yearly figure": null
+	},
+	{
+		"activity": "rubber and plastic products",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.62",
+		"yearly figure": null
+	},
+	{
+		"activity": "cement, lime, plaster and concrete",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "1.39",
+		"yearly figure": null
+	},
+	{
+		"activity": "glass, ceramic, stone products",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.57",
+		"yearly figure": null
+	},
+	{
+		"activity": "iron and steel",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "1.88",
+		"yearly figure": null
+	},
+	{
+		"activity": "structural metal products",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.46",
+		"yearly figure": null
+	},
+	{
+		"activity": "computers and electronic goods",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.22",
+		"yearly figure": null
+	},
+	{
+		"activity": "electrical equipment",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.31",
+		"yearly figure": null
+	},
+	{
+		"activity": "motor vehicles ",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.41",
+		"yearly figure": null
+	},
+	{
+		"activity": "furniture",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.31",
+		"yearly figure": null
+	},
+	{
+		"activity": "misc manufacturing",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.13",
+		"yearly figure": null
+	},
+	{
+		"activity": "repair and installation",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.24",
+		"yearly figure": null
+	},
+	{
+		"activity": "construction",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.34",
+		"yearly figure": null
+	},
+	{
+		"activity": "rail transport",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.59",
+		"yearly figure": null
+	},
+	{
+		"activity": "land transport",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.63",
+		"yearly figure": null
+	},
+	{
+		"activity": "water transport",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "1.5",
+		"yearly figure": null
+	},
+	{
+		"activity": "air transport",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "3.76",
+		"yearly figure": null
+	},
+	{
+		"activity": "postal courier services",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.41",
+		"yearly figure": null
+	},
+	{
+		"activity": "accommodation",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.31",
+		"yearly figure": null
+	},
+	{
+		"activity": "food and beverage services",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.28",
+		"yearly figure": null
+	},
+	{
+		"activity": "film, tv, music production",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.14",
+		"yearly figure": null
+	},
+	{
+		"activity": "telecommunications",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.19",
+		"yearly figure": null
+	},
+	{
+		"activity": "web hosting, web portals",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.13",
+		"yearly figure": null
+	},
+	{
+		"activity": "financial services",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.18",
+		"yearly figure": null
+	},
+	{
+		"activity": "insurance ",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.16",
+		"yearly figure": null
+	},
+	{
+		"activity": "real-estate ",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.05",
+		"yearly figure": null
+	},
+	{
+		"activity": "legal activities",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.07",
+		"yearly figure": null
+	},
+	{
+		"activity": "accounting",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.08",
+		"yearly figure": null
+	},
+	{
+		"activity": "scientific research and development",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.25",
+		"yearly figure": null
+	},
+	{
+		"activity": "advertising ",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.11",
+		"yearly figure": null
+	},
+	{
+		"activity": "veterinary services",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.14",
+		"yearly figure": null
+	},
+	{
+		"activity": "travel agencies and tour operators",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.16",
+		"yearly figure": null
+	},
+	{
+		"activity": "education",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.16",
+		"yearly figure": null
+	},
+	{
+		"activity": "health services",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.17",
+		"yearly figure": null
+	},
+	{
+		"activity": "sports and recreation",
+		"category": "spending (per $)",
+		"qty": "1",
+		"unit": "$",
+		"options": "$1",
+		"carbon": "0.21",
+		"yearly figure": null
+	}
+]
