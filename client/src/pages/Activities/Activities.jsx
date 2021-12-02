@@ -11,6 +11,7 @@ import GroceryTable from '../../components/GroceryTable/GroceryTable';
 export class Activities extends Component {
 
     state = {
+        groceries: null,
         activities: null,
         groceriesActive: false,
         summary: []
@@ -18,13 +19,18 @@ export class Activities extends Component {
 
     componentDidMount = () => {
         axios
-            .get(localAPI + "footprints")
-            .then(response => {
+            .all([
+                axios.get(localAPI + "groceries"),
+                axios.get(localAPI + "activities")
+            ])
+            // .get(localAPI + "footprints")
+            .then(axios.spread((response1, response2) => {
                 // console.log(response)
                 this.setState({
-                    activities: response.data
+                    groceries: response1.data,
+                    activities: response2.data
                 })
-            })
+            }))
     }
 
     toggleClass = () => {
@@ -81,7 +87,7 @@ export class Activities extends Component {
                         <h2>+ groceries</h2>
                     </button>
                     <div className={this.state.groceriesActive ? "activities__content-expanded" : "activities__content-collapsed"}>
-                        <GroceryTable groceries={this.state.activities} addToSummary={this.addToSummary}/>
+                        <GroceryTable groceries={this.state.groceries} addToSummary={this.addToSummary}/>
                         {/* {this.state.activities.map(activity => 
                         <ActivityCard activity={activity} key={activity.id}/>)} */}
                     </div>

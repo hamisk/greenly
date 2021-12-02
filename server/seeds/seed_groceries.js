@@ -13,13 +13,13 @@ let groceries = groceriesJSON.map(function(grocery) {
         'qty': 1,
         'unit': 'kg',
         'carbon': grocery.carbon,
-        'sc_land_use': grocery.supplyChain.landUse || 0,
-        'sc_farm': grocery.supplyChain.farm || 0,
-        'sc_animal_feed': grocery.supplyChain.animalFeed || 0,
-        'sc_processing': grocery.supplyChain.processing || 0,
-        'sc_transport': grocery.supplyChain.transport || 0,
-        'sc_retail': grocery.supplyChain.retail || 0,
-        'sc_packaging': grocery.supplyChain.packaging || 0,
+        'sc_land_use': grocery.supplyChain.landUse,
+        'sc_farm': grocery.supplyChain.farm,
+        'sc_animal_feed': grocery.supplyChain.animalFeed,
+        'sc_processing': grocery.supplyChain.processing,
+        'sc_transport': grocery.supplyChain.transport,
+        'sc_retail': grocery.supplyChain.retail,
+        'sc_packaging': grocery.supplyChain.packaging,
         'pollutants': grocery.pollutants,
         'land': grocery.land,
         'water': grocery.water,
@@ -39,8 +39,6 @@ let groceries = groceriesJSON.map(function(grocery) {
         })
     }
 })
-
-// console.log(groceries)
 
 exports.seed = function(knex) {
     // Deletes ALL existing entries
