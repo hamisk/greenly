@@ -23,7 +23,7 @@ let activities = activitiesJSON.map(activity => ({
 //   "yearly_figure": activitiesJSON[0].yearly_figure
 // }]
 
-console.log(activities)
+// console.log(activities)
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
