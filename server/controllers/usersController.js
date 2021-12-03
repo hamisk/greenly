@@ -61,7 +61,6 @@ exports.login = (req, res) => {
                     message: "User does not exist"
                 })
             }
-            console.log(password, foundUser.password)
             // we are guaranteed to have the user here
             // Validate password matches user's password
             if (foundUser.password !== password) {
@@ -91,3 +90,33 @@ exports.login = (req, res) => {
             res.status(400).send(`Error retrieving user: ${err}`)
         );      
 };
+
+exports.getProfile = ((req, res) => {
+    console.log("req.decoded in /users/profile route", req.decoded);
+    // if valid token, continue
+    const usernameFromToken = req.decoded.username;
+    // find the user from users using username from the token
+    // const foundUser = users.find(user => user.username === usernameFromToken);
+
+    knex('users')
+        .where({ username: usernameFromToken })
+        .then((user) => {
+            // const foundUser = users.find(user => user.username === username);
+            const foundUser = user[0];
+
+            console.log(user)
+            console.log(foundUser)
+
+            if (!foundUser) {
+                return res.status(400).json({
+                    message: "User does not exist"
+                })
+            }
+
+            // send back full user data 
+            return res.json({
+                username: foundUser.username,
+                name: foundUser.name
+            })
+        })
+});

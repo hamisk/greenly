@@ -5,7 +5,6 @@ module.exports = (req, res, next) => {
     if (!req.headers.authorization) {
         return res.sendStatus(400);
     }
-
     // get token from header
     const token = req.headers.authorization.split(" ")[1];
 
