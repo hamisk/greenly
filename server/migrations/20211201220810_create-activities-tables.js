@@ -7,7 +7,7 @@ exports.up = function(knex) {
             table.string('password').notNullable();
             table.string('city');
             table.string('country');
-            table.timestamps();
+            table.timestamps('', true);
         })
         .createTable('activities', (table) => {
             table.increments('id'); //Primary key

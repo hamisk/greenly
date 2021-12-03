@@ -18,7 +18,7 @@ app.use(express.static('public'));
 app.use('/footprints', footprintRoutes)
 app.use('/activities', activityRoutes)
 app.use('/groceries', groceryRoutes)
-app.use('/user', userRoutes)
+app.use('/users', userRoutes)
 
 app.listen(port, function() {
     console.log(`Connected to server at port ${port}`)
