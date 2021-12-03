@@ -7,12 +7,14 @@ import { round } from '../../utils/utils'
 import './Activities.scss';
 import SummaryTable from '../../components/SummaryTable/SummaryTable';
 import GroceryTable from '../../components/GroceryTable/GroceryTable';
+import ActivityTable from '../../components/ActivityTable/ActivityTable';
 
 export class Activities extends Component {
 
     state = {
         groceries: null,
         activities: null,
+        categories: null,
         groceriesActive: false,
         summary: []
     }
@@ -25,17 +27,55 @@ export class Activities extends Component {
             ])
             // .get(localAPI + "footprints")
             .then(axios.spread((response1, response2) => {
-                // console.log(response)
+                console.log(response2.data)
+
+                // array of unique category names to generate category buttons
+                const categoryNames = [...new Set(response2.data.map(item => item.category))]
+                // intialising button toggle to false for each category
+                categoryNames.sort()
+                const categoriesArray = categoryNames.map(category => [category, false])
+                
+                console.log(categoriesArray)
+
+                let groupedActivities = this.groupBy(response2.data, 'category')
+                console.log(groupedActivities)
+
                 this.setState({
                     groceries: response1.data,
-                    activities: response2.data
+                    activities: groupedActivities,
+                    categories: categoriesArray
                 })
             }))
     }
 
+    groupBy = (objectArray, property) => {
+        return objectArray.reduce(function (acc, obj) {
+            let key = obj[property]
+            if (!acc[key]) {
+                acc[key] = []
+            }
+            acc[key].push(obj)
+            return acc
+        }, {})
+    }
+    
+
     toggleClass = () => {
         const currentState = this.state.groceriesActive;
         this.setState({ groceriesActive: !currentState });
+    };
+
+    toggleCategoryClass = (category) => {
+        const currentState = this.state.categories
+        // finding toggle state of selected category and setting to opposite 
+        const newState = currentState.map((mapCategory) => {
+            if (mapCategory === category) {
+                return [category[0], !category[1]]
+            } else {
+                return [mapCategory[0], false]
+            }
+        });
+        this.setState({ categories: newState });
     };
 
     addToSummary = (grocery, qty) => {
@@ -82,19 +122,31 @@ export class Activities extends Component {
             <section className="activity-page">
                 <div className="activities">
                     <h2>Add an activity</h2>
+
                     <button className={`activities__collapsible ${this.state.groceriesActive ? "activities__active" : ""}`} 
                         onClick={this.toggleClass}>
                         <h2>+ groceries</h2>
                     </button>
                     <div className={this.state.groceriesActive ? "activities__content-expanded" : "activities__content-collapsed"}>
                         <GroceryTable groceries={this.state.groceries} addToSummary={this.addToSummary}/>
-                        {/* {this.state.activities.map(activity => 
-                        <ActivityCard activity={activity} key={activity.id}/>)} */}
                     </div>
+
+                    {this.state.categories.map(mapCategory =>
+                    <div key={mapCategory[0]}>
+                    {/* <button className={`activities__collapsible ${this.state.categories.find(findCategory => findCategory === mapCategory)[1] ? "activities__active" : ""}`}  */}
+                    <button className={`activities__collapsible ${mapCategory[1] ? "activities__active" : ""}`} 
+                    onClick={() => {
+                        this.toggleCategoryClass(mapCategory)}}>
+                    <h2>+ {mapCategory[0]}</h2>
+                    </button>
+                    <div className={mapCategory[1] ? "activities__content-expanded" : "activities__content-collapsed"}>
+                        <ActivityTable activities={this.state.activities[mapCategory[0]]} addToSummary={this.addToSummary}/>
+                    </div>
+                    </div>)}
                 </div>
                 <div className="act-summary">
                     <div className="act-summary__header">
-                        <p className="act-summary__title">Activity Summary</p>
+                        <p className="act-summary__title">Your carbon diary for</p>
                         <p className="act-summary__date">Week Commencing: 11/29/2021</p>
                     </div>
                     <SummaryTable summary={this.state.summary} totals={this.getSummaryTotal()}/>

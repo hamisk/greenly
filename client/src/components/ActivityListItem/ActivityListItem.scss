@@ -1,0 +1,42 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/variables' as *;
+
+.activity-item {
+    &__list-item {
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+    }
+
+    &__activity {
+        margin: 0 0 0 1rem;
+        width: 7rem;
+    }
+
+    &__activity-stats {
+        display: flex;
+        // flex-direction: flex-end;
+        justify-content: space-between;
+        width: 20rem;
+    }
+
+    &__activity-text {
+        margin: 0 0.5rem;
+    }
+
+    &__qty-input {
+        width: 3rem;
+        margin: 0.5rem;
+        text-align: end;
+        font-size: 1rem;
+
+        &::placeholder {
+            text-align: end;
+        }
+    }
+
+    &__activity-add {
+        margin-right: 0.5rem;
+        margin-left: auto;
+    }
+}
