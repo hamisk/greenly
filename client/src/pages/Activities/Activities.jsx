@@ -8,6 +8,7 @@ import './Activities.scss';
 import SummaryTable from '../../components/SummaryTable/SummaryTable';
 import GroceryTable from '../../components/GroceryTable/GroceryTable';
 import ActivityTable from '../../components/ActivityTable/ActivityTable';
+import SubNav from '../../components/SubNav/SubNav';
 
 export class Activities extends Component {
 
@@ -118,7 +119,10 @@ export class Activities extends Component {
         if (!this.state.activities) {
             return <p>Loading...</p>
         }
+        const tabs = ['search', 'browse']
         return (
+            <>
+            <SubNav tabs={tabs} />
             <section className="activity-page">
                 <div className="activities">
                     <h2>Add an activity</h2>
@@ -153,6 +157,7 @@ export class Activities extends Component {
 
                 </div>
             </section>
+        </>
         )
     }
 }

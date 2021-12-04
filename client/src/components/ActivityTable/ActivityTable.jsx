@@ -26,16 +26,17 @@ function ActivityTable({ activities, addToSummary }) {
                 {/* <p className="activity-table__sub">pollutants</p> */}
                 {/* <p className="activity-table__sub">quantity</p> */}
             </div>
-            <ul className="Activity-table__list">
+            <ul className="activity-table__list">
                 {activitiesToDisplay.map(activity =>
                 <ActivityListItem activity={activity} addToSummary={addToSummary} key={activity.id}/>)}
             </ul>
+            {!(activities.length > pageSize) ? "" :
             <PaginationBar 
                 fullList={activities} 
                 from="Activity" 
                 goToPage={goToPage}
                 pageIndex={pageIndex}
-                pageSize={pageSize}/>
+                pageSize={pageSize}/>}
         </div>
     )
 }

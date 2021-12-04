@@ -8,9 +8,10 @@ import pollutionIcon from '../../assets/icons/icons8-forest-100.png';
 
 export class Home extends Component {
     render() {
+        const tabs = ['dashboard', 'profile']
         return (
             <div>
-                <SubNav />
+                <SubNav tabs={tabs}/>
                 <div className="summary">
                     <div className="summary__header">
                         <p className="summary__title">Weekly Summary</p>

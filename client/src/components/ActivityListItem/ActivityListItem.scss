@@ -1,40 +1,61 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/variables' as *;
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 .activity-item {
     &__list-item {
         display: flex;
         align-items: center;
-        // justify-content: space-between;
+        margin: 0.25rem 0;
+        height: 36px;
     }
 
     &__activity {
         margin: 0 0 0 1rem;
-        width: 7rem;
+        width: 30%;
     }
 
-    &__activity-stats {
+    &__select {
+        width: 20%;
+    }
+
+    &__qty-wrapper {
         display: flex;
-        // flex-direction: flex-end;
-        justify-content: space-between;
-        width: 20rem;
-    }
-
-    &__activity-text {
-        margin: 0 0.5rem;
+        justify-content: flex-start;
+        align-items: center;
+        width: 25%;
+        margin-left: 2rem;
     }
 
     &__qty-input {
-        width: 3rem;
-        margin: 0.5rem;
+        width: 2rem;
+        margin-left: 0.5rem;
         text-align: end;
         font-size: 1rem;
-
+        height: 19px;;
+        
         &::placeholder {
             text-align: end;
         }
     }
 
+    &__activity-unit {
+        margin: 0 0.5rem;
+        // width: 25%;
+    }
+    
+    &__activity-text {
+        margin: 0 0.5rem;
+        // justify-self: flex-end;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
     &__activity-add {
         margin-right: 0.5rem;
         margin-left: auto;

@@ -1,4 +1,5 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import './App.scss';
 import Header from './components/Header/Header';
 import Activities from './pages/Activities/Activities';
@@ -9,10 +10,11 @@ import Profile from './pages/Profile/Profile';
 import SignUp from './pages/SignUp/SignUp';
 
 function App() {
+    const HeaderWithRouter = withRouter(Header)
     return (
         <div className="app">
             <BrowserRouter>
-                <Header />
+                <HeaderWithRouter />
                 <Switch>
                     <Route path="/" exact><Home /></Route>
                     <Route path="/activities"><Activities /></Route>

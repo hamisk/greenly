@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import './Header.scss'
 import logo from '../../assets/icons/icons8-earth-100.png';
 
-function Header() {
+function Header(props) {
+    // routerProps passed through for active page styling
+    console.log(props)
     return (
         <>
             <div className="header">
@@ -18,7 +20,6 @@ function Header() {
             <div className="primary-nav">
                 <Link to='/'><div className="primary-nav__link">home</div></Link>
                 <Link to='/activities'><div className="primary-nav__link">activities</div></Link>
-                <Link to='/offset'><div className="primary-nav__link">offset</div></Link>
                 <Link to='/about'><div className="primary-nav__link">about</div></Link>
             </div>
         </>

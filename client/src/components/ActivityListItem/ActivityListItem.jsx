@@ -21,23 +21,21 @@ function ActivityListItem({ activity, addToSummary }) {
     return (
         <li className="activity-item__list-item">
             <p className="activity-item__activity">{activity.activity}</p>
-            <div className="activity-item__activity-stats">
-                <select 
-                    value={selectValue} 
-                    onChange={handleChange} 
-                >
-                    {activity.option.map(option => 
-                        <option value={option}>{option}</option>
-                    )}
-                </select>
-                <p className="activity-item__activity-text">
-                    {(qty * activity.carbon[activity.option.findIndex(option => option === selectValue)]).toFixed(1)} kg</p>
-                {/* <p className="activity-item__activity-text">{(qty * activity.land).toFixed(1)} m²</p> */}
-                {/* <p className="activity-item__activity-text">{(qty * activity.water).toFixed(1)} l</p> */}
-                {/* <p className="activity-item__activity-text">{(qty * activity.pollutants).toFixed(1)} g</p> */}
+            <select className="activity-item__select"
+                value={selectValue} 
+                onChange={handleChange} 
+            >
+                {activity.option.map(option => 
+                    <option value={option}>{option}</option>
+                )}
+            </select>
+            
+            <div className="activity-item__qty-wrapper">
+                <input type="number" className="activity-item__qty-input" value={qty} onChange={updateStats}/>
+                <p className="activity-item__activity-unit">{activity.unit}</p>
             </div>
-            <input type="number" className="activity-item__qty-input" value={qty} onChange={updateStats}/>
-            <p className="activity-item__activity-text">{activity.unit}</p>
+            <p className="activity-item__activity-text">
+                {(qty * activity.carbon[activity.option.findIndex(option => option === selectValue)]).toFixed(1)} kg</p>
             <button className="activity-item__activity-add" onClick={() => {
                 addToSummary(activity, qty)
             }}>+</button>
