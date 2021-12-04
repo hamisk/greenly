@@ -8,27 +8,62 @@ import Home from './pages/Home/Home';
 import LogIn from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import SignUp from './pages/SignUp/SignUp';
+import { Component } from 'react';
+import axios from 'axios';
+const HeaderWithRouter = withRouter(Header)
 
-function App() {
-    const HeaderWithRouter = withRouter(Header)
-    return (
-        <div className="app">
-            <BrowserRouter>
-                <HeaderWithRouter />
-                <Switch>
-                    <Route path="/" exact><Home /></Route>
-                    <Route path="/activities"><Activities /></Route>
-                    <Route path="/dashboard" component={Dashboard} />
-                    <Route path="/profile" component={Profile} />
-                    <Route path="/signup" component={SignUp} />
-                    <Route path="/login" component={LogIn} />
-                    <Route></Route>
-                    <Route></Route>
-                </Switch>
-            </BrowserRouter>
+class App extends Component {
 
-        </div>
-    );
+    state = {
+        userInfo: {},
+        isLoading: true,
+        isLoggedIn: false,
+        token: ""
+    }
+
+    componentDidMount() {
+        let token = sessionStorage.getItem('authToken')
+
+        if (!!token) {
+            axios.get('http://localhost:8080/users/profile', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            .then(res => {
+                // console.log(res)
+                this.setState({
+                    userInfo: res.data,
+                    isLoading: false,
+                    isLoggedIn: true,
+                    token: token
+                })
+            })
+        } else {
+            // history.push('/login')
+        }
+    }
+    
+    render() {
+        return (
+            <div className="app">
+                <BrowserRouter>
+                    <HeaderWithRouter isLoggedIn={this.state.isLoggedIn} userInfo={this.state.userInfo}/>
+                    <Switch>
+                        <Route path="/" exact><Home /></Route>
+                        <Route path="/activities"><Activities token={this.state.token}/></Route>
+                        <Route path="/dashboard" component={Dashboard} />
+                        <Route path="/profile" component={Profile} />
+                        <Route path="/signup" component={SignUp} />
+                        <Route path="/login" component={LogIn} />
+                        <Route></Route>
+                        <Route></Route>
+                    </Switch>
+                </BrowserRouter>
+
+            </div>
+        );
+    }
 }
 
 export default App;

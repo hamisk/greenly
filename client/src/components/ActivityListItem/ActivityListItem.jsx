@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
+import { v4 } from 'uuid';
 import './ActivityListItem.scss'
 
 function ActivityListItem({ activity, addToSummary }) {
 
-    console.log(activity)
+    // console.log(activity)
 
     const [qty, setQty] = useState(1);
     const [selectValue, setSelectValue] = useState(activity.option[0])
 
     function handleChange(event) {
         setSelectValue(event.target.value)
-        console.log(selectValue)
+        // console.log(selectValue)
         // this.setState({selectValue:e.target.value});
     }
 
@@ -26,7 +27,7 @@ function ActivityListItem({ activity, addToSummary }) {
                 onChange={handleChange} 
             >
                 {activity.option.map(option => 
-                    <option value={option}>{option}</option>
+                    <option value={option} key={v4()}>{option}</option>
                 )}
             </select>
             
@@ -37,7 +38,8 @@ function ActivityListItem({ activity, addToSummary }) {
             <p className="activity-item__activity-text">
                 {(qty * activity.carbon[activity.option.findIndex(option => option === selectValue)]).toFixed(1)} kg</p>
             <button className="activity-item__activity-add" onClick={() => {
-                addToSummary(activity, qty)
+                // console.log(selectValue)
+                addToSummary(activity, qty, selectValue)
             }}>+</button>
         </li>
     )

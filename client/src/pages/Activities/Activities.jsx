@@ -28,7 +28,7 @@ export class Activities extends Component {
             ])
             // .get(localAPI + "footprints")
             .then(axios.spread((response1, response2) => {
-                console.log(response2.data)
+                // console.log(response2.data)
 
                 // array of unique category names to generate category buttons
                 const categoryNames = [...new Set(response2.data.map(item => item.category))]
@@ -36,10 +36,10 @@ export class Activities extends Component {
                 categoryNames.sort()
                 const categoriesArray = categoryNames.map(category => [category, false])
                 
-                console.log(categoriesArray)
+                // console.log(categoriesArray)
 
                 let groupedActivities = this.groupBy(response2.data, 'category')
-                console.log(groupedActivities)
+                // console.log(groupedActivities)
 
                 this.setState({
                     groceries: response1.data,
@@ -95,6 +95,22 @@ export class Activities extends Component {
         })
     }
 
+    addActivityToSummary = (activity, qty, option) => {
+        let activityItem = {};
+        // console.log(activity, qty, option)
+        activityItem.activity = activity.activity
+        activityItem.option = option
+        activityItem.qty = qty
+        
+        activityItem.carbon = qty * activity.carbon[activity.option.findIndex(findOption => findOption === option)]
+
+        this.setState({
+            summary: [...this.state.summary, activityItem]
+        }, () => {
+            // console.log(this.state.summary)
+        })
+    }
+
     getSummaryTotal = () => {
         let summaryArray = this.state.summary
         let co2Total = 0;
@@ -113,6 +129,21 @@ export class Activities extends Component {
         } else {
             return [0,0,0,0]
         }
+    }
+
+    submitEntry = () => {
+        console.log(this.state.summary)
+        const token = this.props.token
+        axios
+            .post(localAPI + 'users/add-entry', this.state.summary, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            .then(() => {
+                console.log("submitted entry")
+            })
+            .catch(error => console.log(error))
     }
 
     render() {
@@ -144,17 +175,19 @@ export class Activities extends Component {
                     <h2>+ {mapCategory[0]}</h2>
                     </button>
                     <div className={mapCategory[1] ? "activities__content-expanded" : "activities__content-collapsed"}>
-                        <ActivityTable activities={this.state.activities[mapCategory[0]]} addToSummary={this.addToSummary}/>
+                        <ActivityTable activities={this.state.activities[mapCategory[0]]} addToSummary={this.addActivityToSummary}/>
                     </div>
                     </div>)}
                 </div>
                 <div className="act-summary">
-                    <div className="act-summary__header">
-                        <p className="act-summary__title">Your carbon diary for</p>
-                        <p className="act-summary__date">Week Commencing: 11/29/2021</p>
+                    <div className="act-summary__wrapper">
+                        <div className="act-summary__header">
+                            <p className="act-summary__title">Your carbon diary for</p>
+                            <p className="act-summary__date">Week Commencing: 11/29/2021</p>
+                        </div>
+                        <SummaryTable summary={this.state.summary} totals={this.getSummaryTotal()}/>
                     </div>
-                    <SummaryTable summary={this.state.summary} totals={this.getSummaryTotal()}/>
-
+                    <button className="act-summary__add-entry" onClick={this.submitEntry}>add entry</button>
                 </div>
             </section>
         </>

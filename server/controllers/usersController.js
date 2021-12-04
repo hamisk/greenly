@@ -53,8 +53,8 @@ exports.login = (req, res) => {
         .then((user) => {
             // const foundUser = users.find(user => user.username === username);
             const foundUser = user[0];
-            console.log(user)
-            console.log(foundUser)
+            // console.log(user)
+            // console.log(foundUser)
 
             if (!foundUser) {
                 return res.status(400).json({
@@ -91,7 +91,7 @@ exports.login = (req, res) => {
         );      
 };
 
-exports.getProfile = ((req, res) => {
+exports.getProfile = (req, res) => {
     console.log("req.decoded in /users/profile route", req.decoded);
     // if valid token, continue
     const usernameFromToken = req.decoded.username;
@@ -104,8 +104,8 @@ exports.getProfile = ((req, res) => {
             // const foundUser = users.find(user => user.username === username);
             const foundUser = user[0];
 
-            console.log(user)
-            console.log(foundUser)
+            // console.log(user)
+            // console.log(foundUser)
 
             if (!foundUser) {
                 return res.status(400).json({
@@ -119,4 +119,37 @@ exports.getProfile = ((req, res) => {
                 name: foundUser.name
             })
         })
-});
+};
+
+exports.addEntry = (req, res) => {
+    // if valid token, continue
+    const usernameFromToken = req.decoded.username;
+
+    console.log(usernameFromToken)
+    console.log(req.body)
+
+    // const name = req.body.name;
+    // const username = req.body.username;
+    // const password = req.body.password;
+
+    // if (!name || !username || !password) {
+    //     return res.status(400).json({
+    //         message: "Register requires name, username, and password"
+    //     })
+    // }
+
+    // // at this point, we are guaranteed to have a 
+    // // name, username, and password
+    // const newUser = {
+    //     name: name,
+    //     username: username,
+    //     password: password
+    // };
+
+    // knex('users')
+    //     .insert(newUser)
+    //     .then(() => {
+    //         res.sendStatus(200);
+    //     })
+    res.sendStatus(200)
+}
