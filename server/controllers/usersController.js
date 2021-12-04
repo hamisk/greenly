@@ -94,9 +94,8 @@ exports.getProfile = (req, res) => {
     console.log("req.decoded in /users/profile route", req.decoded);
     // if valid token, continue
     const usernameFromToken = req.decoded.username;
-    // find the user from users using username from the token
-    // const foundUser = users.find(user => user.username === usernameFromToken);
 
+    // find the user from users using username from the token
     knex('users')
         .where({ username: usernameFromToken })
         .then((user) => {
@@ -175,6 +174,42 @@ exports.addEntry = (req, res) => {
                     res.status(400).send(`Error adding entry: ${err}`)
                 );   
         })
+}
+
+exports.getUserActivities = (req, res) => {
+    console.log("req.decoded in /users/profile route", req.decoded);
+    // if valid token, continue
+    const usernameFromToken = req.decoded.username;
+
+    // find the user from users using username from the token
+    knex('users')
+        .where({ username: usernameFromToken })
+        .then((user) => {
+            // const foundUser = users.find(user => user.username === username);
+            const foundUser = user[0];
+            // console.log(user)
+            // console.log(foundUser)
+
+            if (!foundUser) {
+                return res.status(400).json({
+                    message: "User does not exist"
+                })
+            }
+
+            const userId = foundUser.id
+            knex('user_logged_activities')
+                .where({ user_id: userId })
+                .join('activities', function () {
+                    this.on('activities.id', '=', 'user_logged_activities.activity_id')
+                })
+                .then(activities => {
+                    console.log(activities)
+                    res.status(200).json(activities);
+                })
+
+            // res.sendStatus(200);
+        })
+
 }
 
 // syntax:

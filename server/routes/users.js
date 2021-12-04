@@ -11,5 +11,7 @@ router.get('/profile', authorize, usersController.getProfile)
 
 router.post('/add-entry', authorize, usersController.addEntry)
 
+router.get('/get-activities', authorize, usersController.getUserActivities)
+
 
 module.exports = router;
