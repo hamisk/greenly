@@ -51,7 +51,6 @@ exports.login = (req, res) => {
     knex('users')
         .where({ username: username })
         .then((user) => {
-            // const foundUser = users.find(user => user.username === username);
             const foundUser = user[0];
             // console.log(user)
             // console.log(foundUser)
@@ -124,10 +123,12 @@ exports.getProfile = (req, res) => {
 exports.addEntry = (req, res) => {
     // if valid token, continue
     const usernameFromToken = req.decoded.username;
+    const userLoggedActivities = req.body;
 
-    console.log(usernameFromToken)
-    console.log(req.body)
+    // console.log(usernameFromToken)
+    // console.log(req.body)
 
+    // validation - do for each property of activity?
     // const name = req.body.name;
     // const username = req.body.username;
     // const password = req.body.password;
@@ -138,18 +139,64 @@ exports.addEntry = (req, res) => {
     //     })
     // }
 
-    // // at this point, we are guaranteed to have a 
-    // // name, username, and password
-    // const newUser = {
-    //     name: name,
-    //     username: username,
-    //     password: password
-    // };
+    if (!userLoggedActivities) {
+            return res.status(400).json({
+            message: "add-entry requires activity"
+        })
+    }
 
-    // knex('users')
-    //     .insert(newUser)
-    //     .then(() => {
-    //         res.sendStatus(200);
-    //     })
-    res.sendStatus(200)
+    knex('users')
+        .where({ username: usernameFromToken })
+        .then((user) => {
+            const foundUser = user[0];
+
+            // console.log(foundUser)
+
+            if (!foundUser) {
+                return res.status(400).json({
+                    message: "User does not exist"
+                })
+            }
+            
+            let userActivitiesToDb = userLoggedActivities.map(activity => ({
+                user_id: foundUser.id,
+                activity_id: activity.option[1],
+                qty: activity.qty,
+            }))
+
+            console.log(userActivitiesToDb)
+
+            knex('user_logged_activities')
+                .insert(userActivitiesToDb)
+                .then(() => {
+                    res.sendStatus(200);
+                })
+                .catch((err) =>
+                    res.status(400).send(`Error adding entry: ${err}`)
+                );   
+        })
+}
+
+// syntax:
+function syntax() {
+    // select one user from users table where age is greater than 18
+    knex("users").where("age", ">", 18).first();
+
+    // filter users by multiple where columns
+    knex("users")
+        .where({
+            full_name: "Test User",
+            is_boat: true,
+        })
+        .select("id");
+
+    // select subquery
+    const usersSubquery = knex("users")
+        .where("age", ">", 18)
+        .andWhere("is_deleted", false)
+        .select("id");
+    knex("programs").where("id", "in", usersSubquery);
+
+    // pagination with offset and limit
+    knex.select("*").from("orders").offset(0).limit(50);
 }

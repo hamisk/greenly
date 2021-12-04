@@ -16,6 +16,8 @@ function SummaryTable({ summary, totals }) {
         setPageIndex(page);
     }
 
+    // console.log(summary)
+
     return (
         <div className="summary-table">
             <div className="summary-table__subheaders">

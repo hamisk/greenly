@@ -14,7 +14,7 @@ exports.getActivities = (_req, res) => {
                 let activityName = activity.activity;
 
                 if (activityName === prevActivityName) {
-                    activityArray[activityArrayIndex].option.push(activity.option)
+                    activityArray[activityArrayIndex].option.push([activity.option, activity.id])
                     activityArray[activityArrayIndex].carbon.push(activity.carbon)
                 } else {
                     let activityObject = {
@@ -23,7 +23,7 @@ exports.getActivities = (_req, res) => {
                         "category": activity.category,
                         "qty": activity.qty,
                         "unit": activity.unit,
-                        "option": [activity.option],
+                        "option": [[activity.option, activity.id]],
                         "carbon": [activity.carbon],
                         "pollutants": activity.pollutants,
                         "land": activity.land,

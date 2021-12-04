@@ -17,10 +17,18 @@ export class Activities extends Component {
         activities: null,
         categories: null,
         groceriesActive: false,
-        summary: []
+        weekCommencing: "11/29/2021",
+        summary: [],
+        token: ''
     }
 
     componentDidMount = () => {
+
+        let token = sessionStorage.getItem('authToken')
+        this.setState({
+            token: token
+        })
+        
         axios
             .all([
                 axios.get(localAPI + "groceries"),
@@ -102,7 +110,8 @@ export class Activities extends Component {
         activityItem.option = option
         activityItem.qty = qty
         
-        activityItem.carbon = qty * activity.carbon[activity.option.findIndex(findOption => findOption === option)]
+        // console.log(activity)
+        activityItem.carbon = qty * activity.carbon[activity.option.findIndex(findOption => findOption[0] === option[0])]
 
         this.setState({
             summary: [...this.state.summary, activityItem]
@@ -132,10 +141,17 @@ export class Activities extends Component {
     }
 
     submitEntry = () => {
-        console.log(this.state.summary)
-        const token = this.props.token
+        // console.log(this.state.summary)
+        const token = this.state.token
+        console.log(token)
+        let summaryArr = this.state.summary
+
+        summaryArr.map(activity => 
+            activity.weekCommencing = this.state.weekCommencing)
+        
+        console.log(summaryArr)
         axios
-            .post(localAPI + 'users/add-entry', this.state.summary, {
+            .post(localAPI + 'users/add-entry', summaryArr, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

@@ -7,10 +7,14 @@ function ActivityListItem({ activity, addToSummary }) {
     // console.log(activity)
 
     const [qty, setQty] = useState(1);
-    const [selectValue, setSelectValue] = useState(activity.option[0])
+    const [selectValue, setSelectValue] = useState(activity.option[0][0])
+    const [optionId, setOptionId] = useState(activity.option[0][1]);
+    // each option in activity array corresponds to a unique row in activities table in db
+    // need to retain this info to pass to user_logged_activities
 
     function handleChange(event) {
         setSelectValue(event.target.value)
+        setOptionId(activity.option[activity.option.findIndex(option => option[0] === event.target.value)][1])
         // console.log(selectValue)
         // this.setState({selectValue:e.target.value});
     }
@@ -27,7 +31,7 @@ function ActivityListItem({ activity, addToSummary }) {
                 onChange={handleChange} 
             >
                 {activity.option.map(option => 
-                    <option value={option} key={v4()}>{option}</option>
+                    <option value={option[0]} key={v4()}>{option[0]}</option>
                 )}
             </select>
             
@@ -36,10 +40,10 @@ function ActivityListItem({ activity, addToSummary }) {
                 <p className="activity-item__activity-unit">{activity.unit}</p>
             </div>
             <p className="activity-item__activity-text">
-                {(qty * activity.carbon[activity.option.findIndex(option => option === selectValue)]).toFixed(1)} kg</p>
+                {(qty * activity.carbon[activity.option.findIndex(option => option[0] === selectValue)]).toFixed(1)} kg</p>
             <button className="activity-item__activity-add" onClick={() => {
-                // console.log(selectValue)
-                addToSummary(activity, qty, selectValue)
+                // console.log(activity, qty, [selectValue, optionId])
+                addToSummary(activity, qty, [selectValue, optionId])
             }}>+</button>
         </li>
     )
