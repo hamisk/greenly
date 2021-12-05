@@ -4,14 +4,14 @@ import { Component } from 'react'
 class Dashboard extends Component {
     state = {
         isLoading: true,
-        userInfo: {}
+        userActivities: []
     }
 
     componentDidMount() {
         let token = sessionStorage.getItem('authToken')
 
         if (!!token) {
-            axios.get('http://localhost:8080/users/profile', {
+            axios.get('http://localhost:8080/users/get-activities', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -19,7 +19,7 @@ class Dashboard extends Component {
             .then(res => {
                 console.log(res)
                 this.setState({
-                    userInfo: res.data,
+                    userActivities: res.data,
                     isLoading: false
                 })
             })
@@ -37,7 +37,7 @@ class Dashboard extends Component {
     }
 
     render() {
-        const { isLoading, userInfo } = this.state
+        const { isLoading, userActivities } = this.state
         return isLoading ? 
             <h1>Loading...</h1> 
         :
@@ -47,7 +47,20 @@ class Dashboard extends Component {
                         Dashboard
                     </h1>
 
-                    <h2>Welcome! {userInfo.name}</h2>
+                    <h2>Welcome! {userActivities[0].id}</h2>
+                    {userActivities.map( activity => 
+                        <>
+                        <p>{activity.id}</p>
+                        <p>{activity.user_id}</p>
+                        <p>{activity.activity_id}</p>
+                        <p>{activity.qty}</p>
+                        <p>{activity.created_at}</p>
+                        <p>{activity.activity}</p>
+                        <p>{activity.category}</p>
+                        <p>{activity.unit}</p>
+                        <p>{activity.option}</p>
+                        <p>{activity.carbon}</p>
+                        </>)}
 
                     <button onClick={this.handleLogOut}>Log Out</button>
                 </div>
