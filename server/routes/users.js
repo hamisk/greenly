@@ -13,5 +13,6 @@ router.post('/add-entry', authorize, usersController.addEntry)
 
 router.get('/get-activities', authorize, usersController.getUserActivities)
 
+router.get('/get-users', usersController.getUsers)
 
 module.exports = router;

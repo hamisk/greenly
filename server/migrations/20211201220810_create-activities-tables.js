@@ -7,12 +7,17 @@ exports.up = function(knex) {
             table.string('password').notNullable();
             table.string('city');
             table.string('country');
+            table.string('goal_carbon');
+            table.string('goal_water');
+            table.string('goal_land');
+            table.string('goal_pollution');
             table.timestamps('', true);
         })
         .createTable('activities', (table) => {
             table.increments('id'); //Primary key
             table.string('activity').notNullable();
             table.string('category').notNullable();
+            table.string('sub_category');
             table.string('qty').notNullable();
             table.string('unit').notNullable();
             table.string('option').notNullable();
@@ -75,25 +80,10 @@ exports.up = function(knex) {
                 .onUpdate("CASCADE")
                 .onDelete("SET NULL")
         })
-        .createTable('user_goals', (table) => {
-            table.increments('id');
-            table.integer("user_id").unsigned();
-            table.string('carbon');
-            table.string('pollutants');
-            table.string('land');
-            table.string('water');
-            table
-                .foreign("user_id")
-                .references("id")
-                .inTable("users")
-                .onUpdate("CASCADE")
-                .onDelete("SET NULL")
-        })
 };
 
 exports.down = function(knex) {
     return knex.schema
-        .dropTable('user_goals')
         .dropTable('user_logged_activities')
         .dropTable('users')
         .dropTable('activities')
