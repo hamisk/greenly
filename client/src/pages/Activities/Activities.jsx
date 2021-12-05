@@ -2,19 +2,20 @@ import { Component } from 'react';
 import axios from 'axios';
 
 import { localAPI } from '../../utils/apiUtils';
-import { round, groupArrayBy } from '../../utils/utils'
+import { round, groupArrayBy, getWeekCommencing } from '../../utils/utils'
 
 import SummaryTable from '../../components/SummaryTable/SummaryTable';
 import ActivityTable from '../../components/ActivityTable/ActivityTable';
 import SubNav from '../../components/SubNav/SubNav';
 import './Activities.scss';
+import Calendar from '../../components/Calendar/Calendar';
 
 export class Activities extends Component {
 
     state = {
         activities: null,
         categories: null,
-        weekCommencing: "11/29/2021",
+        weekCommencing: getWeekCommencing(new Date()),
         summary: [],
         token: ''
     }
@@ -44,6 +45,8 @@ export class Activities extends Component {
                     groceries: response1.data,
                     activities: groupedActivities,
                     categories: categoriesArray
+                }, () => {
+                    console.log(this.state)
                 })
             }))
     }
@@ -112,6 +115,13 @@ export class Activities extends Component {
             .catch(error => console.log(error))
     }
 
+    setStartDate = (date) => {
+        let weekCommencing = getWeekCommencing(date)
+        this.setState({
+            weekCommencing: weekCommencing
+        })
+    }
+
     render() {
         if (!this.state.activities) {
             return <p>Loading...</p>
@@ -138,7 +148,8 @@ export class Activities extends Component {
                     <div className="act-summary__wrapper">
                         <div className="act-summary__header">
                             <p className="act-summary__title">Your carbon diary for</p>
-                            <p className="act-summary__date">Week Commencing: 11/29/2021</p>
+                            <p className="act-summary__date">Week Commencing: </p>
+                            <Calendar startDate={this.state.weekCommencing} setStartDate={this.setStartDate} />
                         </div>
                         <SummaryTable summary={this.state.summary} totals={this.getSummaryTotal()}/>
                     </div>
