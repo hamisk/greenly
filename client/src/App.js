@@ -10,6 +10,7 @@ import Profile from './pages/Profile/Profile';
 import SignUp from './pages/SignUp/SignUp';
 import { Component } from 'react';
 import axios from 'axios';
+import Groceries from './pages/Groceries/Groceries';
 const HeaderWithRouter = withRouter(Header)
 
 class App extends Component {
@@ -53,6 +54,7 @@ class App extends Component {
                         <Route path="/" exact><Home /></Route>
                         <Route path="/activities"><Activities token={this.state.token}/></Route>
                         <Route path="/dashboard" component={Dashboard} />
+                        <Route path="/groceries" component={Groceries} />
                         <Route path="/profile" component={Profile} />
                         <Route path="/signup" component={SignUp} />
                         <Route path="/login" component={LogIn} />

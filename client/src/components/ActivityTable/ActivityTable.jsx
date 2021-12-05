@@ -11,8 +11,6 @@ function ActivityTable({ activities, addToSummary }) {
     let end = start + pageSize;
     let activitiesToDisplay = (activities.slice(start, end))
 
-    // console.log(activitiesToDisplay)
-
     const goToPage = (page) => {
         setPageIndex(page);
     }
@@ -21,10 +19,6 @@ function ActivityTable({ activities, addToSummary }) {
         <div className="activity-table">
             <div className="activity-table__subheaders">
                 <p className="activity-table__sub">Activity</p>
-                {/* <p className="activity-table__sub">Land use</p> */}
-                {/* <p className="activity-table__sub">water use</p> */}
-                {/* <p className="activity-table__sub">pollutants</p> */}
-                {/* <p className="activity-table__sub">quantity</p> */}
             </div>
             <ul className="activity-table__list">
                 {activitiesToDisplay.map(activity =>
