@@ -3,7 +3,6 @@ import { withRouter } from 'react-router';
 import './App.scss';
 import Header from './components/Header/Header';
 import Activities from './pages/Activities/Activities';
-import Dashboard from './pages/Dashboard/Dashboard';
 import Home from './pages/Home/Home';
 import LogIn from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
@@ -11,6 +10,7 @@ import SignUp from './pages/SignUp/SignUp';
 import { Component } from 'react';
 import axios from 'axios';
 import Groceries from './pages/Groceries/Groceries';
+import Dashboard from './pages/Dashboard/Dashboard';
 const HeaderWithRouter = withRouter(Header)
 
 class App extends Component {

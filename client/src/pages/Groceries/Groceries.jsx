@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { localAPI } from '../../utils/apiUtils';
 import GroceryTable from '../../components/GroceryTable/GroceryTable';
-import ActivityCard from '../../components/ActivityCard/ActivityCard';
+// import ActivityCard from '../../components/ActivityCard/ActivityCard';
 
 import React, { Component } from 'react'
 

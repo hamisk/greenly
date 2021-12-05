@@ -21,6 +21,8 @@ class Dashboard extends Component {
                 this.setState({
                     userActivities: res.data,
                     isLoading: false
+                }, () => {
+                    console.log(this.state.userActivities)
                 })
             })
         } else {
@@ -38,7 +40,7 @@ class Dashboard extends Component {
 
     render() {
         const { isLoading, userActivities } = this.state
-        return isLoading ? 
+        return isLoading || !userActivities.length ? 
             <h1>Loading...</h1> 
         :
             (
