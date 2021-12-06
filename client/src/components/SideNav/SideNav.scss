@@ -1,0 +1,95 @@
+@use '../../styles/partials/colors' as *;
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $color-light-green;
+    overflow-x: hidden;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+    &__title-logo {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    &__logo {
+        width: 4rem;
+        margin: 0.5rem;
+        height: auto;
+    }
+
+    &__title {
+        color: $color-light;
+        margin: 0.5rem;
+        text-transform: uppercase;
+    }
+
+    &__links-wrapper {
+        display: flex;
+        // flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__link {
+        color: $color-light;
+        margin: 0.5rem;
+        text-transform: uppercase;
+
+        &:hover {
+            color: #f1f1f1;
+            font-weight: bold;
+        }
+    }
+
+    &__logout {
+        @extend .sidenav__link;
+        position: absolute;
+        bottom: 5%;
+    }
+
+    &__nav-links-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: $color-light-green;
+        position: relative;
+        top: 20%;
+    }
+
+    &__nav-link {
+        // padding: 1rem;
+        color: $color-light;
+    }
+}
+  
+// .sidenav a {
+//     padding: 6px 6px 6px 32px;
+//     text-decoration: none;
+//     font-size: 25px;
+//     color: #818181;
+//     display: block;
+// }
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    width: calc(100% - 200px);
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

@@ -3,15 +3,7 @@ import { Component } from 'react'
 import SubNav from '../../components/SubNav/SubNav';
 // import { v4 } from 'uuid';
 import './Dashboard.scss';
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
-    } from 'chart.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { groupArrayBy } from '../../utils/utils';
 import DoughnutChart from '../../components/DoughnutChart/DoughnutChart';
@@ -33,9 +25,21 @@ export const options = {
         },
         title: {
             display: true,
-            text: 'Chart.js Bar Chart',
+            text: 'Weekly Consumption',
         },
     },
+    scales: {
+        x: {
+            grid: {
+                display:false
+                }
+            },
+        y: {
+            grid:{
+                display:false
+            }
+        }
+    }
 };
   
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];

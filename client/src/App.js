@@ -12,7 +12,9 @@ import Groceries from './pages/Groceries/Groceries';
 import Dashboard from './pages/Dashboard/Dashboard';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import About from './pages/About/About';
+import SideNav from './components/SideNav/SideNav';
 const HeaderWithRouter = withRouter(Header)
+const SideNavWithRouter = withRouter(SideNav)
 
 class App extends Component {
     
@@ -20,19 +22,22 @@ class App extends Component {
         return (
             <div className="app">
                 <BrowserRouter>
-                    <HeaderWithRouter />
-                    <Switch>
-                        <Route path="/" exact><Home /></Route>
-                        <Route path="/activities" component={Activities} />
-                        <Route path="/groceries" component={Groceries} />
-                        <Route path="/about" component={About} />
-                        <Route path="/signup" component={SignUp} />
-                        <Route path="/login" component={LogIn} />
-                        <PrivateRoute path="/home/dashboard" component={Dashboard} />
-                        <PrivateRoute path="/home/profile" component={Profile} />
-                        <Route></Route>
-                        <Route></Route>
-                    </Switch>
+                    <SideNavWithRouter />
+                    <div class="main">
+                        {/* <HeaderWithRouter /> */}
+                        <Switch>
+                            <Route path="/" exact><Home /></Route>
+                            <Route path="/activities" component={Activities} />
+                            <Route path="/groceries" component={Groceries} />
+                            <Route path="/about" component={About} />
+                            <Route path="/signup" component={SignUp} />
+                            <Route path="/login" component={LogIn} />
+                            <PrivateRoute path="/home/dashboard" component={Dashboard} />
+                            <PrivateRoute path="/home/profile" component={Profile} />
+                            <Route></Route>
+                            <Route></Route>
+                        </Switch>
+                    </div>
                 </BrowserRouter>
 
             </div>

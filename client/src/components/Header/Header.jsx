@@ -5,7 +5,7 @@ import logo from '../../assets/icons/icons8-earth-100.png';
 import { Component } from 'react';
 import { localAPI } from '../../utils/apiUtils';
 import axios from 'axios';
-import LoginModal from '../LoginModal/LoginModal';
+// import LoginModal from '../LoginModal/LoginModal';
 
 class Header extends Component {
     // routerProps passed through for active page styling
@@ -75,7 +75,7 @@ class Header extends Component {
                         </>
                         }
                     </div>
-                    <LoginModal name="name" id="id" handler={() => {}}/>
+                    {/* <LoginModal name="name" id="id" handler={() => {}}/> */}
                 </div>
                 <div className="primary-nav">
                     <Link to='/'><div className="primary-nav__link">home</div></Link>
