@@ -3,10 +3,11 @@ import ActivityListItem from '../ActivityListItem/ActivityListItem'
 import PaginationBar from '../PaginationBar/PaginationBar';
 import './ActivityTable.scss'
 
-function ActivityTable({ activities, addToSummary }) {
+function ActivityTable({ activities, addToSummary, perPage }) {
+    // console.log(activities)
 
     const [pageIndex, setPageIndex] = useState(0);
-    let pageSize = 5;
+    let pageSize = perPage || 5;
     let start = pageIndex * pageSize;    
     let end = start + pageSize;
     let activitiesToDisplay = (activities.slice(start, end))
@@ -14,6 +15,7 @@ function ActivityTable({ activities, addToSummary }) {
     const goToPage = (page) => {
         setPageIndex(page);
     }
+
 
     return (
         <div className="activity-table">

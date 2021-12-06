@@ -11,7 +11,7 @@ export class Home extends Component {
         const tabs = ['dashboard', 'profile']
         return (
             <div>
-                <SubNav tabs={tabs}/>
+                <SubNav page='home' tabs={tabs}/>
                 <div className="summary">
                     <div className="summary__header">
                         <p className="summary__title">Weekly Summary</p>

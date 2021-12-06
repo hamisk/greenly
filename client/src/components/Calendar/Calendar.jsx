@@ -5,6 +5,7 @@ import { getMonth, getYear } from 'date-fns';
 import range from "lodash/range";
 
 import "react-datepicker/dist/react-datepicker.css";
+import './Calendar.scss'
 
 // CSS Modules, react-datepicker-cssmodules.css
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
@@ -78,6 +79,7 @@ function Calendar(props) {
             )}
             selected={startDate}
             onChange={(date) => setStartDate(date)}
+            calendarClassName="rasta-stripes"
         />
     );
 };

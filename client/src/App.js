@@ -8,56 +8,28 @@ import LogIn from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import SignUp from './pages/SignUp/SignUp';
 import { Component } from 'react';
-import axios from 'axios';
 import Groceries from './pages/Groceries/Groceries';
 import Dashboard from './pages/Dashboard/Dashboard';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import About from './pages/About/About';
 const HeaderWithRouter = withRouter(Header)
 
 class App extends Component {
-
-    state = {
-        userInfo: {},
-        isLoading: true,
-        isLoggedIn: false,
-        token: ""
-    }
-
-    componentDidMount() {
-        let token = sessionStorage.getItem('authToken')
-
-        if (!!token) {
-            axios.get('http://localhost:8080/users/profile', {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            })
-            .then(res => {
-                // console.log(res)
-                this.setState({
-                    userInfo: res.data,
-                    isLoading: false,
-                    isLoggedIn: true,
-                    token: token
-                })
-            })
-        } else {
-            // history.push('/login')
-        }
-    }
     
     render() {
         return (
             <div className="app">
                 <BrowserRouter>
-                    <HeaderWithRouter isLoggedIn={this.state.isLoggedIn} userInfo={this.state.userInfo}/>
+                    <HeaderWithRouter />
                     <Switch>
                         <Route path="/" exact><Home /></Route>
-                        <Route path="/activities"><Activities token={this.state.token}/></Route>
-                        <Route path="/dashboard" component={Dashboard} />
+                        <Route path="/activities" component={Activities} />
                         <Route path="/groceries" component={Groceries} />
-                        <Route path="/profile" component={Profile} />
+                        <Route path="/about" component={About} />
                         <Route path="/signup" component={SignUp} />
                         <Route path="/login" component={LogIn} />
+                        <PrivateRoute path="/home/dashboard" component={Dashboard} />
+                        <PrivateRoute path="/home/profile" component={Profile} />
                         <Route></Route>
                         <Route></Route>
                     </Switch>

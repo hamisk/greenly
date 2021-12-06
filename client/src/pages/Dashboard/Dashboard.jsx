@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { Component } from 'react'
+import SubNav from '../../components/SubNav/SubNav';
+import { v4 } from 'uuid';
 
 class Dashboard extends Component {
     state = {
@@ -40,33 +42,38 @@ class Dashboard extends Component {
 
     render() {
         const { isLoading, userActivities } = this.state
-        return isLoading || !userActivities.length ? 
-            <h1>Loading...</h1> 
-        :
-            (
-                <div className="dashboard">
-                    <h1>
-                        Dashboard
-                    </h1>
+        const tabs = ['dashboard', 'profile']
+        return (
+            <>
+                <SubNav page='home' tabs={tabs} />
+                {(isLoading || !userActivities.length) ? 
+                    <h1>Loading...</h1> 
+                :
+                    (<div className="dashboard">
+                        <h1>
+                            Dashboard
+                        </h1>
 
-                    <h2>Welcome! {userActivities[0].id}</h2>
-                    {userActivities.map( activity => 
-                        <>
-                        <p>{activity.id}</p>
-                        <p>{activity.user_id}</p>
-                        <p>{activity.activity_id}</p>
-                        <p>{activity.qty}</p>
-                        <p>{activity.created_at}</p>
-                        <p>{activity.activity}</p>
-                        <p>{activity.category}</p>
-                        <p>{activity.unit}</p>
-                        <p>{activity.option}</p>
-                        <p>{activity.carbon}</p>
-                        </>)}
+                        <h2>Welcome! {userActivities[0].id}</h2>
+                        {userActivities.map( activity => 
+                            <div key={v4()}>
+                                <p>{activity.id}</p>
+                                <p>{activity.user_id}</p>
+                                <p>{activity.activity_id}</p>
+                                <p>{activity.qty}</p>
+                                <p>{activity.created_at}</p>
+                                <p>{activity.activity}</p>
+                                <p>{activity.category}</p>
+                                <p>{activity.unit}</p>
+                                <p>{activity.option}</p>
+                                <p>{activity.carbon}</p>
+                            </div>)}
 
-                    <button onClick={this.handleLogOut}>Log Out</button>
-                </div>
-            )
+                        <button onClick={this.handleLogOut}>Log Out</button>
+                    </div>
+                )}
+            </>
+        )
     }
 }
 

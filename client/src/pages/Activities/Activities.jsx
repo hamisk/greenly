@@ -1,14 +1,16 @@
 import { Component } from 'react';
 import axios from 'axios';
+import { Switch, Route } from 'react-router-dom';
 
 import { localAPI } from '../../utils/apiUtils';
 import { round, groupArrayBy, getWeekCommencing } from '../../utils/utils'
 
 import SummaryTable from '../../components/SummaryTable/SummaryTable';
-import ActivityTable from '../../components/ActivityTable/ActivityTable';
 import SubNav from '../../components/SubNav/SubNav';
 import './Activities.scss';
 import Calendar from '../../components/Calendar/Calendar';
+import BrowseActivities from '../../components/BrowseActivities/BrowseActivities';
+import SearchActivities from '../../components/SearchActivities/SearchActivities';
 
 export class Activities extends Component {
 
@@ -21,10 +23,12 @@ export class Activities extends Component {
     }
 
     componentDidMount = () => {
-
+        let summaryFromSession = JSON.parse(sessionStorage.getItem('summary'))
+        console.log(summaryFromSession)
         let token = sessionStorage.getItem('authToken')
         this.setState({
-            token: token
+            token: token,
+            summary: summaryFromSession || []
         })
         
         axios
@@ -39,14 +43,11 @@ export class Activities extends Component {
                 categoryNames.sort()
                 const categoriesArray = categoryNames.map(category => [category, false])
 
-                let groupedActivities = groupArrayBy(response1.data, 'category')
-
                 this.setState({
-                    groceries: response1.data,
-                    activities: groupedActivities,
+                    activities: response1.data,
                     categories: categoriesArray
                 }, () => {
-                    console.log(this.state)
+                    // console.log(this.state)
                 })
             }))
     }
@@ -79,6 +80,7 @@ export class Activities extends Component {
         }, () => {
             // callback to do something with state
             // console.log(this.state.summary)
+            sessionStorage.setItem('summary', JSON.stringify(this.state.summary))
         })
     }
 
@@ -110,6 +112,11 @@ export class Activities extends Component {
                 }
             })
             .then(() => {
+                this.setState({
+                    summary: []
+                }, () => {
+                    sessionStorage.removeItem('summary')
+                })
                 console.log("submitted entry")
             })
             .catch(error => console.log(error))
@@ -129,21 +136,23 @@ export class Activities extends Component {
         const tabs = ['search', 'browse']
         return (
             <>
-            <SubNav tabs={tabs} />
+            <SubNav page='activities' tabs={tabs} />
             <section className="activity-page">
-                <div className="activities">
-                    <h2>Add an activity</h2>
-                    {this.state.categories.map(mapCategory =>
-                    <div key={mapCategory[0]}>
-                        <button className={`activities__collapsible ${mapCategory[1] ? "activities__active" : ""}`} 
-                            onClick={() => {this.toggleCategoryClass(mapCategory)}}>
-                            <h2>+ {mapCategory[0]}</h2>
-                        </button>
-                        <div className={mapCategory[1] ? "activities__content-expanded" : "activities__content-collapsed"}>
-                            <ActivityTable activities={this.state.activities[mapCategory[0]]} addToSummary={this.addActivityToSummary}/>
-                        </div>
-                    </div>)}
-                </div>
+                <Switch>
+                    <Route path="/activities/browse">
+                        <BrowseActivities 
+                            activities={groupArrayBy(this.state.activities, 'category')}
+                            categories={this.state.categories}
+                            toggleCategoryClass={this.toggleCategoryClass}
+                            addActivityToSummary={this.addActivityToSummary} />
+                    </Route>
+                    <Route>
+                        <SearchActivities  path='activities/search'
+                            activities={this.state.activities}
+                            categories={this.state.categories}
+                            addActivityToSummary={this.addActivityToSummary}/>
+                    </Route>
+                </Switch>
                 <div className="act-summary">
                     <div className="act-summary__wrapper">
                         <div className="act-summary__header">
