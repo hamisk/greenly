@@ -75,11 +75,11 @@ exports.addEntry = (req, res) => {
             let userActivitiesToDb = userLoggedActivities.map(activity => ({
                 user_id: foundUser.id,
                 activity_id: activity.option[1],
-                activity: activity.activity,
-                option: activity.option[0],
-                carbon: activity.carbon,
-                qty: activity.qty,
-                week_commencing: activity.weekCommencing
+                activity_used: activity.activity,
+                option_used: activity.option[0],
+                carbon_used: activity.carbon,
+                qty_used: activity.qty,
+                week_commencing: activity.weekCommencing.toString().slice(0,10)
             }))
 
             knex('user_logged_activities')

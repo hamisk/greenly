@@ -30,3 +30,24 @@ export function epochToMMDDYYYY(epoch) {
 
     return readableDate;
 }
+
+export function generateRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+export function generateArrayOfColors(num) {
+    let colorArray = []
+    for (let i = 0; i < num; i++) {
+        colorArray.push(generateRandomColor())
+    }
+    return colorArray;
+}
+
+export const colorPaletteBlue = ['#0C35BD', '#4A6AD2', '#234BD0', '#092991', '#061F71']
+export const colorPaletteGreen = ['#0C930C', '#45C045', '#20B320', '#007800', '#005700']
+export const colorPaletteBoth = ['#0C35BD', '#4A6AD2', '#061F71','#0C930C', '#45C045', '#005700']

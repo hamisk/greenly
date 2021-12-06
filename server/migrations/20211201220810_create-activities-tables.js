@@ -54,12 +54,12 @@ exports.up = function(knex) {
             table.increments('id');
             table.integer("user_id").unsigned();
             table.integer("activity_id").unsigned();
-            table.string('activity');
-            table.string('option');
-            table.string('carbon');
+            table.string('activity_used');
+            table.string('option_used');
+            table.string('carbon_used');
             table.string('week_commencing').notNullable();
             table.integer("grocery_id").unsigned();
-            table.integer('qty').unsigned().notNullable();
+            table.integer('qty_used').unsigned().notNullable();
             table.timestamp('created_at').defaultTo(knex.fn.now());
             table
                 .foreign("user_id")
