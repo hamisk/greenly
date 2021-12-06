@@ -24,3 +24,28 @@ const footprintWithId = footprintJSON.map(footprint => {
 
 // console.log(footprintWithId);
 fs.writeFileSync("../data/food-footprints.json", JSON.stringify(footprintWithId));
+
+
+// knex syntax:
+function syntax() {
+    // select one user from users table where age is greater than 18
+    knex("users").where("age", ">", 18).first();
+
+    // filter users by multiple where columns
+    knex("users")
+        .where({
+            full_name: "Test User",
+            is_boat: true,
+        })
+        .select("id");
+
+    // select subquery
+    const usersSubquery = knex("users")
+        .where("age", ">", 18)
+        .andWhere("is_deleted", false)
+        .select("id");
+    knex("programs").where("id", "in", usersSubquery);
+
+    // pagination with offset and limit
+    knex.select("*").from("orders").offset(0).limit(50);
+}
