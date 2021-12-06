@@ -32,14 +32,6 @@ class Dashboard extends Component {
         }
     }
 
-    handleLogOut = (e) => {
-        e.preventDefault();
-
-        sessionStorage.removeItem('authToken')
-
-        this.props.history.push('/login')
-    }
-
     render() {
         const { isLoading, userActivities } = this.state
         const tabs = ['dashboard', 'profile']
@@ -49,28 +41,7 @@ class Dashboard extends Component {
                 {(isLoading || !userActivities.length) ? 
                     <h1>Loading...</h1> 
                 :
-                    (<div className="dashboard">
-                        <h1>
-                            Dashboard
-                        </h1>
-
-                        <h2>Welcome! {userActivities[0].id}</h2>
-                        {userActivities.map( activity => 
-                            <div key={v4()}>
-                                <p>{activity.id}</p>
-                                <p>{activity.user_id}</p>
-                                <p>{activity.activity_id}</p>
-                                <p>{activity.qty}</p>
-                                <p>{activity.created_at}</p>
-                                <p>{activity.activity}</p>
-                                <p>{activity.category}</p>
-                                <p>{activity.unit}</p>
-                                <p>{activity.option}</p>
-                                <p>{activity.carbon}</p>
-                            </div>)}
-
-                        <button onClick={this.handleLogOut}>Log Out</button>
-                    </div>
+                    (<div className="dashboard"></div>
                 )}
             </>
         )
