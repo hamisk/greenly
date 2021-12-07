@@ -28,12 +28,12 @@ class App extends Component {
                         <Switch>
                             {/* <Route path="/" exact><Home /></Route> */}
                             <PrivateRoute path="/" exact component={Dashboard} />
+                            <PrivateRoute path="/home/profile" component={Profile} />
                             <Route path="/activities" component={Activities} />
-                            <Route path="/groceries" component={Groceries} />
+                            {/* <Route path="/groceries" component={Groceries} /> */}
                             <Route path="/about" component={About} />
                             <Route path="/signup" component={SignUp} />
                             <Route path="/login" component={LogIn} />
-                            <PrivateRoute path="/home/profile" component={Profile} />
                             <Route></Route>
                             <Route></Route>
                         </Switch>
