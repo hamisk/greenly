@@ -55,12 +55,14 @@ export class Profile extends Component {
                 <section className="profile">
                     <div className="profile__container">
                         <h1 className="profile__header">{nameArray[0]}'s profile page</h1>
-                        <div className="profile__weekly-target-wrapper">
-                            <div className="profile__weekly-target-text">
-                                <h2 className="profile__weekly-target">weekly CO2e target: {Math.round(userProfile.goal_carbon / 52)}kg</h2>
+                        <div className="profile__target-wrapper">
+                            <p className="profile__target-text">weekly CO2e target:</p>
+                            <div className="profile__weekly-target-wrapper">
                                 <img src={treeIcon} alt="tree icon" className="profile__target-image" />
-                                <h2 className="profile__weekly-target">based on a yearly target of {userProfile.goal_carbon}kg</h2>
+                                <h1 className="profile__weekly-target">{Math.round(userProfile.goal_carbon / 52)}kg</h1>
+                                <img src={treeIcon} alt="tree icon" className="profile__target-image" />
                             </div>
+                            <p className="profile__target-text">based on your yearly target of {Number(userProfile.goal_carbon).toLocaleString()}kg</p>
                         </div>
                         <form onSubmit={this.updateProfile}>
                             <div className="profile__columns-wrapper">
