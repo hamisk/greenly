@@ -29,7 +29,8 @@ function SignUp(props) {
             console.log(res)
             let token = res.data.token
             sessionStorage.setItem('authToken', token)
-            props.history.push('/home/profile')
+            window.location.href = '/home/profile'
+            // props.history.push('/home/profile')
         })
     }
 
@@ -48,7 +49,7 @@ function SignUp(props) {
                         <div className="signup__column">
                             <Input label="City" name="city" type="text" />
                             <Input label="Country" name="country" type="text" />
-                            <Input label="Carbon target (kg per year)" name="carbon" type="number" value="10" placeholder={10} />
+                            <Input label="Carbon target (kg per year)" name="carbon" type="number" value="10" defaultValue={10000} />
                         </div>
                     </div>
                     <div className="signup__links">
