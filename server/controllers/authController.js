@@ -19,7 +19,7 @@ exports.createUser = (req, res) => {
     const newUser = {
         name: name,
         username: username,
-        password: hashedPassword,
+        password: password,
         city: city,
         country: country,
         goal_carbon: carbon
@@ -28,8 +28,25 @@ exports.createUser = (req, res) => {
     knex('users')
         .insert(newUser)
         .then(() => {
-            res.sendStatus(200);
+            // create and return JWT
+            const token = jwt.sign(
+                // 1. payload
+                { username: username },
+                // 2. secret key
+                process.env.JWT_SECRET_KEY,
+                // 3. options
+                { expiresIn: "1h" }
+            );
+
+            res.status(200)
+                .json({ 
+                    message: "Successfully registered",
+                    token: token 
+                })
         })
+        .catch((err) =>
+            res.status(400).send(`Error registering: ${err}`)
+        );
 };
 
 exports.login = (req, res) => {

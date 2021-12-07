@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import {Link} from 'react-router-dom';
 import Input from '../../components/Input/Input'
+import { localAPI } from '../../utils/apiUtils';
 import './SignUp.scss'
 
 function SignUp(props) {
@@ -10,17 +11,25 @@ function SignUp(props) {
         console.log({
             name: e.target.name.value,
             username: e.target.username.value,
-            password: e.target.password.value
+            password: e.target.password.value,
+            city: e.target.city.value,
+            country: e.target.country.value,
+            carbon: e.target.carbon.value,
         })
 
-        axios.post('http://localhost:8080/users/register', {
+        axios.post(localAPI + 'auth/register', {
             name: e.target.name.value,
             username: e.target.username.value,
-            password: e.target.password.value
+            password: e.target.password.value,
+            city: e.target.city.value,
+            country: e.target.country.value,
+            carbon: e.target.carbon.value,
         })
         .then(res => {
             console.log(res)
-            props.history.push('/login')
+            let token = res.data.token
+            sessionStorage.setItem('authToken', token)
+            props.history.push('/home/profile')
         })
     }
 
@@ -39,7 +48,7 @@ function SignUp(props) {
                         <div className="signup__column">
                             <Input label="City" name="city" type="text" />
                             <Input label="Country" name="country" type="text" />
-                            <Input label="Carbon target (tonnes per year)" name="carbon" type="number" value="10" placeholder={10} />
+                            <Input label="Carbon target (kg per year)" name="carbon" type="number" value="10" placeholder={10} />
                         </div>
                     </div>
                     <div className="signup__links">
