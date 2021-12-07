@@ -42,7 +42,7 @@ function Calendar(props) {
                     style={{
                         margin: 10,
                         display: "flex",
-                        justifyContent: "center",
+                        justifyContent: "space-between",
                     }}
                 >
                 <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
@@ -79,43 +79,9 @@ function Calendar(props) {
             )}
             selected={startDate}
             onChange={(date) => setStartDate(date)}
-            calendarClassName="rasta-stripes"
+            // calendarClassName="rasta-stripes"
         />
     );
 };
-
-// basic calendar
-
-// function Calendar(props) {
-//     const { startDate, setStartDate } = props
-//     // console.log(startDate)
-//     return (
-//         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-//     )
-// }
-
-// calendar with container
-
-// function Calendar(props) {
-//     const { startDate, setStartDate } = props
-//     const MyContainer = ({ className, children }) => {
-//       return (
-//         <div style={{ padding: "16px", background: "#216ba5", color: "#fff" }}>
-//           <CalendarContainer className={className}>
-//             <div style={{ background: "#f0f0f0" }}>
-//             </div>
-//             <div style={{ position: "relative" }}>{children}</div>
-//           </CalendarContainer>
-//         </div>
-//       );
-//     };
-//     return (
-//       <DatePicker
-//         selected={startDate}
-//         onChange={(date) => setStartDate(date)}
-//         calendarContainer={MyContainer}
-//       />
-//     );
-//   };
 
 export default Calendar

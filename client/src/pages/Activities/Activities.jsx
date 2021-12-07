@@ -143,31 +143,35 @@ export class Activities extends Component {
             <section className="activity-page">
                 <div className="activity-page__page-wrapper">
                     <Switch>
-                        <Route path="/activities/browse">
+                        <Route path="/activities">
                             <BrowseActivities
                                 activities={groupArrayBy(this.state.activities, 'category')}
                                 categories={this.state.categories}
                                 toggleCategoryClass={this.toggleCategoryClass}
                                 addActivityToSummary={this.addActivityToSummary} />
                         </Route>
-                        <Route>
+                        {/* <Route>
                             <SearchActivities  path='activities/search'
                                 activities={this.state.activities}
                                 categories={this.state.categories}
                                 addActivityToSummary={this.addActivityToSummary}/>
-                        </Route>
+                        </Route> */}
                     </Switch>
                 </div>
-                <div className="act-summary">
-                    <div className="act-summary__wrapper">
+                <div className="activity-page__page-wrapper">
+                    <div className="act-summary">
                         <div className="act-summary__header">
-                            <p className="act-summary__title">Your carbon diary for</p>
-                            <p className="act-summary__date">Week Commencing: </p>
-                            <Calendar startDate={this.state.weekCommencing} setStartDate={this.setStartDate} />
+                            {/* <p className="act-summary__title">Your carbon diary for</p> */}
+                            <h3 className="act-summary__header-text">Week Commencing:</h3>
+                            <div className="act-summary__calendar-wrapper">
+                                <Calendar startDate={this.state.weekCommencing} setStartDate={this.setStartDate} />
+                            </div>
                         </div>
-                        <SummaryTable summary={this.state.summary} totals={this.getSummaryTotal()}/>
+                        <div className="act-summary__wrapper">
+                            <SummaryTable summary={this.state.summary} totals={this.getSummaryTotal()}/>
+                        </div>
+                        <button className="act-summary__add-entry" onClick={this.submitEntry}>add entry</button>
                     </div>
-                    <button className="act-summary__add-entry" onClick={this.submitEntry}>add entry</button>
                 </div>
             </section>
         </>
