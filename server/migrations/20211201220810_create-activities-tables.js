@@ -7,7 +7,7 @@ exports.up = function(knex) {
             table.string('password').notNullable();
             table.string('city');
             table.string('country');
-            table.string('goal_carbon');
+            table.string('goal_carbon').notNullable();
             table.string('goal_water');
             table.string('goal_land');
             table.string('goal_pollution');

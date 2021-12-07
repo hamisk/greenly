@@ -2,11 +2,12 @@ const knex = require('knex')(require('../knexfile').development);
 const jwt = require("jsonwebtoken");
 
 exports.createUser = (req, res) => {
-    const name = req.body.name;
-    const username = req.body.username;
-    const password = req.body.password;
+    // const name = req.body.name;
+    // const username = req.body.username;
+    // const password = req.body.password;
+    const { name, username, password, carbon, city, country } = req.body
 
-    if (!name || !username || !password) {
+    if (!name || !username || !password || !carbon) {
         return res.status(400).json({
             message: "Register requires name, username, and password"
         })
@@ -14,10 +15,14 @@ exports.createUser = (req, res) => {
 
     // at this point, we are guaranteed to have a 
     // name, username, and password
+    
     const newUser = {
         name: name,
         username: username,
-        password: password
+        password: hashedPassword,
+        city: city,
+        country: country,
+        goal_carbon: carbon
     };
 
     knex('users')

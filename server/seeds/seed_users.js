@@ -1,35 +1,41 @@
+const bcrypt = require('bcrypt')
+
 const users = [
   {
     "id": 1,
     "name": "Luke Skywalker",
     "username": "lovetheforce",
-    "password": "vaderiscool",
-    "city": null,
-    "country": null,
+    "password": "usetheforce",
+    "city": "Tattooine",
+    "country": "Alpha Centauri",
+    "goal_carbon": 10000
   },
   {
     "id": 2,
     "name": "Anakin Skywalker",
     "username": "lovethedarkside",
-    "password": "vaderislife",
+    "password": "usetheforce",
     "city": null,
     "country": null,
+    "goal_carbon": 10000
   },
   {
     "id": 3,
-    "name": "newUser",
-    "username": "newUserOne",
-    "password": "password",
-    "city": null,
-    "country": null,
+    "name": "Captain Planet",
+    "username": "captainplanet",
+    "password": "usetheforce",
+    "city": "Greenopolis",
+    "country": "Earth",
+    "goal_carbon": 10000
   },
   {
     "id": 4,
-    "name": "harman",
-    "username": "newUser",
-    "password": "password",
-    "city": null,
-    "country": null,
+    "name": "Harman Khera",
+    "username": "harman",
+    "password": "usetheforce",
+    "city": "Vancouver",
+    "country": "Canada",
+    "goal_carbon": 10000
   }
 ]
 
