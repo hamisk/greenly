@@ -79,7 +79,7 @@ export class Activities extends Component {
             summary: [...this.state.summary, activityItem]
         }, () => {
             // callback to do something with state
-            // console.log(this.state.summary)
+            console.log(this.state.summary)
             sessionStorage.setItem('summary', JSON.stringify(this.state.summary))
         })
     }

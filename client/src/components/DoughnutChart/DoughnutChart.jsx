@@ -1,7 +1,9 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import { colorPaletteBoth, generateArrayOfColors, groupArrayBy } from '../../utils/utils';
+import { 
+    // colorPaletteBoth, generateArrayOfColors, 
+    groupArrayBy } from '../../utils/utils';
 import chroma from 'chroma-js';
 
 ChartJS.register(ArcElement, Tooltip, Legend);

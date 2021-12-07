@@ -49,7 +49,7 @@ export class SideNav extends Component {
 
     render() {
         return (
-            <div class="sidenav">
+            <div className="sidenav">
                 <div className="sidenav__title-logo">
                     <img src={logo} alt="logo" className="sidenav__logo" />
                     <h2 className="sidenav__title">Greenly</h2>

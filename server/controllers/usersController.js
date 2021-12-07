@@ -29,10 +29,7 @@ exports.getProfile = (req, res) => {
             }
 
             // send back full user data 
-            return res.json({
-                username: foundUser.username,
-                name: foundUser.name
-            })
+            return res.status(200).json(foundUser)
         })
 };
 

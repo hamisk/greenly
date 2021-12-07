@@ -14,10 +14,16 @@ body {
     box-sizing: border-box;
 }
 
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    width: calc(100% - 200px);
+    height: 100%;
+}
+
 a {
     text-decoration: none;
 }
 
-.app {
-    height: 8rem;
-}
+// .app {
+//     height: 8rem;
+// }
