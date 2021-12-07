@@ -11,6 +11,7 @@ import './Activities.scss';
 import Calendar from '../../components/Calendar/Calendar';
 import BrowseActivities from '../../components/BrowseActivities/BrowseActivities';
 import SearchActivities from '../../components/SearchActivities/SearchActivities';
+import { API_URL } from '../../config';
 
 export class Activities extends Component {
 
@@ -33,7 +34,8 @@ export class Activities extends Component {
         
         axios
             .all([
-                axios.get(localAPI + "activities")
+                // axios.get(localAPI + "activities")
+                axios.get(API_URL + "/activities")
             ])
             .then(axios.spread((response1) => {
                 // array of unique category names to generate category buttons
@@ -106,7 +108,8 @@ export class Activities extends Component {
             activity.weekCommencing = this.state.weekCommencing)
         
         axios
-            .post(localAPI + 'users/add-entry', summaryArray, {
+            // .post(localAPI + 'users/add-entry', summaryArray, {
+            .post(API_URL + '/users/add-entry', summaryArray, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

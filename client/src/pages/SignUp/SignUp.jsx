@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import {Link} from 'react-router-dom';
 import Input from '../../components/Input/Input'
+import { API_URL } from '../../config';
 import { localAPI } from '../../utils/apiUtils';
 import './SignUp.scss'
 
@@ -17,7 +18,8 @@ function SignUp(props) {
             carbon: e.target.carbon.value,
         })
 
-        axios.post(localAPI + 'auth/register', {
+        // axios.post(localAPI + 'auth/register', {
+        axios.post(API_URL + '/auth/register', {
             name: e.target.name.value,
             username: e.target.username.value,
             password: e.target.password.value,

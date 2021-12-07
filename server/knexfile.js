@@ -11,5 +11,9 @@ module.exports = {
       database: "greenly_db",
       charset: "utf8"
     }
-  }
+  },
+  production: {
+    client: 'mysql',
+    connection: process.env.JAWSDB_URL,
+  },
 };

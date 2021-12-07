@@ -5,6 +5,7 @@ import { epochToMMDDYYYY } from '../../utils/utils';
 import Input from '../../components/Input/Input'
 import './Profile.scss';
 import treeIcon from '../../assets/icons/icons8-tree-100-2.png'
+import { API_URL } from '../../config';
 
 export class Profile extends Component {
 
@@ -19,7 +20,8 @@ export class Profile extends Component {
         if (!!token) {
             axios
                 .all([
-                    axios.get(localAPI + 'users/profile', {
+                    // axios.get(localAPI + 'users/profile', {
+                    axios.get(API_URL + '/users/profile', {
                         headers: {Authorization: `Bearer ${token}`}})
                     ])
                 .then(axios.spread(response1 => {

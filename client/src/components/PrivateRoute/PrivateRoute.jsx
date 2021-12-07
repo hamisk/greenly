@@ -4,6 +4,7 @@ import axios from 'axios';
 
 // We will be exporting the API_URL from App.js in a later step
 import { localAPI } from '../../utils/apiUtils';
+import { API_URL } from '../../config';
 
 class PrivateRoute extends Component {
   state = {
@@ -18,7 +19,8 @@ class PrivateRoute extends Component {
     // it allows for cookies to be passed to backend
     let token = sessionStorage.getItem('authToken')
     axios
-      .get(`${localAPI}auth/check-auth`, { headers: {
+      // .get(`${localAPI}auth/check-auth`, { headers: {
+      .get(`${API_URL}/auth/check-auth`, { headers: {
         Authorization: `Bearer ${token}`
     }})
       .then((res) => {

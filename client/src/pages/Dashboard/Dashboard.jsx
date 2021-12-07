@@ -7,6 +7,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 import { Bar } from 'react-chartjs-2';
 import { groupArrayBy } from '../../utils/utils';
 import DoughnutChart from '../../components/DoughnutChart/DoughnutChart';
+import { API_URL } from '../../config';
   
 ChartJS.register(
     CategoryScale,
@@ -72,7 +73,9 @@ class Dashboard extends Component {
         let token = sessionStorage.getItem('authToken')
 
         if (!!token) {
-            axios.get('http://localhost:8080/users/get-activities', {
+            // axios.get('http://localhost:8080/users/get-activities', 
+            axios.get(API_URL + '/users/get-activities', 
+            {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

@@ -5,6 +5,7 @@ import logo from '../../assets/icons/icons8-earth-100.png';
 import { Component } from 'react';
 import { localAPI } from '../../utils/apiUtils';
 import axios from 'axios';
+import { API_URL } from '../../config';
 // import LoginModal from '../LoginModal/LoginModal';
 
 class Header extends Component {
@@ -21,7 +22,8 @@ class Header extends Component {
         let token = sessionStorage.getItem('authToken')
         if (!!token) {
             axios
-                .get(`${localAPI}auth/check-auth`, {
+                // .get(`${localAPI}auth/check-auth`, {
+                .get(`${API_URL}/auth/check-auth`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -45,7 +47,8 @@ class Header extends Component {
         // the URL for redirecting back to a client
         sessionStorage.removeItem('authToken')
         const url = `${window.location.protocol}//${window.location.host}`;
-        window.location = `${localAPI}auth/logout?from=${url}`;
+        // window.location = `${localAPI}auth/logout?from=${url}`;
+        window.location = `${API_URL}/auth/logout?from=${url}`;
     };
 
     handleLogOut (e) {
