@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React from 'react'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Input from '../../components/Input/Input';
+import './Login.scss';
 
 function LogIn(props) {
 
@@ -21,15 +22,21 @@ function LogIn(props) {
     }
 
     return (
-        <div className="login">
-            <h1>Log In</h1>
-            <form onSubmit={handleLogIn}>
-                <Input label="Username" name="username" type="text" />
-                <Input label="Password" name="password" type="password" />
-                <button type="submit">Log In</button>
-            </form>
-            <Link to="/signup">Sign Up</Link>
-        </div>
+        <section className="login">
+            <div className="login__container">
+                <h1>Log In</h1>
+                <form onSubmit={handleLogIn}>
+                    <Input label="Username" name="username" type="text" />
+                    <Input label="Password" name="password" type="password" />
+                    <div className="login__links">
+                        <button className="login__button" type="submit">Log In</button>
+                    </div>
+                </form>
+                <div className="login__signup">
+                    <Link className="login__link" to="/signup">Don't have an account? <span className="login__signup-link">Sign Up</span></Link>
+                </div>
+            </div>
+        </section>
     )
 }
 

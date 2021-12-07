@@ -1,0 +1,45 @@
+@use '../../styles/partials/colors' as *;
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: $color-strong-green;
+
+    &__container {
+        width: 30%;
+    }
+
+    &__links {
+        display: flex;
+        justify-content: space-between;
+        color: $color-strong-green;
+    }
+
+    &__link {
+        color: $color-strong-green;
+    }
+
+    &__button {
+        background-color: $color-strong-green;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        color: $color-light;
+        padding: 0.5rem;
+        border-radius: 4px;
+        width: 6rem;
+    }
+    
+    &__signup {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    &__signup-link {
+        font-weight: 600;
+    }
+}

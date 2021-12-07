@@ -60,7 +60,7 @@ export class Activities extends Component {
                 return [category[0], !category[1]]
             } else {
                 // set all other categories to false - ensures only one category expanded at one time
-                return [mapCategory[0], false]
+                return [mapCategory[0], mapCategory[1]]
             }
         });
         this.setState({ categories: newState });
@@ -136,23 +136,25 @@ export class Activities extends Component {
         const tabs = ['search', 'browse']
         return (
             <>
-            <SubNav page='activities' tabs={tabs} />
+            {/* <SubNav page='activities' tabs={tabs} /> */}
             <section className="activity-page">
-                <Switch>
-                    <Route path="/activities/browse">
-                        <BrowseActivities 
-                            activities={groupArrayBy(this.state.activities, 'category')}
-                            categories={this.state.categories}
-                            toggleCategoryClass={this.toggleCategoryClass}
-                            addActivityToSummary={this.addActivityToSummary} />
-                    </Route>
-                    <Route>
-                        <SearchActivities  path='activities/search'
-                            activities={this.state.activities}
-                            categories={this.state.categories}
-                            addActivityToSummary={this.addActivityToSummary}/>
-                    </Route>
-                </Switch>
+                <div className="activity-page__page-wrapper">
+                    <Switch>
+                        <Route path="/activities/browse">
+                            <BrowseActivities
+                                activities={groupArrayBy(this.state.activities, 'category')}
+                                categories={this.state.categories}
+                                toggleCategoryClass={this.toggleCategoryClass}
+                                addActivityToSummary={this.addActivityToSummary} />
+                        </Route>
+                        <Route>
+                            <SearchActivities  path='activities/search'
+                                activities={this.state.activities}
+                                categories={this.state.categories}
+                                addActivityToSummary={this.addActivityToSummary}/>
+                        </Route>
+                    </Switch>
+                </div>
                 <div className="act-summary">
                     <div className="act-summary__wrapper">
                         <div className="act-summary__header">

@@ -3,77 +3,26 @@
 
 .activity-page {
     display: flex;
-}
+    width: 100%;
 
-.activities {
-    margin: 2rem;
-    background-color: $color-strong-green;
-    flex-grow: 1;
-    border-radius: $border-radius;
-
-    &__collapsible {
-        background-color: #eee;
-        color: #444;
-        cursor: pointer;
-        padding: 18px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        border-radius: 4px;
-
-        &:hover {
-            background-color: #ccc;
-        }
-    }
-
-    &__active {
-        background-color: #ccc;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    &__content-collapsed {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        overflow: hidden;
-        overflow-y: scroll;
-        background-color: #f1f1f1;
-        height: 0;
-        transition: all .3s linear 0s;
-    }
-
-    &__content-expanded {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        
-        padding: 0;
-        width: 100%;
-        overflow: hidden;
-        overflow-y: scroll;
-        background-color: white;
-        height: 16rem;
-        transition: all .3s linear 0s;
-
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
+    &__page-wrapper {
+        width: 50%;
     }
 }
+
 
 .act-summary {
-    margin: 2rem 1rem;
+    margin: 2rem 2rem 2rem 1rem;
     border-radius: $border-radius;
     background-color: white;
-    width: 40%;
+    width: 50%;
     height: 28rem;
     display: flex;
     flex-direction: column;
 
     &__wrapper {
         overflow: hidden;
-        overflow-y: scroll;
+        // overflow-y: scroll;
     }
     
     &__header {
@@ -90,4 +39,14 @@
         height: 3rem;
         align-self: flex-end;
     }
+}
+
+@keyframes bouncy {
+    0%{top:0em}
+    40%{top:0em}
+    43%{top:-0.5em}
+    46%{top:0em}
+    48%{top:-0.4em}
+    50%{top:0em}
+    100%{top:0em;}
 }

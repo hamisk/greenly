@@ -43,6 +43,7 @@
         color: $color-light;
         margin: 0.5rem;
         text-transform: uppercase;
+        transition: all 0.2s;
 
         &:hover {
             color: #f1f1f1;
@@ -54,6 +55,7 @@
         @extend .sidenav__link;
         position: absolute;
         bottom: 5%;
+        cursor: pointer;
     }
 
     &__nav-links-wrapper {
@@ -63,7 +65,7 @@
         justify-content: flex-start;
         background-color: $color-light-green;
         position: relative;
-        top: 20%;
+        top: 15%;
     }
 
     &__nav-link {
