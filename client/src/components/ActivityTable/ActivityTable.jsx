@@ -3,36 +3,26 @@ import ActivityListItem from '../ActivityListItem/ActivityListItem'
 import PaginationBar from '../PaginationBar/PaginationBar';
 import './ActivityTable.scss'
 
-function ActivityTable({ activities, addToSummary, perPage }) {
-    // console.log(activities)
-
-    const [pageIndex, setPageIndex] = useState(0);
-    let pageSize = perPage || 5;
-    let start = pageIndex * pageSize;    
-    let end = start + pageSize;
-    let activitiesToDisplay = (activities.slice(start, end))
-
-    const goToPage = (page) => {
-        setPageIndex(page);
-    }
-
+function ActivityTable({ activities, addToSummary }) {
+    
+    activities.sort((a,b) => (a.activity > b.activity) ? 1 : ((b.activity > a.activity) ? -1 : 0))
+    activities.sort((a,b) => (a.category > b.category) ? 1 : ((b.category > a.category) ? -1 : 0))
+    console.log(activities)
 
     return (
         <div className="activity-table">
             <div className="activity-table__subheaders">
-                <p className="activity-table__sub">Activity</p>
+                <p className="activity-table__sub-activity">Activity</p>
+                <p className="activity-table__sub-option">Options</p>
+                <p className="activity-table__sub-qty">Quantity</p>
+                <p className="activity-table__sub-co2">CO2e</p>
             </div>
-            <ul className="activity-table__list">
-                {activitiesToDisplay.map(activity =>
-                <ActivityListItem activity={activity} addToSummary={addToSummary} key={activity.id}/>)}
-            </ul>
-            {!(activities.length > pageSize) ? "" :
-            <PaginationBar 
-                fullList={activities} 
-                from="Activity" 
-                goToPage={goToPage}
-                pageIndex={pageIndex}
-                pageSize={pageSize}/>}
+            <div className="activity-table__list-wrapper">
+                <ul className="activity-table__list">
+                    {activities.map(activity =>
+                    <ActivityListItem activity={activity} addToSummary={addToSummary} key={activity.id}/>)}
+                </ul>
+            </div>
         </div>
     )
 }

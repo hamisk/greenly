@@ -2,36 +2,56 @@
 @use '../../styles/partials/variables' as *;
 
 .activities {
-    margin: 2rem 1rem 2rem 2rem;
+    margin: 2rem 2rem 1rem;
     color: $color-light;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     background-color: $color-light-green;
-    flex-grow: 1;
+    // flex-grow: 1;
     border-radius: $border-radius;
     height: 90%;
+    // width: 95%;
+
+    &__title-categories-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 45%;
+    }
 
     &__title {
         text-transform: uppercase;
+        margin: 0;
     }
 
     &__activity-list-container {
-        height: 55%;
-        width: 90%;
+        height: 90%;
+        width: 55%;
         background-color: $color-light;
-        margin: 0 1rem;
+        margin: 0 1rem 0 0;
         border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        overflow: hidden;
+    }
+
+    &__loading {
+        color: $color-dark-green;
+        margin: 2rem;
     }
 
     &__categories-wrapper {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        // width: 100%;
+        width: 430px;
         justify-content: center;
-        margin: 0 1rem;
+        margin: 0;
         padding: 1rem 0;
+        height: 220px;
+        overflow: hidden;
     }
 
     &__category {

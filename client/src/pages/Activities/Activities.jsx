@@ -7,16 +7,17 @@ import { round, groupArrayBy, getWeekCommencing } from '../../utils/utils'
 
 import SummaryTable from '../../components/SummaryTable/SummaryTable';
 import SubNav from '../../components/SubNav/SubNav';
-import './Activities.scss';
 import Calendar from '../../components/Calendar/Calendar';
 import BrowseActivities from '../../components/BrowseActivities/BrowseActivities';
 import SearchActivities from '../../components/SearchActivities/SearchActivities';
 import { API_URL } from '../../config';
+import './Activities.scss';
 
 export class Activities extends Component {
 
     state = {
         activities: null,
+        activitiesToDisplay: null,
         categories: null,
         weekCommencing: getWeekCommencing(new Date()),
         summary: [],
@@ -55,17 +56,25 @@ export class Activities extends Component {
     }
 
     toggleCategoryClass = (category) => {
-        const currentState = this.state.categories
-        const newState = currentState.map((mapCategory) => {
+
+        let activitiesToDisplayArr = []
+        const currentCategoryStates = this.state.categories
+        const newCategoryStates = currentCategoryStates.map((mapCategory) => {
             if (mapCategory === category) {
                 // find toggle state of selected category and setting to opposite 
                 return [category[0], !category[1]]
             } else {
-                // set all other categories to false - ensures only one category expanded at one time
                 return [mapCategory[0], mapCategory[1]]
             }
         });
-        this.setState({ categories: newState });
+        const selectedCategories = newCategoryStates.filter(category => category[1]).map(category => category[0])
+        // console.log(selectedCategories)
+        activitiesToDisplayArr = this.state.activities.filter(activity => selectedCategories.includes(activity.category))
+        // console.log(activitiesToDisplayArr)
+        this.setState({ 
+            categories: newCategoryStates,
+            activitiesToDisplay: activitiesToDisplayArr
+        });
     };
 
     addActivityToSummary = (activity, qty, option) => {
@@ -145,23 +154,16 @@ export class Activities extends Component {
                     <Switch>
                         <Route path="/activities">
                             <BrowseActivities
-                                activities={groupArrayBy(this.state.activities, 'category')}
+                                activities={this.state.activitiesToDisplay}
                                 categories={this.state.categories}
                                 toggleCategoryClass={this.toggleCategoryClass}
                                 addActivityToSummary={this.addActivityToSummary} />
                         </Route>
-                        {/* <Route>
-                            <SearchActivities  path='activities/search'
-                                activities={this.state.activities}
-                                categories={this.state.categories}
-                                addActivityToSummary={this.addActivityToSummary}/>
-                        </Route> */}
                     </Switch>
                 </div>
                 <div className="activity-page__page-wrapper">
                     <div className="act-summary">
                         <div className="act-summary__header">
-                            {/* <p className="act-summary__title">Your carbon diary for</p> */}
                             <h3 className="act-summary__header-text">Week Commencing:</h3>
                             <div className="act-summary__calendar-wrapper">
                                 <Calendar startDate={this.state.weekCommencing} setStartDate={this.setStartDate} />

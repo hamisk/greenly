@@ -35,7 +35,7 @@ function ActivityListItem({ activity, addToSummary }) {
                 <input type="number" className="activity-item__qty-input" value={qty} onChange={updateStats}/>
                 <p className="activity-item__activity-unit">{activity.unit}</p>
             </div>
-            <p className="activity-item__activity-text">
+            <p className="activity-item__activity-co2">
                 {(qty * activity.carbon[activity.option.findIndex(option => option[0] === selectValue)]).toFixed(1)} kg
             </p>
             <button className="activity-item__activity-add" 
