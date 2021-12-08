@@ -7,11 +7,16 @@ import './SignUp.scss'
 
 function SignUp(props) {
 
-    const [valid, setValid] = useState(true);
+    const [invalid, setInvalid] = useState(false);
+    const [passwordMatch, setPasswordMatch] = useState(true);
+
     
     const handleSignUp = (e) => {
         e.preventDefault();
-
+        
+        // reinitialise for subsequent attempts
+        setInvalid(false)
+        setPasswordMatch(true)
 
         let signupName = e.target.name.value
         let signupUsername = e.target.username.value
@@ -22,16 +27,20 @@ function SignUp(props) {
         let signupCarbon = e.target.carbon.value
 
         if (!signupName || !signupUsername || !signupPassword || !signupCarbon ) {
-            return setValid(false)
+            return setInvalid(true)
+        }
+
+        if (signupPassword !== signupConfirmPassword) {
+            return setPasswordMatch(false)
         }
 
         axios.post(API_URL + '/auth/register', {
-            name: e.target.name.value,
-            username: e.target.username.value,
-            password: e.target.password.value,
-            city: e.target.city.value,
-            country: e.target.country.value,
-            carbon: e.target.carbon.value,
+            name: signupName,
+            username: signupUsername,
+            password: signupPassword,
+            city: signupCity,
+            country: signupCountry,
+            carbon: signupCarbon,
         })
         .then(res => {
             let token = res.data.token
@@ -48,15 +57,17 @@ function SignUp(props) {
                 <form onSubmit={handleSignUp}>
                     <div className="signup__columns-wrapper">
                         <div className="signup__column">
-                            <Input label="Name" name="name" type="text" valid={valid}/>
-                            <Input label="Username" name="username" type="text" valid={valid}/>
-                            <Input label="Password" name="password" type="password" valid={valid}/>
-                            <Input label="Confirm Password" name="confirmPassword" type="password" valid={valid}/>
+                            <Input label="Name" name="name" type="text" invalid={invalid}/>
+                            <Input label="Username" name="username" type="text" invalid={invalid}/>
+                            <Input label="Password" name="password" type="password" invalid={invalid}/>
+                            <Input label="Confirm Password" name="confirmPassword" type="password" invalid={invalid}/>
                         </div>
                         <div className="signup__column">
+                            <Input label="Carbon target (kg per year)" name="carbon" type="number" value="10" defaultValue={10000} invalid={invalid}/>
                             <Input label="City" name="city" type="text" />
                             <Input label="Country" name="country" type="text" />
-                            <Input label="Carbon target (kg per year)" name="carbon" type="number" value="10" defaultValue={10000} valid={valid}/>
+                            {invalid ? <p className="signup__invalid">Please provide all required fields</p> : <></> }
+                            {passwordMatch ? <></> : <p className="signup__invalid">Passwords did not match</p> }
                         </div>
                     </div>
                     <div className="signup__links">

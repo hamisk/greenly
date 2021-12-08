@@ -1,6 +1,6 @@
 // phase 2
 import axios from 'axios';
-import GroceryTable from '../../components/GroceryTable/GroceryTable';
+// import GroceryTable from '../../components/GroceryTable/GroceryTable';
 
 import React, { Component } from 'react'
 import { API_URL } from '../../config';
@@ -59,7 +59,7 @@ export class Groceries extends Component {
                     <h2>+ groceries</h2>
                 </button>
                 <div className={this.state.groceriesActive ? "activities__content-expanded" : "activities__content-collapsed"}>
-                    <GroceryTable groceries={this.state.groceries} addToSummary={this.addToSummary}/>
+                    {/* <GroceryTable groceries={this.state.groceries} addToSummary={this.addToSummary}/> */}
                 </div>
                 
             </div>

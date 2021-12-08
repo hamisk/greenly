@@ -25,6 +25,13 @@
         margin: 0.5rem;
     }
 
+    &__invalid {
+        height: 3rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
     &__links {
         display: flex;
         justify-content: space-between;

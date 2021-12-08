@@ -1,3 +1,5 @@
+@use '../../styles/partials/colors' as *;
+
 .field {
     display: flex;
     flex-direction: column;
@@ -13,4 +15,8 @@
         padding: 0.5rem;
         font-size: inherit;
     }
+}
+
+.required {
+    border: solid 2px $color-strong-green;
 }
