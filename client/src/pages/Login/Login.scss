@@ -31,6 +31,18 @@
         padding: 0.5rem;
         border-radius: 4px;
         width: 6rem;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        transition: all 0.2s;
+        position: relative;
+
+        &:hover {
+            // font-weight: 600;
+            background-color: $color-light-green;
+        }
+
+        &:active {
+            top: 0.1rem;
+        }
     }
     
     &__signup {

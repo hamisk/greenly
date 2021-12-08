@@ -21,7 +21,8 @@ export class Activities extends Component {
         categories: null,
         weekCommencing: getWeekCommencing(new Date()),
         summary: [],
-        token: ''
+        token: null,
+        loginPrompt: false
     }
 
     componentDidMount = () => {
@@ -111,6 +112,13 @@ export class Activities extends Component {
 
     submitEntry = () => {
         const token = this.state.token
+        console.log(token)
+        if (!token) {
+            return this.setState({
+                loginPrompt: true
+            })
+        }
+
         let summaryArray = this.state.summary
 
         summaryArray.map(activity => 
@@ -163,16 +171,23 @@ export class Activities extends Component {
                 </div>
                 <div className="activity-page__page-wrapper">
                     <div className="act-summary">
-                        <div className="act-summary__header">
-                            <h3 className="act-summary__header-text">Week Commencing:</h3>
-                            <div className="act-summary__calendar-wrapper">
-                                <Calendar startDate={this.state.weekCommencing} setStartDate={this.setStartDate} />
+                        <div className="act-summary__left-wrapper">
+                            <h3 className="act-summary__title">Activity summary</h3>
+                            <div className="act-summary__calendar-submit-wrapper">
+                                <div className="act-summary__calendar-wrapper">
+                                    <p className="act-summary__calendar-text">Week Commencing:</p>
+                                    <div className="act-summary__calendar">
+                                        <Calendar startDate={this.state.weekCommencing} setStartDate={this.setStartDate} />
+                                    </div>
+                                </div>
+                                <button className="act-summary__add-entry" onClick={this.submitEntry}>submit entry</button>
+                                {this.state.loginPrompt ? <p className="act-summary__login-prompt">please log in to submit an entry</p>
+                                : <></> }
                             </div>
                         </div>
-                        <div className="act-summary__wrapper">
+                        <div className="act-summary__summary-list-container">
                             <SummaryTable summary={this.state.summary} totals={this.getSummaryTotal()}/>
                         </div>
-                        <button className="act-summary__add-entry" onClick={this.submitEntry}>add entry</button>
                     </div>
                 </div>
             </section>

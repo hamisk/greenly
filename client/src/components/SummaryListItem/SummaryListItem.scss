@@ -1,0 +1,29 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/variables' as *;
+
+.summary-item {
+    &__list-item {
+        display: flex;
+        align-items: center;
+        margin: 0.25rem 0;
+        height: 36px;
+    }
+
+    &__activity {
+        margin: 0 0 0 1rem;
+        width: 30%;
+    }
+
+    &__option {
+        width: 20%;
+    }
+
+    &__qty {
+        margin-left: 3rem;
+    }
+
+    &__co2 {
+        margin-left: auto;
+        margin-right: 3rem;
+    }
+}

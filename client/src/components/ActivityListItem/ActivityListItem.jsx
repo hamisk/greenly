@@ -22,12 +22,9 @@ function ActivityListItem({ activity, addToSummary }) {
     return (
         <li className="activity-item__list-item">
             <p className="activity-item__activity">{activity.activity}</p>
-            <select className="activity-item__select"
-                value={selectValue} 
-                onChange={handleChange}
-            >
+            <select className="activity-item__select" value={selectValue} onChange={handleChange}>
                 {activity.option.map(option => 
-                    <option value={option[0]} key={v4()}>{option[0]}</option>
+                <option value={option[0]} key={v4()}>{option[0]}</option>
                 )}
             </select>
             

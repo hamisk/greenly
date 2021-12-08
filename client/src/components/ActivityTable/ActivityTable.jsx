@@ -5,9 +5,11 @@ import './ActivityTable.scss'
 
 function ActivityTable({ activities, addToSummary }) {
     
-    activities.sort((a,b) => (a.activity > b.activity) ? 1 : ((b.activity > a.activity) ? -1 : 0))
-    activities.sort((a,b) => (a.category > b.category) ? 1 : ((b.category > a.category) ? -1 : 0))
-    console.log(activities)
+    if (!!activities) {
+        activities.sort((a,b) => (a.activity > b.activity) ? 1 : ((b.activity > a.activity) ? -1 : 0))
+        activities.sort((a,b) => (a.category > b.category) ? 1 : ((b.category > a.category) ? -1 : 0))
+        console.log(activities)
+    }
 
     return (
         <div className="activity-table">
@@ -17,12 +19,14 @@ function ActivityTable({ activities, addToSummary }) {
                 <p className="activity-table__sub-qty">Quantity</p>
                 <p className="activity-table__sub-co2">CO2e</p>
             </div>
+            {!!activities ? 
             <div className="activity-table__list-wrapper">
                 <ul className="activity-table__list">
                     {activities.map(activity =>
                     <ActivityListItem activity={activity} addToSummary={addToSummary} key={activity.id}/>)}
                 </ul>
             </div>
+            : <p className="activity-table__loading">please select a category</p>}
         </div>
     )
 }

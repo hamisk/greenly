@@ -35,7 +35,7 @@
 
     &__list-wrapper {
         width: 100%;
-        height: calc(100% - 33px);
+        height: calc(100% - 48px);
         overflow-y: scroll;
     }
 
@@ -43,6 +43,10 @@
         list-style: none;
         padding: 0;
         margin: 0;
-        
+    }
+
+    &__loading {
+        color: $color-dark-green;
+        margin-left: 12rem;
     }
 }

@@ -23,9 +23,7 @@ export class BrowseActivities extends Component {
                     </div>
                 </div>
                 <div className="activities__activity-list-container">
-                    {!!activities ? 
                     <ActivityTable activities={activities} addToSummary={addActivityToSummary}/>
-                    : <p className="activities__loading">please select a category</p>}
                 </div>
             </div>
         )

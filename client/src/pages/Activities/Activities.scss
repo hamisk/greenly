@@ -13,46 +13,97 @@
     }
 }
 
-
 .act-summary {
-    margin: 1rem 2rem 2rem 2rem;
-    border-radius: $border-radius;
-    background-color: $color-light-green;
-    // width: 90%;
-    height: 90%;
+    margin: 1rem 2rem 2rem;
+    color: $color-light;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    background-color: $color-light-green;
+    border-radius: $border-radius;
+    height: 90%;
 
-    &__header {
+    &__left-wrapper {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        width: 90%;
+        width: 45%;
     }
 
-    &__header-text {
-        // width: 60%;
-        color: $color-light;
-        text-transform: uppercase;  
-        margin-right: 1rem; 
+    &__title {
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    &__loading {
+        color: $color-dark-green;
+        margin: 2rem;
+    }
+
+    &__calendar-submit-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 430px;
+        margin: 0;
+        padding: 1rem 0;
+        height: 220px;
+        overflow: hidden;
+        align-items: center;
     }
 
     &__calendar-wrapper {
-        // width: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    &__wrapper {
-        overflow: hidden;
-        // overflow-y: scroll;
+    &__calendar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    
+
+    &__calendar-text {
+        margin: 0.5rem;
+        font-size: 1.2rem;
+    }
 
     &__add-entry {
-        margin-top: 1rem;
+        background-color: $color-light;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        color: $color-strong-green;
+        padding: 0.5rem;
+        border-radius: 4px;
         width: 8rem;
-        height: 3rem;
-        align-self: flex-end;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        transition: all 0.2s;
+        position: relative;
+
+        &:hover {
+            background-color: $color-strong-green;
+            color: $color-light;
+        }
+
+        &:active {
+            top: 0.1rem;
+        }
+    }
+
+    &__summary-list-container {
+        height: 90%;
+        width: 55%;
+        background-color: $color-light;
+        margin: 0 1rem 0 0;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        overflow: hidden;
+        color: $color-dark-green;
     }
 }
 

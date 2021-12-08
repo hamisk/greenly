@@ -1,0 +1,34 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/variables' as *;
+
+.summary-table {
+    height: 21rem;
+    display: flex;
+    flex-direction: column;
+
+    &__subheaders {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__sub {
+        margin: 0.5rem;
+    }
+
+
+
+    &__totals-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+    }
+
+    &__totals {
+        display: flex;
+    }
+
+    &__totals-text {
+        margin: 0.5rem;
+        font-weight: 600;
+    }
+}
