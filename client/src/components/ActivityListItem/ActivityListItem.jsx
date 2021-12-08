@@ -36,7 +36,10 @@ function ActivityListItem({ activity, addToSummary }) {
                 {(qty * activity.carbon[activity.option.findIndex(option => option[0] === selectValue)]).toFixed(1)} kg
             </p>
             <button className="activity-item__activity-add" 
-                onClick={() => {addToSummary(activity, qty, [selectValue, optionId])}}>
+                onClick={() => {
+                    addToSummary(activity, qty, [selectValue, optionId])
+                    setQty(1)
+                    }}>
                 +
             </button>
         </li>

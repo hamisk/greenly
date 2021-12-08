@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ActivityTable from '../ActivityTable/ActivityTable'
-import { v4 } from 'uuid';
 import './BrowseActivities.scss';
 
 export class BrowseActivities extends Component {

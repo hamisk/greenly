@@ -1,8 +1,6 @@
+// phase 2
 import axios from 'axios';
-
-import { localAPI } from '../../utils/apiUtils';
 import GroceryTable from '../../components/GroceryTable/GroceryTable';
-// import ActivityCard from '../../components/ActivityCard/ActivityCard';
 
 import React, { Component } from 'react'
 import { API_URL } from '../../config';
@@ -20,7 +18,6 @@ export class Groceries extends Component {
         
         axios
             .all([
-                // axios.get(localAPI + "groceries"),
                 axios.get(API_URL + "/groceries"),
             ])
             .then(axios.spread((response1) => {

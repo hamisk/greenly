@@ -1,5 +1,4 @@
 import axios from 'axios';
-import React from 'react'
 import { Link } from 'react-router-dom';
 import Input from '../../components/Input/Input';
 import { API_URL } from '../../config';
@@ -10,13 +9,11 @@ function LogIn(props) {
     const handleLogIn = (e) => {
         e.preventDefault();
 
-        // axios.post('http://localhost:8080/auth/login', {
         axios.post(API_URL + '/auth/login', {
             username: e.target.username.value,
             password: e.target.password.value
         })
         .then(res => {
-            console.log(res)
             let token = res.data.token
             sessionStorage.setItem('authToken', token)
             window.location.href = '/'

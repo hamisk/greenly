@@ -1,16 +1,19 @@
+// modules
 import { Component } from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 import axios from 'axios';
-import { Switch, Route } from 'react-router-dom';
 
-import { localAPI } from '../../utils/apiUtils';
-import { round, groupArrayBy, getWeekCommencing } from '../../utils/utils'
-
+// components
 import SummaryTable from '../../components/SummaryTable/SummaryTable';
-import SubNav from '../../components/SubNav/SubNav';
 import Calendar from '../../components/Calendar/Calendar';
 import BrowseActivities from '../../components/BrowseActivities/BrowseActivities';
-import SearchActivities from '../../components/SearchActivities/SearchActivities';
+import Loading from '../../components/Loading/Loading';
+
+// utils
+import { round, getWeekCommencing } from '../../utils/utils'
 import { API_URL } from '../../config';
+
+// styling
 import './Activities.scss';
 
 export class Activities extends Component {
@@ -22,12 +25,13 @@ export class Activities extends Component {
         weekCommencing: getWeekCommencing(new Date()),
         summary: [],
         token: null,
-        loginPrompt: false
+        loginPrompt: false,
+        submitted: false,
     }
 
     componentDidMount = () => {
+        // summary store in session storage, in case user not logged in
         let summaryFromSession = JSON.parse(sessionStorage.getItem('summary'))
-        console.log(summaryFromSession)
         let token = sessionStorage.getItem('authToken')
         this.setState({
             token: token,
@@ -36,7 +40,6 @@ export class Activities extends Component {
         
         axios
             .all([
-                // axios.get(localAPI + "activities")
                 axios.get(API_URL + "/activities")
             ])
             .then(axios.spread((response1) => {
@@ -50,8 +53,6 @@ export class Activities extends Component {
                 this.setState({
                     activities: response1.data,
                     categories: categoriesArray
-                }, () => {
-                    // console.log(this.state)
                 })
             }))
     }
@@ -69,9 +70,8 @@ export class Activities extends Component {
             }
         });
         const selectedCategories = newCategoryStates.filter(category => category[1]).map(category => category[0])
-        // console.log(selectedCategories)
         activitiesToDisplayArr = this.state.activities.filter(activity => selectedCategories.includes(activity.category))
-        // console.log(activitiesToDisplayArr)
+
         this.setState({ 
             categories: newCategoryStates,
             activitiesToDisplay: activitiesToDisplayArr
@@ -81,6 +81,7 @@ export class Activities extends Component {
     addActivityToSummary = (activity, qty, option) => {
         let activityItem = {};
         activityItem.activity = activity.activity
+        // activity id stored in option array, used to identify correct record in db 
         activityItem.option = option
         activityItem.qty = qty
 
@@ -88,10 +89,10 @@ export class Activities extends Component {
         activityItem.carbon = qty * activity.carbon[activity.option.findIndex(findOption => findOption[0] === option[0])]
 
         this.setState({
-            summary: [...this.state.summary, activityItem]
+            summary: [...this.state.summary, activityItem],
+            submitted: false
         }, () => {
-            // callback to do something with state
-            console.log(this.state.summary)
+            // store summary in session storage in case user needs to log in, or browses away
             sessionStorage.setItem('summary', JSON.stringify(this.state.summary))
         })
     }
@@ -112,7 +113,6 @@ export class Activities extends Component {
 
     submitEntry = () => {
         const token = this.state.token
-        console.log(token)
         if (!token) {
             return this.setState({
                 loginPrompt: true
@@ -120,12 +120,10 @@ export class Activities extends Component {
         }
 
         let summaryArray = this.state.summary
-
         summaryArray.map(activity => 
             activity.weekCommencing = this.state.weekCommencing)
         
         axios
-            // .post(localAPI + 'users/add-entry', summaryArray, {
             .post(API_URL + '/users/add-entry', summaryArray, {
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -133,11 +131,12 @@ export class Activities extends Component {
             })
             .then(() => {
                 this.setState({
-                    summary: []
+                    summary: [],
+                    submitted: true
                 }, () => {
                     sessionStorage.removeItem('summary')
+                    console.log("Successfully submitted entry")
                 })
-                console.log("submitted entry")
             })
             .catch(error => console.log(error))
     }
@@ -151,12 +150,18 @@ export class Activities extends Component {
 
     render() {
         if (!this.state.activities) {
-            return <p>Loading...</p>
-        }
-        const tabs = ['search', 'browse']
+            return (
+                <section className="activity-page">
+                    <div className="activity-page__loading-wrapper">
+                        <div className="activity-page__loading">
+                            <Loading />
+                        </div>
+                    </div>
+                </section>
+        )}
+
         return (
             <>
-            {/* <SubNav page='activities' tabs={tabs} /> */}
             <section className="activity-page">
                 <div className="activity-page__page-wrapper">
                     <Switch>
@@ -187,6 +192,13 @@ export class Activities extends Component {
                         </div>
                         <div className="act-summary__summary-list-container">
                             <SummaryTable summary={this.state.summary} totals={this.getSummaryTotal()}/>
+                            {this.state.submitted ? 
+                            <div className="act-summary__submitted">
+                                <p className="act-summary__submitted-text">entry submitted!</p>
+                                <p className="act-summary__submitted-text">view in your <Link to="/home/dashboard"><span className="act-summary__link">dashboard</span></Link></p>
+                                <p className="act-summary__submitted-text">or add an activity to submit another entry</p>
+                            </div>
+                            : <></> }
                         </div>
                     </div>
                 </div>

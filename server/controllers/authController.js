@@ -39,7 +39,7 @@ exports.createUser = (req, res) => {
                 // 2. secret key
                 process.env.JWT_SECRET_KEY,
                 // 3. options
-                { expiresIn: "1h" }
+                { expiresIn: "6h" }
             );
 
             res.status(200)
@@ -92,7 +92,7 @@ exports.login = (req, res) => {
                 // 2. secret key
                 process.env.JWT_SECRET_KEY,
                 // 3. options
-                { expiresIn: "1h" }
+                { expiresIn: "6h" }
             );
 
             res

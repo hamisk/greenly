@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
 import ActivityListItem from '../ActivityListItem/ActivityListItem'
-import PaginationBar from '../PaginationBar/PaginationBar';
 import './ActivityTable.scss'
 
 function ActivityTable({ activities, addToSummary }) {

@@ -1,11 +1,13 @@
 import axios from 'axios';
 import React, { Component } from 'react'
-import { localAPI } from '../../utils/apiUtils';
-import { epochToMMDDYYYY } from '../../utils/utils';
+
 import Input from '../../components/Input/Input'
-import './Profile.scss';
 import treeIcon from '../../assets/icons/icons8-tree-100-2.png'
+
+import { epochToMMDDYYYY } from '../../utils/utils';
 import { API_URL } from '../../config';
+
+import './Profile.scss';
 
 export class Profile extends Component {
 
@@ -20,7 +22,6 @@ export class Profile extends Component {
         if (!!token) {
             axios
                 .all([
-                    // axios.get(localAPI + 'users/profile', {
                     axios.get(API_URL + '/users/profile', {
                         headers: {Authorization: `Bearer ${token}`}})
                     ])
@@ -28,11 +29,8 @@ export class Profile extends Component {
                     this.setState({
                         userProfile: response1.data,
                         isLoading: false
-                    }, () => {
-                        // console.log(this.state.userProfile)
                     })
-                    })
-                )
+                }))
         } else {
             this.props.history.push('/login')
         }

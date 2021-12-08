@@ -28,7 +28,6 @@
     &__weekly-target-wrapper {
         display: flex;
         align-items: center;
-        // justify-content: space-around;
     }
 
     &__weekly-target {
@@ -36,8 +35,6 @@
         font-size: 2.5rem;
         margin: 0 2rem;
     }
-
-    
 
     &__target-image {
         width: 75px;
@@ -83,7 +80,6 @@
         position: relative;
 
         &:hover {
-            // font-weight: 600;
             background-color: $color-light-green;
         }
 
