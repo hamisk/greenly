@@ -7,7 +7,6 @@ import './SideNav.scss'
 
 export class SideNav extends Component {
     // routerProps passed through for active page styling
-    // console.log(props)
 
     state = {
         isAuthenticated: false,
@@ -15,6 +14,7 @@ export class SideNav extends Component {
     };
 
     componentDidMount() {
+        console.log(this.props)
         // Check auth
         let token = sessionStorage.getItem('authToken')
         if (!!token) {
@@ -67,6 +67,7 @@ export class SideNav extends Component {
                 </div>
                 <div className="sidenav__nav-links-wrapper">
                     <Link to='/'><div className="sidenav__link">home</div></Link>
+                    <Link to='/home/profile'><div className="sidenav__link">profile</div></Link>
                     <Link to='/activities'><div className="sidenav__link">activities</div></Link>
                     <Link to='/about'><div className="sidenav__link">about</div></Link>
                 </div>

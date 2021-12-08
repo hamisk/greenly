@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { Component } from 'react'
-import SubNav from '../../components/SubNav/SubNav';
 // import { v4 } from 'uuid';
 import './Dashboard.scss';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
@@ -8,6 +7,7 @@ import { Bar } from 'react-chartjs-2';
 import { groupArrayBy } from '../../utils/utils';
 import DoughnutChart from '../../components/DoughnutChart/DoughnutChart';
 import { API_URL } from '../../config';
+import Loading from '../../components/Loading/Loading';
   
 ChartJS.register(
     CategoryScale,
@@ -73,7 +73,6 @@ class Dashboard extends Component {
         let token = sessionStorage.getItem('authToken')
 
         if (!!token) {
-            // axios.get('http://localhost:8080/users/get-activities', 
             axios.get(API_URL + '/users/get-activities', 
             {
                 headers: {
@@ -85,7 +84,6 @@ class Dashboard extends Component {
                     userActivities: res.data,
                     isLoading: false
                 }, () => {
-                    // console.log(this.state.userActivities)
                     this.getData()
                 })
             })
@@ -137,12 +135,16 @@ class Dashboard extends Component {
         }
 
         const { isLoading, userActivities } = this.state
-        const tabs = ['dashboard', 'profile']
         return (
             <>
-                <SubNav page='home' tabs={tabs} />
                 {(isLoading || !userActivities.length || !this.state.chartTwo) ? 
-                <h1>Loading...</h1> 
+                <section className="loading">
+                    <div className="loading__wrapper">
+                        <div className="loading__loading">
+                            <Loading />
+                        </div>
+                    </div>
+                </section>
                 :
                 (<section className="dashboard">
                     <div className="dashboard__chart">

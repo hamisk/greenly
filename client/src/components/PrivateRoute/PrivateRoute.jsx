@@ -3,6 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import { API_URL } from '../../config';
 import Loading from '../Loading/Loading';
+import './PrivateRoute.scss'
 
 class PrivateRoute extends Component {
     state = {
