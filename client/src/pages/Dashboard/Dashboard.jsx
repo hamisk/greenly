@@ -152,10 +152,10 @@ class Dashboard extends Component {
                         <Bar options={options} data={this.state.chartTwo} />
                     </div>
                     <div className="dashboard__chart">
-                        <DoughnutChart activityData={this.state.userActivities}/>
+                        <Bar options={options} data={data} />
                     </div>
                     <div className="dashboard__chart">
-                        <Bar options={options} data={data} />
+                        <DoughnutChart activityData={this.state.userActivities}/>
                     </div>
                     
                 </section>
