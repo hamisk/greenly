@@ -14,7 +14,6 @@ export class SideNav extends Component {
     };
 
     componentDidMount() {
-        console.log(this.props)
         // Check auth
         let token = sessionStorage.getItem('authToken')
         if (!!token) {

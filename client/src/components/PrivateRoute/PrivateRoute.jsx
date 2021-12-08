@@ -50,11 +50,9 @@ class PrivateRoute extends Component {
             // alternatively this could be a loading indicator
             if (this.state.isAuthenticating) {
                 return (
-                <section className="loading">
-                    <div className="loading__wrapper">
-                        <div className="loading__loading">
-                            <Loading />
-                        </div>
+                <section className="private-route-load">
+                    <div className="private-route-load__loading">
+                        <Loading />
                     </div>
                 </section>
             )};

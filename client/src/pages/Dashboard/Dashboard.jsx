@@ -138,11 +138,9 @@ class Dashboard extends Component {
         return (
             <>
                 {(isLoading || !userActivities.length || !this.state.chartTwo) ? 
-                <section className="loading">
-                    <div className="loading__wrapper">
-                        <div className="loading__loading">
-                            <Loading />
-                        </div>
+                <section className="dashboard-load">
+                    <div className="dashboard-load__loading">
+                        <Loading />
                     </div>
                 </section>
                 :
