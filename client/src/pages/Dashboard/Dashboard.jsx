@@ -113,7 +113,6 @@ class Dashboard extends Component {
     getWeekSummary = () => {
         const weekCommencing = epochToYYYYMMDD(this.state.weekCommencing).toString().slice(0,10)
         const weekActivities = this.state.userActivities.filter(activity => activity.week_commencing === weekCommencing)
-        console.log(weekActivities)
         let weekSummary = []
         weekActivities.forEach(element => weekSummary.push({  
             activity: element.activity,
