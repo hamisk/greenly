@@ -42,6 +42,8 @@ exports.addEntry = (req, res) => {
     const usernameFromToken = req.decoded.username;
     const userLoggedActivities = req.body;
 
+    console.log(userLoggedActivities)
+
     // console.log(usernameFromToken)
     // console.log(req.body)
 

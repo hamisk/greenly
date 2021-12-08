@@ -6,7 +6,6 @@ function ActivityTable({ activities, addToSummary }) {
     if (!!activities) {
         activities.sort((a,b) => (a.activity > b.activity) ? 1 : ((b.activity > a.activity) ? -1 : 0))
         activities.sort((a,b) => (a.category > b.category) ? 1 : ((b.category > a.category) ? -1 : 0))
-        console.log(activities)
     }
 
     return (

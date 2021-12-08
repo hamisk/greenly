@@ -26,7 +26,18 @@ export function epochToMMDDYYYY(epoch) {
     let MM = `0${epochDate.getMonth() + 1}`;
     let DD = `0${epochDate.getDate()}`;
     let YYYY = epochDate.getFullYear();
-    let readableDate = `${MM.slice(-2)}/${DD.slice(-2)}/${YYYY}`;
+    let readableDate = `${MM.slice(-2)}-${DD.slice(-2)}-${YYYY}`;
+
+    return readableDate;
+}
+
+// function to convert epoch date to MM/DD/YYYY format
+export function epochToYYYYMMDD(epoch) {
+    let epochDate = new Date(epoch);
+    let MM = `0${epochDate.getMonth() + 1}`;
+    let DD = `0${epochDate.getDate()}`;
+    let YYYY = epochDate.getFullYear();
+    let readableDate = `${YYYY}-${MM.slice(-2)}-${DD.slice(-2)}`;
 
     return readableDate;
 }

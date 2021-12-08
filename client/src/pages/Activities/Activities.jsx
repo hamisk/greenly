@@ -10,7 +10,7 @@ import BrowseActivities from '../../components/BrowseActivities/BrowseActivities
 import Loading from '../../components/Loading/Loading';
 
 // utils
-import { round, getWeekCommencing } from '../../utils/utils'
+import { round, getWeekCommencing, epochToYYYYMMDD } from '../../utils/utils'
 import { API_URL } from '../../config';
 
 // styling
@@ -121,7 +121,7 @@ export class Activities extends Component {
 
         let summaryArray = this.state.summary
         summaryArray.map(activity => 
-            activity.weekCommencing = this.state.weekCommencing)
+            activity.weekCommencing = epochToYYYYMMDD(this.state.weekCommencing))
         
         axios
             .post(API_URL + '/users/add-entry', summaryArray, {

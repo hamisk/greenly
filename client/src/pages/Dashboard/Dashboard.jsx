@@ -4,10 +4,11 @@ import { Component } from 'react'
 import './Dashboard.scss';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { groupArrayBy } from '../../utils/utils';
+import { epochToMMDDYYYY, epochToYYYYMMDD, getWeekCommencing, groupArrayBy, round } from '../../utils/utils';
 import DoughnutChart from '../../components/DoughnutChart/DoughnutChart';
 import { API_URL } from '../../config';
 import Loading from '../../components/Loading/Loading';
+import SummaryTable from '../../components/SummaryTable/SummaryTable';
   
 ChartJS.register(
     CategoryScale,
@@ -65,28 +66,43 @@ class Dashboard extends Component {
     state = {
         isLoading: true,
         userActivities: [],
+        weekCommencing: getWeekCommencing(new Date()),
+        weekSummary: null,
         chartTwo: null,
-        chartTwoLabels: []
+        chartTwoLabels: [],
+        userProfile: ''
     }
 
     componentDidMount() {
         let token = sessionStorage.getItem('authToken')
 
         if (!!token) {
-            axios.get(API_URL + '/users/get-activities', 
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            })
-            .then(res => {
-                this.setState({
-                    userActivities: res.data,
-                    isLoading: false
-                }, () => {
-                    this.getData()
-                })
-            })
+            axios
+                .all([
+                    axios.get(API_URL + '/users/get-activities', 
+                        {
+                            headers: {
+                                Authorization: `Bearer ${token}`
+                            }
+                        }),
+                    axios.get(API_URL + '/users/get-activities', 
+                        {
+                            headers: {
+                                Authorization: `Bearer ${token}`
+                            }
+                        })
+                ])
+                .then(axios.spread((response1, response2) => {
+                    this.setState({
+                        userActivities: response1.data,
+                        userProfile: response2.data,
+                        isLoading: false
+                    }, () => {
+                        this.getData()
+                        // console.log(this.state.userActivities)
+                        this.getWeekSummary()
+                    })
+                }))
         } else {
             this.props.history.push('/login')
         }
@@ -128,16 +144,49 @@ class Dashboard extends Component {
         })
     }
 
+    getWeekSummary = () => {
+        const weekCommencing = epochToYYYYMMDD(this.state.weekCommencing).toString().slice(0,10)
+        console.log(weekCommencing)
+        const weekActivities = this.state.userActivities.filter(activity => activity.week_commencing === weekCommencing)
+        console.log(weekActivities)
+        let weekSummary = []
+        weekActivities.forEach(element => weekSummary.push({  
+            activity: element.activity,
+            carbon: Number(element.carbon_used),
+            option: [element.option_used, element.activity_id],
+            qty: element.qty_used
+        }))
+        
+        // console.log(weekSummary)
+
+        this.setState({
+            weekSummary: weekSummary,
+        })
+    }
+
+    getSummaryTotal = () => {
+        let summaryArray = this.state.weekSummary
+        let co2Total = 0;
+
+        if (summaryArray.length) {
+            summaryArray.forEach(activity => {
+                co2Total += round(activity.carbon);
+            })
+            return [co2Total]
+        } else {
+            return [0]
+        }
+    }
     
     render() {
         if (!this.state.chartTwo) {
             return null
         }
 
-        const { isLoading, userActivities } = this.state
+        const { isLoading, userActivities, weekSummary } = this.state
         return (
             <>
-                {(isLoading || !userActivities.length || !this.state.chartTwo) ? 
+                {(isLoading || !userActivities.length || !this.state.chartTwo || !weekSummary) ? 
                 <section className="dashboard-load">
                     <div className="dashboard-load__loading">
                         <Loading />
@@ -149,13 +198,13 @@ class Dashboard extends Component {
                         <Bar options={options} data={data} />
                     </div>
                     <div className="dashboard__chart">
-                        <Bar options={options} data={this.state.chartTwo} />
-                    </div>
-                    <div className="dashboard__chart">
-                        <Bar options={options} data={data} />
+                        <SummaryTable summary={this.state.weekSummary} totals={(this.getSummaryTotal())}/>
                     </div>
                     <div className="dashboard__chart">
                         <DoughnutChart activityData={this.state.userActivities}/>
+                    </div>
+                    <div className="dashboard__chart">
+                        <Bar options={options} data={this.state.chartTwo} />
                     </div>
                     
                 </section>
