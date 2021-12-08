@@ -10,7 +10,7 @@ import Profile from './pages/Profile/Profile';
 import SignUp from './pages/SignUp/SignUp';
 import Dashboard from './pages/Dashboard/Dashboard';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import About from './pages/About/About';
+// import About from './pages/About/About';
 import SideNav from './components/SideNav/SideNav';
 
 // styling
@@ -30,11 +30,9 @@ class App extends Component {
                             <PrivateRoute path="/" exact component={Dashboard} />
                             <PrivateRoute path="/home/profile" component={Profile} />
                             <Route path="/activities" component={Activities} />
-                            <Route path="/about" component={About} />
+                            {/* <Route path="/about" component={About} /> */}
                             <Route path="/signup" component={SignUp} />
                             <Route path="/login" component={LogIn} />
-                            <Route></Route>
-                            <Route></Route>
                         </Switch>
                     </div>
                 </BrowserRouter>

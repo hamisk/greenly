@@ -68,7 +68,7 @@ export class SideNav extends Component {
                     <Link to='/'><div className="sidenav__link">home</div></Link>
                     <Link to='/home/profile'><div className="sidenav__link">profile</div></Link>
                     <Link to='/activities'><div className="sidenav__link">activities</div></Link>
-                    <Link to='/about'><div className="sidenav__link">about</div></Link>
+                    {/* <Link to='/about'><div className="sidenav__link">about</div></Link> */}
                 </div>
             </div>
         )
