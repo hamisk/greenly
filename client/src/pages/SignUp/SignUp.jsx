@@ -71,15 +71,15 @@ function SignUp(props) {
                 <form onSubmit={handleSignUp}>
                     <div className="signup__columns-wrapper">
                         <div className="signup__column">
-                            <Input label="Name" name="name" type="text" invalid={invalid}/>
-                            <Input label="Username" name="username" type="text" invalid={invalid || usernameTaken}/>
-                            <Input label="Password" name="password" type="password" invalid={invalid || !passwordMatch}/>
-                            <Input label="Confirm Password" name="confirmPassword" type="password" invalid={invalid || !passwordMatch}/>
+                            <Input label="Name" name="name" type="text" invalid={invalid} placeholder="Required"/>
+                            <Input label="Username" name="username" type="text" invalid={invalid || usernameTaken} placeholder="Required"/>
+                            <Input label="Password" name="password" type="password" invalid={invalid || !passwordMatch} placeholder="Required"/>
+                            <Input label="Confirm Password" name="confirmPassword" type="password" invalid={invalid || !passwordMatch} placeholder="Required"/>
                         </div>
                         <div className="signup__column">
-                            <Input label="Carbon target (kg per year)" name="carbon" type="number" value="10" defaultValue={10000} invalid={invalid}/>
-                            <Input label="City" name="city" type="text" />
-                            <Input label="Country" name="country" type="text" />
+                            <Input label="Carbon target (kg per year)" name="carbon" type="number" value="10" defaultValue={10000} invalid={invalid} placeholder="Required"/>
+                            <Input label="City" name="city" type="text" placeholder="Optional"/>
+                            <Input label="Country" name="country" type="text" placeholder="Optional" />
                             {invalid ? <p className="signup__invalid">Please provide all required fields</p> : <></> }
                             {usernameTaken ? <p className="signup__invalid">Username already in use, please provide another</p> : <></> }
                             {passwordMatch ? <></> : <p className="signup__invalid">Passwords did not match</p> }
