@@ -36,7 +36,7 @@ function SignUp(props) {
         let signupCountry = e.target.country.value
         let signupCarbon = e.target.carbon.value
 
-        if (usernameList.find(username => username === signupUsername)) {
+        if (usernameList.find(username => username.toLowerCase() === signupUsername.toLowerCase())) {
             return setUsernameTaken(true)
         }
 
@@ -47,6 +47,13 @@ function SignUp(props) {
         if (signupPassword !== signupConfirmPassword) {
             return setPasswordMatch(false)
         }
+        console.log(signupName)
+        console.log(signupUsername)
+        console.log(signupPassword)
+        console.log(signupConfirmPassword)
+        console.log(signupCity)
+        console.log(signupCountry)
+        console.log(signupCarbon)
 
         axios.post(API_URL + '/auth/register', {
             name: signupName,
@@ -61,6 +68,7 @@ function SignUp(props) {
             sessionStorage.setItem('authToken', token)
             window.location.href = '/home/profile'
         })
+        .catch(error => console.log(error))
     }
 
     return (
