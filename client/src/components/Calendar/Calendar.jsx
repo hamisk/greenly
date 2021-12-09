@@ -2,7 +2,7 @@ import React from "react";
 import DatePicker from "react-datepicker";
 import { getMonth, getYear } from 'date-fns';
 import range from "lodash/range";
-import "react-datepicker/dist/react-datepicker.css";
+import './Calendar.scss';
 
 // CSS Modules, react-datepicker-cssmodules.css
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';

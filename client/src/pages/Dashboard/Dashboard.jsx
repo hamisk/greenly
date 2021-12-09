@@ -148,6 +148,8 @@ class Dashboard extends Component {
             this.getWeekSummary()
         })
     }
+
+    deleteUserActivity = () => {}
     
     render() {
         if (!this.state.chartTwo) {
@@ -176,7 +178,7 @@ class Dashboard extends Component {
                             <ProgressChart target={Math.round(userProfile.goal_carbon / 52)} total={(this.getSummaryTotal())} />
                         </div>
                         <div className="dashboard__table">
-                            <SummaryTable summary={this.state.weekSummary} totals={(this.getSummaryTotal())}/>
+                            <SummaryTable summary={this.state.weekSummary} totals={(this.getSummaryTotal())} delete={this.deleteUserActivity}/>
                         </div>
                         
                     </div>

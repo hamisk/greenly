@@ -11,4 +11,6 @@ router.get('/get-activities', authorize, usersController.getUserActivities)
 
 router.get('/get-users', usersController.getUsers)
 
+router.put('/update', authorize, usersController.updateUser)
+
 module.exports = router;

@@ -2,7 +2,7 @@ const knex =
   process.env.NODE_ENV === 'production'
     ? require('knex')(require('../knexfile').production)
     : require('knex')(require('../knexfile').development);
-// const knex = require('knex')(require('../knexfile').development);
+
 const jwt = require("jsonwebtoken");
 
 exports.getUsers = (req, res) => {
@@ -41,22 +41,6 @@ exports.addEntry = (req, res) => {
     // if valid token, continue
     const usernameFromToken = req.decoded.username;
     const userLoggedActivities = req.body;
-
-    console.log(userLoggedActivities)
-
-    // console.log(usernameFromToken)
-    // console.log(req.body)
-
-    // validation - do for each property of activity?
-    // const name = req.body.name;
-    // const username = req.body.username;
-    // const password = req.body.password;
-
-    // if (!name || !username || !password) {
-    //     return res.status(400).json({
-    //         message: "Register requires name, username, and password"
-    //     })
-    // }
 
     if (!userLoggedActivities) {
             return res.status(400).json({
@@ -105,10 +89,7 @@ exports.getUserActivities = (req, res) => {
     knex('users')
         .where({ username: usernameFromToken })
         .then((user) => {
-            // const foundUser = users.find(user => user.username === username);
             const foundUser = user[0];
-            // console.log(user)
-            // console.log(foundUser)
 
             if (!foundUser) {
                 return res.status(400).json({
@@ -123,11 +104,56 @@ exports.getUserActivities = (req, res) => {
                     this.on('activities.id', '=', 'user_logged_activities.activity_id')
                 })
                 .then(activities => {
-                    // console.log(activities)
                     res.status(200).json(activities);
                 })
-
-            // res.sendStatus(200);
         })
-
 }
+
+exports.updateUser = (req, res) => {
+    const usernameFromToken = req.decoded.username;
+    const { name, username, password, carbon, city, country } = req.body
+
+    console.log(username, usernameFromToken)
+
+    if (!name || !username || !password || !carbon) {
+        return res.status(400).json({
+            message: "Register requires name, username, and password"
+        })
+    }
+
+    // at this point, we are guaranteed to have a 
+    // name, username, and password
+    
+    const updateUser = {
+        name: name,
+        username: username,
+        password: password,
+        city: city,
+        country: country,
+        goal_carbon: carbon
+    };
+
+    knex('users')
+        .where({ username: usernameFromToken })
+        .update(updateUser)
+        .then(() => {
+            // create and return JWT
+            const token = jwt.sign(
+                // 1. payload
+                { username: username },
+                // 2. secret key
+                process.env.JWT_SECRET_KEY,
+                // 3. options
+                { expiresIn: "6h" }
+            );
+
+            res.status(204)
+                .json({ 
+                    message: "Successfully updated",
+                    token: token 
+                })
+        })
+        .catch((err) =>
+            res.status(400).send(`Error updating: ${err}`)
+        );
+};

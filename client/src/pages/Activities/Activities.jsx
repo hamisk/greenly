@@ -43,6 +43,7 @@ export class Activities extends Component {
                 axios.get(API_URL + "/activities")
             ])
             .then(axios.spread((response1) => {
+                console.log(API_URL + "/activities")
                 // array of unique category names to generate category buttons
                 const categoryNames = [...new Set(response1.data.map(item => item.category))]
                 
@@ -185,7 +186,7 @@ export class Activities extends Component {
                                         <Calendar startDate={this.state.weekCommencing} setStartDate={this.setStartDate} />
                                     </div>
                                 </div>
-                                <button className="act-summary__add-entry" onClick={this.submitEntry}>submit entry</button>
+                                <button className="act-summary__add-entry" onClick={this.submitEntry}>Submit Entry</button>
                                 {this.state.loginPrompt ? <p className="act-summary__login-prompt">please log in to submit an entry</p>
                                 : <></> }
                             </div>
