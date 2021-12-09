@@ -34,7 +34,7 @@ function DoughnutChart({ activityData }) {
             legend: {position: 'right',},
             title: {
                 display: true,
-                text: 'Total Consumption by Category',
+                text: 'Total Consumption By Category',
             },
         },
     };

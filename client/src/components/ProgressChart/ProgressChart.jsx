@@ -31,7 +31,7 @@ const chartOptions = {
       y: { stacked: true, grid: {display:false} }
     }
 };
-const labels = ["usage"]
+const labels = ["Usage"]
 const green = '#00800099'
 const red = '#80000099'
 const greener = '#45C04599'

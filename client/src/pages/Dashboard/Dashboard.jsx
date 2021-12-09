@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Component } from 'react'
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { epochToYYYYMMDD, getWeekCommencing, groupArrayBy, round } from '../../utils/utils';
+import { epochToYYYYMMDD, getWeekCommencing, groupArrayBy, round} from '../../utils/utils';
 import DoughnutChart from '../../components/DoughnutChart/DoughnutChart';
 import { API_URL } from '../../config';
 import Loading from '../../components/Loading/Loading';
@@ -85,7 +85,7 @@ class Dashboard extends Component {
         userActsArray.forEach(activity => activity.week_commencing = activity.week_commencing.toString().slice(0,10))
 
         // array of unique week_commencing values
-        const WCArray = [...new Set(userActsArray.map(activity => activity.week_commencing))]
+        const WCArray = [...new Set(userActsArray.map(activity => activity.week_commencing))].sort()
         const WCChartLabels = WCArray.map(date => date.toString())
         
         // group userActivities by week commencing
@@ -97,7 +97,7 @@ class Dashboard extends Component {
             labels: WCChartLabels,
             datasets: [
                 {
-                    label: 'Dataset 1',
+                    label: 'CO2e',
                     data: carbonSums,
                     backgroundColor: '#2F8D31',
                 }

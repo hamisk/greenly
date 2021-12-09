@@ -42,6 +42,14 @@ export function epochToYYYYMMDD(epoch) {
     return readableDate;
 }
 
+export function sortByDate(array) {
+    array.sort(function(a,b){
+    // Turn your strings into dates, and then subtract them
+    // to get a value that is either negative, positive, or zero.
+    return new Date(b.date) - new Date(a.date);
+  });
+}
+
 export function generateRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';

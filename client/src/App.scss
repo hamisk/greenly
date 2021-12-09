@@ -12,6 +12,9 @@ body {
 
 * {
     box-sizing: border-box;
+    &:first-letter {
+        text-transform: capitalize;
+    }
 }
 
 .main {
