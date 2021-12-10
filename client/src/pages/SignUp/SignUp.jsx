@@ -18,7 +18,7 @@ function SignUp(props) {
                 const usernameListArr = [...new Set(response.data.map(item => item.username))]
                 setUsernameList(usernameListArr)
             })
-    })
+    }, [])
     
     const handleSignUp = (e) => {
         e.preventDefault();

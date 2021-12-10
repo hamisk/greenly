@@ -161,6 +161,7 @@ class Dashboard extends Component {
             <>
                 {(isLoading || !userActivities.length || !this.state.chartTwo || !weekSummary) ? 
                 <section className="dashboard-load">
+                    <p>Please log an activity to view your dashboard</p>
                     <div className="dashboard-load__loading">
                         <Loading />
                     </div>
