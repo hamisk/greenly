@@ -43,6 +43,18 @@
             top: 0.1rem;
         }
     }
+
+    &__incorrect-password {
+        height: 3rem;
+        width: 100%;
+    }
+
+    &__invalid {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
     
     &__signup {
         display: flex;

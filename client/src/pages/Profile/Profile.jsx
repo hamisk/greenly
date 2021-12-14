@@ -16,7 +16,6 @@ export class Profile extends Component {
         usernameList: [],
         isLoading: true,
         invalid: false,
-        passwordMatch: true,
         usernameTaken: false
     }
 
@@ -51,14 +50,11 @@ export class Profile extends Component {
         // reinitialise for subsequent attempts
         this.setState({
             invalid: false,
-            passwordMatch: true,
             usernameTaken: false
         })
 
         let updateName = e.target.name.value
         let updateUsername = e.target.username.value
-        let updatePassword = e.target.password.value
-        let updateConfirmPassword = e.target.confirmPassword.value
         let updateCity = e.target.city.value
         let updateCountry = e.target.country.value
         let updateCarbon = e.target.carbon.value
@@ -69,18 +65,13 @@ export class Profile extends Component {
             return this.setState({usernameTaken: true})
         }
 
-        if (!updateName || !updateUsername || !updatePassword || !updateCarbon ) {
+        if (!updateName || !updateUsername || !updateCarbon ) {
             return this.setState({invalid: true})
-        }
-
-        if (updatePassword !== updateConfirmPassword) {
-            return this.setState({passwordMatch: true})
         }
 
         axios.put(API_URL + '/users/update', {
             name: updateName,
             username: updateUsername,
-            password: updatePassword,
             city: updateCity,
             country: updateCountry,
             carbon: updateCarbon,
@@ -99,7 +90,7 @@ export class Profile extends Component {
         if(this.state.isLoading) {
             return <h1>loading</h1>
         }
-        const { userProfile, invalid, passwordMatch, usernameTaken } = this.state
+        const { userProfile, invalid, usernameTaken } = this.state
         const nameArray = userProfile.name.split(' ')
 
         return (
@@ -121,16 +112,13 @@ export class Profile extends Component {
                                 <div className="profile__column">
                                     <Input label="Name" name="name" type="text" defaultValue={userProfile.name} invalid={invalid}/>
                                     <Input label="Username" name="username" type="text" defaultValue={userProfile.username} invalid={invalid}/>
-                                    <Input label="Password" name="password" type="password" defaultValue={userProfile.password} invalid={invalid}/>
                                     <Input label="Carbon target (kg per year)" name="carbon" type="number" defaultValue={userProfile.goal_carbon} invalid={invalid}/>
                                 </div>
                                 <div className="profile__column">
                                     <Input label="City" name="city" type="text" defaultValue={userProfile.city}/>
                                     <Input label="Country" name="country" type="text" defaultValue={userProfile.country}/>
-                                    <Input label="Confirm password" name="confirmPassword" type="password" defaultValue={userProfile.password} invalid={invalid}/>
                                     {invalid ? <p className="signup__invalid">Please provide all required fields</p> : <></> }
                                     {usernameTaken ? <p className="signup__invalid">Username already in use, please provide another</p> : <></> }
-                                    {passwordMatch ? <></> : <p className="signup__invalid">Passwords did not match</p> }
                                 </div>
                             </div>
                             <div className="profile__links">

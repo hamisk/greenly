@@ -2,15 +2,16 @@ const knex =
   process.env.NODE_ENV === 'production'
     ? require('knex')(require('../knexfile').production)
     : require('knex')(require('../knexfile').development);
-// const knex = require('knex')(require('../knexfile').development);
 const jwt = require("jsonwebtoken");
+const bcrypt = require('bcrypt');
+const salt = 10;
 
 exports.createUser = (req, res) => {
     // const name = req.body.name;
     // const username = req.body.username;
     // const password = req.body.password;
     const { name, username, password, carbon, city, country } = req.body
-    console.log(req.body)
+
     if (!name || !username || !password || !carbon) {
         return res.status(400).json({
             message: "Register requires name, username, and password"
@@ -19,40 +20,44 @@ exports.createUser = (req, res) => {
 
     // at this point, we are guaranteed to have a 
     // name, username, and password
+
+    bcrypt.hash(password, salt, function (err, hashedPassword) {
+
+        const newUser = {
+            name: name,
+            username: username,
+            password: hashedPassword,
+            city: city,
+            country: country,
+            goal_carbon: carbon
+        };
     
-    const newUser = {
-        name: name,
-        username: username,
-        password: password,
-        city: city,
-        country: country,
-        goal_carbon: carbon
-    };
-
-    console.log(newUser)
-
-    knex('users')
-        .insert(newUser)
-        .then(() => {
-            // create and return JWT
-            const token = jwt.sign(
-                // 1. payload
-                { username: username },
-                // 2. secret key
-                process.env.JWT_SECRET_KEY,
-                // 3. options
-                { expiresIn: "6h" }
+        console.log(newUser)
+    
+        knex('users')
+            .insert(newUser)
+            .then(() => {
+                // create and return JWT
+                const token = jwt.sign(
+                    // 1. payload
+                    { username: username },
+                    // 2. secret key
+                    process.env.JWT_SECRET_KEY,
+                    // 3. options
+                    { expiresIn: "6h" }
+                );
+    
+                res.status(200)
+                    .json({ 
+                        message: "Successfully registered",
+                        token: token 
+                    })
+            })
+            .catch((err) =>
+                res.status(400).send(`Error registering: ${err}`)
             );
-
-            res.status(200)
-                .json({ 
-                    message: "Successfully registered",
-                    token: token 
-                })
-        })
-        .catch((err) =>
-            res.status(400).send(`Error registering: ${err}`)
-        );
+    })
+    
 };
 
 exports.login = (req, res) => {
@@ -77,32 +82,36 @@ exports.login = (req, res) => {
                     message: "User does not exist"
                 })
             }
+
             // we are guaranteed to have the user here
             // Validate password matches user's password
-            if (foundUser.password !== password) {
-                // invalid password, return response
-                return res.status(400).json({
-                    message: "Invalid Credentials, password does not match"
-                })
-            }
+            bcrypt.compare(password, foundUser.password, (err, result) => {
 
-            // it is a valid password at this point, 
-            // create and return JWT
-            const token = jwt.sign(
-                // 1. payload
-                { username: username },
-                // 2. secret key
-                process.env.JWT_SECRET_KEY,
-                // 3. options
-                { expiresIn: "6h" }
-            );
-
-            res
-                .status(200)
-                .json({ 
-                    message: "Successfully logged in",
-                    token: token 
-                })
+                if (!result) {
+                    // invalid password, return response
+                    return res.status(403).json({
+                        message: "Invalid Credentials, password does not match"
+                    })
+                }
+    
+                // it is a valid password at this point, 
+                // create and return JWT
+                const token = jwt.sign(
+                    // 1. payload
+                    { username: username },
+                    // 2. secret key
+                    process.env.JWT_SECRET_KEY,
+                    // 3. options
+                    { expiresIn: "6h" }
+                );
+    
+                res
+                    .status(200)
+                    .json({ 
+                        message: "Successfully logged in",
+                        token: token 
+                    })
+            })
         })
         .catch((err) =>
             res.status(400).send(`Error retrieving user: ${err}`)

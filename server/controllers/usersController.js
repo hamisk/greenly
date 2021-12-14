@@ -111,23 +111,19 @@ exports.getUserActivities = (req, res) => {
 
 exports.updateUser = (req, res) => {
     const usernameFromToken = req.decoded.username;
-    const { name, username, password, carbon, city, country } = req.body
+    const { name, username, carbon, city, country } = req.body
 
-    console.log(username, usernameFromToken)
-
-    if (!name || !username || !password || !carbon) {
+    if (!name || !username || !carbon) {
         return res.status(400).json({
-            message: "Register requires name, username, and password"
+            message: "Update requires name, username, and carbon target"
         })
     }
 
     // at this point, we are guaranteed to have a 
-    // name, username, and password
-    
+    // name, username, and carbon target
     const updateUser = {
         name: name,
         username: username,
-        password: password,
         city: city,
         country: country,
         goal_carbon: carbon
@@ -135,7 +131,13 @@ exports.updateUser = (req, res) => {
 
     knex('users')
         .where({ username: usernameFromToken })
-        .update(updateUser)
+        .update({
+            name: name,
+            username: username,
+            city: city,
+            country: country,
+            goal_carbon: carbon
+        })
         .then(() => {
             // create and return JWT
             const token = jwt.sign(
