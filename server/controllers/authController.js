@@ -10,7 +10,7 @@ exports.createUser = (req, res) => {
     // const username = req.body.username;
     // const password = req.body.password;
     const { name, username, password, carbon, city, country } = req.body
-
+    console.log(req.body)
     if (!name || !username || !password || !carbon) {
         return res.status(400).json({
             message: "Register requires name, username, and password"
@@ -28,6 +28,8 @@ exports.createUser = (req, res) => {
         country: country,
         goal_carbon: carbon
     };
+
+    console.log(newUser)
 
     knex('users')
         .insert(newUser)
