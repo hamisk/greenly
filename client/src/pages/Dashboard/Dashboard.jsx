@@ -171,7 +171,7 @@ class Dashboard extends Component {
                     <div className="dashboard__row">
                         <div className="dashboard__one-week">
                             <div className="dashboard__calendar-wrapper">
-                                <p className="dashboard__calendar-text">Week Commencing:</p>
+                                <p className="dashboard__calendar-text">Carbon Target For Week Commencing</p>
                                 <div className="dashboard__calendar">
                                     <Calendar startDate={this.state.weekCommencing} setStartDate={this.setStartDate} />
                                 </div>
@@ -179,6 +179,7 @@ class Dashboard extends Component {
                             <ProgressChart target={Math.round(userProfile.goal_carbon / 52)} total={(this.getSummaryTotal())} />
                         </div>
                         <div className="dashboard__table">
+                            <p className="dashboard__table-sub">Logged Activities</p>
                             <SummaryTable summary={this.state.weekSummary} totals={(this.getSummaryTotal())} delete={this.deleteUserActivity}/>
                         </div>
                         
