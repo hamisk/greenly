@@ -8,6 +8,7 @@ import { epochToMMDDYYYY } from '../../utils/utils';
 import { API_URL } from '../../config';
 
 import './Profile.scss';
+import Loading from '../../components/Loading/Loading';
 
 export class Profile extends Component {
 
@@ -88,8 +89,16 @@ export class Profile extends Component {
 
     render() {
         if(this.state.isLoading) {
-            return <h1>loading</h1>
-        }
+            return (
+                <section className="profile">
+                    <div className="profile__loading-wrapper">
+                        <div className="profile__loading">
+                            <Loading />
+                        </div>
+                    </div>
+                </section>
+        )}
+
         const { userProfile, invalid, usernameTaken } = this.state
         const nameArray = userProfile.name.split(' ')
 
