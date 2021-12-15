@@ -99,14 +99,18 @@ exports.getUserActivities = (req, res) => {
 
             const userId = foundUser.id
             knex('user_logged_activities')
+                .select('user_logged_activities.*', 'activities.activity', 'activities.category', 'activities.unit', 'activities.qty', 'activities.option', 'activities.carbon')
+                .join('activities', 'activities.id', '=', 'user_logged_activities.activity_id')
                 .where({ user_id: userId })
-                .join('activities', function () {
-                    this.on('activities.id', '=', 'user_logged_activities.activity_id')
-                })
                 .then(activities => {
+                    console.log(activities)
                     res.status(200).json(activities);
                 })
         })
+}
+
+exports.deleteUserActivity = (req, res) => {
+    console.log(req.params)
 }
 
 exports.updateUser = (req, res) => {

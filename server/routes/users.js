@@ -9,6 +9,8 @@ router.post('/add-entry', authorize, usersController.addEntry)
 
 router.get('/get-activities', authorize, usersController.getUserActivities)
 
+router.delete('/delete-user-activity/:id', authorize, usersController.deleteUserActivity)
+
 router.get('/get-users', usersController.getUsers)
 
 router.put('/update', authorize, usersController.updateUser)

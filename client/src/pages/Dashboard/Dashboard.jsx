@@ -65,6 +65,7 @@ class Dashboard extends Component {
                         })
                 ])
                 .then(axios.spread((response1, response2) => {
+                    console.log(response1)
                     this.setState({
                         userActivities: response1.data,
                         userProfile: response2.data,
