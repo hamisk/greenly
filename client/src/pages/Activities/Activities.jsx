@@ -43,7 +43,6 @@ export class Activities extends Component {
                 axios.get(API_URL + "/activities")
             ])
             .then(axios.spread((response1) => {
-                console.log(API_URL + "/activities")
                 // array of unique category names to generate category buttons
                 const categoryNames = [...new Set(response1.data.map(item => item.category))]
                 
@@ -149,6 +148,13 @@ export class Activities extends Component {
         })
     }
 
+    deleteFromSummary = (activityId) => {
+        let newSummary = this.state.summary.filter(summaryItem => summaryItem.option[1] !== activityId)
+        this.setState({
+            summary: newSummary
+        })
+    }
+
     render() {
         if (!this.state.activities) {
             return (
@@ -192,11 +198,11 @@ export class Activities extends Component {
                             </div>
                         </div>
                         <div className="act-summary__summary-list-container">
-                            <SummaryTable summary={this.state.summary} totals={this.getSummaryTotal()}/>
+                            <SummaryTable summary={this.state.summary} totals={this.getSummaryTotal()} handleDelete={this.deleteFromSummary}/>
                             {this.state.submitted ? 
                             <div className="act-summary__submitted">
                                 <p className="act-summary__submitted-text">entry submitted!</p>
-                                <p className="act-summary__submitted-text">view in your <Link to="/home/dashboard"><span className="act-summary__link">dashboard</span></Link></p>
+                                <p className="act-summary__submitted-text">view in your <Link to="/"><span className="act-summary__link">dashboard</span></Link></p>
                                 <p className="act-summary__submitted-text">or add an activity to submit another entry</p>
                             </div>
                             : <></> }

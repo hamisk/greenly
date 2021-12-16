@@ -55,7 +55,7 @@ export class SideNav extends Component {
                 <div className="sidenav__links-wrapper"> 
                     {this.state.isAuthenticated ? 
                     <>
-                        <Link to='/profile'><p className="sidenav__link">hi {this.state.user.name}</p></Link>
+                        <Link to='/home/profile'><p className="sidenav__link">hi {this.state.user.name}</p></Link>
                         <p onClick={this.signOut} className="sidenav__logout">logout</p>
                     </>
                     : <>

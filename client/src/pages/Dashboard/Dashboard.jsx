@@ -42,7 +42,8 @@ class Dashboard extends Component {
         weekSummary: null,
         chartTwo: null,
         chartTwoLabels: [],
-        userProfile: ''
+        userProfile: '',
+        token: null
     }
 
     componentDidMount() {
@@ -65,16 +66,20 @@ class Dashboard extends Component {
                         })
                 ])
                 .then(axios.spread((response1, response2) => {
-                    console.log(response1)
+                    // console.log(response1)
                     this.setState({
                         userActivities: response1.data,
                         userProfile: response2.data,
-                        isLoading: false
+                        isLoading: false,
+                        token: token
                     }, () => {
                         this.getData()
                         this.getWeekSummary()
                     })
                 }))
+                .catch(err => {
+                    console.log(err)
+                })
         } else {
             this.props.history.push('/login')
         }
@@ -119,7 +124,8 @@ class Dashboard extends Component {
             activity: element.activity,
             carbon: Number(element.carbon_used),
             option: [element.option_used, element.activity_id],
-            qty: element.qty_used
+            qty: element.qty_used,
+            userActivityId: element.id
         }))
 
         this.setState({
@@ -150,7 +156,33 @@ class Dashboard extends Component {
         })
     }
 
-    deleteUserActivity = () => {}
+    deleteUserActivity = (userActivityId) => {
+        axios
+            .delete(API_URL + '/users/delete-user-activity/' + userActivityId, {
+                headers: {
+                    Authorization: `Bearer ${this.state.token}`
+                }
+            })
+            .then(() => {
+                axios
+                    .get(API_URL + '/users/get-activities', 
+                        {
+                            headers: {
+                                Authorization: `Bearer ${this.state.token}`
+                            }
+                        })
+                    .then(response => {
+                        this.setState({
+                            userActivities: response.data
+                        }, () => {
+                            this.getData()
+                            this.getWeekSummary()
+                        })
+                    })
+
+            })
+            .catch(error => console.log(error))
+    }
     
     render() {
         if (!this.state.chartTwo) {
@@ -181,7 +213,7 @@ class Dashboard extends Component {
                         </div>
                         <div className="dashboard__table">
                             <p className="dashboard__table-sub">Logged Activities</p>
-                            <SummaryTable summary={this.state.weekSummary} totals={(this.getSummaryTotal())} delete={this.deleteUserActivity}/>
+                            <SummaryTable summary={this.state.weekSummary} totals={(this.getSummaryTotal())} handleDelete={this.deleteUserActivity}/>
                         </div>
                         
                     </div>

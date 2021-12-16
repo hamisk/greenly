@@ -103,14 +103,23 @@ exports.getUserActivities = (req, res) => {
                 .join('activities', 'activities.id', '=', 'user_logged_activities.activity_id')
                 .where({ user_id: userId })
                 .then(activities => {
-                    console.log(activities)
                     res.status(200).json(activities);
                 })
         })
 }
 
 exports.deleteUserActivity = (req, res) => {
-    console.log(req.params)
+    const userActivityId = req.params.id
+
+    knex('user_logged_activities')
+        .where({ id: userActivityId })
+        .del()
+        .then(data => {
+            res.sendStatus(204)
+        })
+        .catch(() => 
+            res.status(400)
+            .json({message: `Error deleting user activity ${userActivityId}`}))
 }
 
 exports.updateUser = (req, res) => {

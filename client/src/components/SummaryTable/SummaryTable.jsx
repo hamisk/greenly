@@ -2,7 +2,7 @@ import SummaryListItem from '../SummaryListItem/SummaryListItem';
 import { v4 } from 'uuid';
 import './SummaryTable.scss'
 
-function SummaryTable({ summary, totals }) {
+function SummaryTable({ summary, totals, handleDelete }) {
 
     return (
         <div className="summary-table">
@@ -16,7 +16,7 @@ function SummaryTable({ summary, totals }) {
             <div className="summary-table__list-wrapper">
                 <ul className="summary-table__list">
                     {summary.map(summaryItem =>
-                    <SummaryListItem summaryItem={summaryItem} key={v4()} />)}
+                    <SummaryListItem summaryItem={summaryItem} key={v4()} handleDelete={handleDelete} />)}
                 </ul>
             </div>
             : <p className="summary-table__loading">please select a category</p>}
