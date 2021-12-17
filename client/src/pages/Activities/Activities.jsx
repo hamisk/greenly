@@ -86,7 +86,21 @@ export class Activities extends Component {
         activityItem.qty = qty
 
         // identify carbon emissions per unit for specific option (index in activity carbon array corresponds to index of option)
-        activityItem.carbon = qty * activity.carbon[activity.option.findIndex(findOption => findOption[0] === option[0])]
+        activityItem.carbon = Number(activity.carbon[activity.option.findIndex(findOption => findOption[0] === option[0])])
+
+        // check if activity already in summary, add quantity if so
+        if (this.state.summary.find(summaryActivity => summaryActivity.option[1] === option[1])) {
+            let newSummary = this.state.summary
+            newSummary.find(summaryActivity => summaryActivity.option[1] === option[1]).qty += qty
+
+            return (this.setState({
+                summary: newSummary,
+                submitted: false
+            }, () => {
+                // store summary in session storage in case user needs to log in, or browses away
+                sessionStorage.setItem('summary', JSON.stringify(this.state.summary))
+            }))
+        }
 
         this.setState({
             summary: [...this.state.summary, activityItem],
@@ -103,7 +117,7 @@ export class Activities extends Component {
 
         if (summaryArray.length) {
             summaryArray.forEach(activity => {
-                co2Total += round(activity.carbon);
+                co2Total += round(activity.qty * activity.carbon);
             })
             return [co2Total]
         } else {
@@ -125,9 +139,7 @@ export class Activities extends Component {
         
         axios
             .post(API_URL + '/users/add-entry', summaryArray, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+                headers: {Authorization: `Bearer ${token}`}
             })
             .then(() => {
                 this.setState({
@@ -154,6 +166,23 @@ export class Activities extends Component {
             summary: newSummary
         })
     }
+
+    handleUpdateQty = (event, summaryItem) => {
+        let newSummary = this.state.summary
+ 
+        newSummary.find(summaryActivity => summaryActivity.option[1] === summaryItem.option[1]).qty = event.target.value
+
+        return (this.setState({
+            summary: newSummary,
+            submitted: false
+        }, () => {
+            // store summary in session storage in case user needs to log in, or browses away
+            sessionStorage.setItem('summary', JSON.stringify(this.state.summary))
+        }))
+    }
+
+    // no extra functionality required for summary table on activities page
+    saveQtyChanges = () => {}
 
     render() {
         if (!this.state.activities) {
@@ -198,7 +227,11 @@ export class Activities extends Component {
                             </div>
                         </div>
                         <div className="act-summary__summary-list-container">
-                            <SummaryTable summary={this.state.summary} totals={this.getSummaryTotal()} handleDelete={this.deleteFromSummary}/>
+                            <SummaryTable summary={this.state.summary} 
+                                totals={this.getSummaryTotal()} 
+                                handleDelete={this.deleteFromSummary} 
+                                handleUpdateQty={this.handleUpdateQty}
+                                saveQtyChanges={this.saveQtyChanges}/>
                             {this.state.submitted ? 
                             <div className="act-summary__submitted">
                                 <p className="act-summary__submitted-text">entry submitted!</p>

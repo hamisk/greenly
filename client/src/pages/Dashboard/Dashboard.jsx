@@ -53,20 +53,11 @@ class Dashboard extends Component {
             axios
                 .all([
                     axios.get(API_URL + '/users/get-activities', 
-                        {
-                            headers: {
-                                Authorization: `Bearer ${token}`
-                            }
-                        }),
+                        {headers: {Authorization: `Bearer ${token}`}}),
                     axios.get(API_URL + '/users/profile', 
-                        {
-                            headers: {
-                                Authorization: `Bearer ${token}`
-                            }
-                        })
+                        {headers: {Authorization: `Bearer ${token}`}})
                 ])
                 .then(axios.spread((response1, response2) => {
-                    // console.log(response1)
                     this.setState({
                         userActivities: response1.data,
                         userProfile: response2.data,
@@ -139,7 +130,7 @@ class Dashboard extends Component {
 
         if (summaryArray.length) {
             summaryArray.forEach(activity => {
-                co2Total += round(activity.carbon);
+                co2Total += round(activity.qty * activity.carbon);
             })
             return [co2Total]
         } else {
@@ -159,17 +150,12 @@ class Dashboard extends Component {
     deleteUserActivity = (userActivityId) => {
         axios
             .delete(API_URL + '/users/delete-user-activity/' + userActivityId, {
-                headers: {
-                    Authorization: `Bearer ${this.state.token}`
-                }
+                headers: {Authorization: `Bearer ${this.state.token}`}
             })
             .then(() => {
                 axios
                     .get(API_URL + '/users/get-activities', 
-                        {
-                            headers: {
-                                Authorization: `Bearer ${this.state.token}`
-                            }
+                        {headers: {Authorization: `Bearer ${this.state.token}`}
                         })
                     .then(response => {
                         this.setState({
@@ -182,6 +168,27 @@ class Dashboard extends Component {
 
             })
             .catch(error => console.log(error))
+    }
+
+    handleUpdateQty = (event, summaryItem) => {
+
+        let newSummary = this.state.weekSummary
+        newSummary.find(summaryActivity => summaryActivity.option[1] === summaryItem.option[1]).qty = event.target.value
+
+        return (this.setState({
+            weekSummary: newSummary,
+        }))
+    }
+
+    updateActivityQtys = () => {
+        // submit qty changes to database
+        axios
+            .put(API_URL + '/users/update-user-activity-qtys', this.state.weekSummary, {
+                headers: {Authorization: `Bearer ${this.state.token}`}
+            })
+            .then(res => {
+                console.log(res)
+            })
     }
     
     render() {
@@ -213,7 +220,11 @@ class Dashboard extends Component {
                         </div>
                         <div className="dashboard__table">
                             <p className="dashboard__table-sub">Logged Activities</p>
-                            <SummaryTable summary={this.state.weekSummary} totals={(this.getSummaryTotal())} handleDelete={this.deleteUserActivity}/>
+                            <SummaryTable summary={this.state.weekSummary} 
+                                totals={(this.getSummaryTotal())} 
+                                handleDelete={this.deleteUserActivity} 
+                                handleUpdateQty={this.handleUpdateQty}
+                                saveQtyChanges={this.updateActivityQtys}/>
                         </div>
                         
                     </div>

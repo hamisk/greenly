@@ -1,0 +1,32 @@
+@use '../../styles/partials/colors' as *;
+
+.cta-button {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        color: $color-strong-green;
+    }
+    
+    &__button {
+        background-color: $color-strong-green;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        color: $color-light;
+        padding: 0.5rem;
+        border-radius: 4px;
+        width: fit-content;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        transition: all 0.2s;
+        position: relative;
+    
+        &:hover {
+            background-color: $color-light-green;
+        }
+    
+        &:active {
+            top: 0.1rem;
+        }
+    }
+}

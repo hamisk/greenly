@@ -122,6 +122,30 @@ exports.deleteUserActivity = (req, res) => {
             .json({message: `Error deleting user activity ${userActivityId}`}))
 }
 
+exports.updateUserActivityQtys = (req, res) => {
+    // const userActivityId = req.params.id
+    // need to update qtys for all actvities submitted
+    const weekSummary = req.body
+
+    console.log(req.body)
+
+    weekSummary.forEach(activity => {
+
+        knex('user_logged_activities')
+            .where({ id: activity.userActivityId })
+            .update({ qty_used: activity.qty })
+            .then(data => {
+                // res.sendStatus(204)
+                console.log("updated activity " + activity.userActivityId)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    })
+
+    res.sendStatus(204)
+}
+
 exports.updateUser = (req, res) => {
     const usernameFromToken = req.decoded.username;
     const { name, username, carbon, city, country } = req.body

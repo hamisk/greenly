@@ -47,13 +47,13 @@ function SignUp(props) {
         if (signupPassword !== signupConfirmPassword) {
             return setPasswordMatch(false)
         }
-        console.log(signupName)
-        console.log(signupUsername)
-        console.log(signupPassword)
-        console.log(signupConfirmPassword)
-        console.log(signupCity)
-        console.log(signupCountry)
-        console.log(signupCarbon)
+        // console.log(signupName)
+        // console.log(signupUsername)
+        // console.log(signupPassword)
+        // console.log(signupConfirmPassword)
+        // console.log(signupCity)
+        // console.log(signupCountry)
+        // console.log(signupCarbon)
 
         axios.post(API_URL + '/auth/register', {
             name: signupName,

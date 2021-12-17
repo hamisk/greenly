@@ -10,7 +10,7 @@ function ActivityListItem({ activity, addToSummary }) {
     // each option in activity array corresponds to a unique row in activities table in db
     // retain this to pass to user_logged_activities table
 
-    function handleChange(event) {
+    function handleOptionSelect(event) {
         setSelectValue(event.target.value)
         setOptionId(activity.option[activity.option.findIndex(option => option[0] === event.target.value)][1])
     }
@@ -22,7 +22,7 @@ function ActivityListItem({ activity, addToSummary }) {
     return (
         <li className="activity-item__list-item">
             <p className="activity-item__activity">{activity.activity}</p>
-            <select className="activity-item__select" value={selectValue} onChange={handleChange}>
+            <select className="activity-item__select" value={selectValue} onChange={handleOptionSelect}>
                 {activity.option.map(option => 
                 <option value={option[0]} key={v4()}>{option[0]}</option>
                 )}

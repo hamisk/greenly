@@ -11,6 +11,8 @@ router.get('/get-activities', authorize, usersController.getUserActivities)
 
 router.delete('/delete-user-activity/:id', authorize, usersController.deleteUserActivity)
 
+router.put('/update-user-activity-qtys', authorize, usersController.updateUserActivityQtys)
+
 router.get('/get-users', usersController.getUsers)
 
 router.put('/update', authorize, usersController.updateUser)

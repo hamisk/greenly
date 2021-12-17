@@ -1,8 +1,15 @@
 import SummaryListItem from '../SummaryListItem/SummaryListItem';
-import { v4 } from 'uuid';
 import './SummaryTable.scss'
+import CTAButton from '../CTAButton/CTAButton';
+import { useState } from 'react';
 
-function SummaryTable({ summary, totals, handleDelete }) {
+function SummaryTable({ summary, totals, handleDelete, handleUpdateQty, saveQtyChanges }) {
+
+    const [qtyInputBool, setQtyInputBool] = useState(false);
+
+    const enableUpdateQuantity = () => {
+        setQtyInputBool(!qtyInputBool)
+    }
 
     return (
         <div className="summary-table">
@@ -16,11 +23,18 @@ function SummaryTable({ summary, totals, handleDelete }) {
             <div className="summary-table__list-wrapper">
                 <ul className="summary-table__list">
                     {summary.map(summaryItem =>
-                    <SummaryListItem summaryItem={summaryItem} key={v4()} handleDelete={handleDelete} />)}
+                    <SummaryListItem summaryItem={summaryItem} key={summaryItem.option[1]} handleDelete={handleDelete} handleUpdateQty={handleUpdateQty} qtyInputBool={qtyInputBool}/>)}
                 </ul>
             </div>
             : <p className="summary-table__loading">please select a category</p>}
             <div className="summary-table__total-wrapper">
+                {!qtyInputBool ? 
+                <CTAButton buttonText={"Update Quantities"} handleOnClick={enableUpdateQuantity} />
+                : <CTAButton buttonText={"Save Changes"} handleOnClick={() => {
+                    saveQtyChanges()
+                    enableUpdateQuantity()
+                }} />
+                }
                 <p className="summary-table__total-text">Total: {totals[0].toFixed(1)} kg</p>
             </div>
         </div>
