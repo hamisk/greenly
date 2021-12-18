@@ -15,7 +15,7 @@ function SummaryTable({ summary, totals, handleDelete, handleUpdateQty, saveQtyC
         <div className="summary-table">
             <div className="summary-table__subheaders">
                 <p className="summary-table__sub-activity">Activity</p>
-                <p className="summary-table__sub-option">Options</p>
+                <p className="summary-table__sub-option">Option</p>
                 <p className="summary-table__sub-qty">Quantity</p>
                 <p className="summary-table__sub-co2">CO2e</p>
             </div>
@@ -28,13 +28,14 @@ function SummaryTable({ summary, totals, handleDelete, handleUpdateQty, saveQtyC
             </div>
             : <p className="summary-table__loading">please select a category</p>}
             <div className="summary-table__total-wrapper">
-                {!qtyInputBool ? 
-                <CTAButton buttonText={"Update Quantities"} handleOnClick={enableUpdateQuantity} />
-                : <CTAButton buttonText={"Save Changes"} handleOnClick={() => {
-                    saveQtyChanges()
-                    enableUpdateQuantity()
-                }} />
-                }
+                <div className="summary-table__qty-button-wrapper">
+                    {!qtyInputBool ?
+                    <CTAButton buttonText={"Update Quantities"} handleOnClick={enableUpdateQuantity} />
+                    : <CTAButton buttonText={"Save Changes"} handleOnClick={() => {
+                        saveQtyChanges()
+                        enableUpdateQuantity()
+                    }} />}
+                </div>
                 <p className="summary-table__total-text">Total: {totals[0].toFixed(1)} kg</p>
             </div>
         </div>

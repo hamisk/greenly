@@ -131,7 +131,7 @@
     &__submitted {
         position: absolute;
         bottom: 20%;
-        left: 25%;
+        left: calc(50% - 146px);
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -10,14 +10,13 @@ import {
     Tooltip,
     Legend,
   } from 'chart.js';
-  ChartJS.register(
+ChartJS.register(
     CategoryScale,
     LinearScale,
     BarElement,
     Title,
     Tooltip,
-    Legend
-  );
+    Legend);
   
 const chartOptions = {
     indexAxis: 'y',
@@ -27,7 +26,7 @@ const chartOptions = {
         text: "This Week's Progress",
     },
     scales: {
-      x: { stacked: true, grid: {display:false} },
+      x: { stacked: true, grid: {display:false}, title: {text:"CO2e (kg)", display:true} },
       y: { stacked: true, grid: {display:false} }
     }
 };

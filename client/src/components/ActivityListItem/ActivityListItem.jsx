@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { v4 } from 'uuid';
+import greenPlus from '../../assets/icons/green-plus.png'
 import './ActivityListItem.scss'
 
 function ActivityListItem({ activity, addToSummary }) {
@@ -40,7 +41,7 @@ function ActivityListItem({ activity, addToSummary }) {
                     addToSummary(activity, qty, [selectValue, optionId])
                     setQty(1)
                     }}>
-                +
+                <img src={greenPlus} alt="add icon" className="activity-item__add-icon" />
             </button>
         </li>
     )

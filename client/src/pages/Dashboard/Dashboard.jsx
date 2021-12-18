@@ -19,18 +19,21 @@ ChartJS.register(
     Tooltip,
     Legend
 );
-  
+
+ChartJS.defaults.plugins.title.font.size = 16
+ChartJS.defaults.plugins.title.font.weight = 400
+
 export const options = {
     responsive: true,
     plugins: {
-        legend: {position: 'top',},
+        legend: {display:false},
         title: {
             display: true,
             text: 'Weekly Consumption Over Time',
         },
     },
-    scales: {x: {grid: {display:false}},
-            y: {grid:{display:false}}
+    scales: {x: {grid: {display:false}, title: {text:"Week Commencing", display:true} },
+            y: {grid:{display:false}, title: {text:"CO2e (kg)", display:true}}
     }
 };
 
@@ -88,7 +91,7 @@ class Dashboard extends Component {
         // group userActivities by week commencing
         const userActsByWC = groupArrayBy(userActsArray, 'week_commencing')
 
-        const carbonSums = WCArray.map(WC => userActsByWC[WC].reduce((a, b) => ({carbon: Number(a.carbon) + Number(b.carbon)}))).map(object => object.carbon)
+        const carbonSums = WCArray.map(WC => userActsByWC[WC].reduce((a, b) => ({carbon: Number(a.carbon) + Number(b.carbon)}))).map(object => Math.round(object.carbon * 10) / 10)
         
         const chartData = {
             labels: WCChartLabels,
@@ -216,7 +219,7 @@ class Dashboard extends Component {
                                     <Calendar startDate={this.state.weekCommencing} setStartDate={this.setStartDate} />
                                 </div>
                             </div>
-                            <ProgressChart target={Math.round(userProfile.goal_carbon / 52)} total={(this.getSummaryTotal())} />
+                            <ProgressChart target={Math.round(userProfile.goal_carbon / 52)} total={Math.round(this.getSummaryTotal()[0])} />
                         </div>
                         <div className="dashboard__table">
                             <p className="dashboard__table-sub">Logged Activities</p>

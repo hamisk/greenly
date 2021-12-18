@@ -10,7 +10,7 @@ function DoughnutChart({ activityData }) {
 
     const userActsByCat = groupArrayBy(activityData, 'category')
     const categoryArray = [...new Set(activityData.map(activity => activity.category))]
-    const categorySums = categoryArray.map(category => userActsByCat[category].reduce((a, b) => ({carbon: Number(a.carbon) + Number(b.carbon)}))).map(object => Number(object.carbon))
+    const categorySums = categoryArray.map(category => userActsByCat[category].reduce((a, b) => ({carbon: Number(a.carbon) + Number(b.carbon)}))).map(object => Math.round(object.carbon * 10) / 10)
     const colors = chroma.scale(['red', 'blue', 'green']).colors(categoryArray.length)
     const opacity = colors.map(color => color + '99')
 

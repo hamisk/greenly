@@ -47,6 +47,8 @@
 
     &__loading {
         color: $color-dark-green;
-        margin-left: 12rem;
+        margin-top: 2rem;
+        margin-left: calc(50% - 72.5px);
+        width: fit-content;
     }
 }

@@ -1,5 +1,5 @@
-// import { useState } from 'react';
 import './SummaryListItem.scss'
+import minus from '../../assets/icons/red-minus.png'
 
 function SummaryListItem({ summaryItem, handleDelete, qtyInputBool, handleUpdateQty }) {
     let option = summaryItem.option[0]
@@ -15,7 +15,7 @@ function SummaryListItem({ summaryItem, handleDelete, qtyInputBool, handleUpdate
             <p className="summary-item__option">{option.length > 15 ? option.slice(0,15) + "..." : option}</p>
 
             {qtyInputBool ? 
-            <input type="number" className="summary-item__qty" 
+            <input type="number" className="summary-item__qty-input" 
                 defaultValue={qty} 
                 onChange={(e) => {
                     handleUpdateQty(e, summaryItem)}}/>
@@ -27,7 +27,7 @@ function SummaryListItem({ summaryItem, handleDelete, qtyInputBool, handleUpdate
                 onClick={() => {
                     handleDelete(activityId)
                     }}>
-                -
+                <img src={minus} alt="delete icon" className="summary-item__delete-icon"/>
             </button>
         </li>
     )

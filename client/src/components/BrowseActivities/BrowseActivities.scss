@@ -8,10 +8,8 @@
     flex-direction: row;
     align-items: center;
     background-color: $color-light-green;
-    // flex-grow: 1;
     border-radius: $border-radius;
     height: 90%;
-    // width: 95%;
 
     &__title-categories-wrapper {
         display: flex;
@@ -61,6 +59,7 @@
         margin: 0.25rem;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         transition: all 0.2s;
+        padding-left: 0.5rem;
 
         animation: bouncy 5s 1 linear;
         position:relative;
@@ -77,8 +76,6 @@
 
     &__active {
         background-color: $color-strong-green;
-        // border-bottom-left-radius: 0;
-        // border-bottom-right-radius: 0;
         color: $color-light;
     }
 

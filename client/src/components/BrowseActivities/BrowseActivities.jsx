@@ -17,7 +17,7 @@ export class BrowseActivities extends Component {
                             className={`activities__category ${mapCategory[1] ? "activities__active" : ""}`}
                             onClick={() => {toggleCategoryClass(mapCategory)}}
                             style={{animationDelay: `${0.07*index}s`}}>
-                            <p>+ {mapCategory[0]}</p>
+                            <p>{mapCategory[0]}</p>
                         </button>)}
                     </div>
                 </div>

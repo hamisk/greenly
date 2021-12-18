@@ -35,7 +35,7 @@
 
     &__list-wrapper {
         width: 100%;
-        height: calc(100% - 85px);
+        height: calc(100% - 101px);
         overflow-y: scroll;
     }
 
@@ -52,12 +52,18 @@
 
     &__total-wrapper {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
+        align-items: center;
         border-top: 1px solid $color-light-green;
     }
 
+    &__qty-button-wrapper {
+        width: 10rem;
+        margin: 0.5rem 1rem;
+    }
+
     &__total-text {
-        margin: 0.5rem 3rem;
+        margin: 0.5rem 1rem;
         font-size: 1.15rem;
         font-weight: 600;
     }
