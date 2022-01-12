@@ -16,24 +16,32 @@ class PrivateRoute extends Component {
         // Send an Auth check request to the server
         let token = sessionStorage.getItem('authToken')
         if (!!token) {
-            axios
-            .get(`${API_URL}/auth/check-auth`, { headers: {
-                Authorization: `Bearer ${token}`
-            }})
-            .then((res) => {
-                this.setState({
-                isAuthenticating: false,
-                isAuthenticated: true,
-                user: res.data,
-                });
-            })
-            .catch(() => {
-                this.setState({
+            return (
+                axios
+                    .get(`${API_URL}/auth/check-auth`, { headers: {
+                        Authorization: `Bearer ${token}`
+                    }})
+                    .then((res) => {
+                        this.setState({
+                        isAuthenticating: false,
+                        isAuthenticated: true,
+                        user: res.data,
+                        });
+                    })
+                    .catch(() => {
+                        this.setState({
+                        isAuthenticating: false,
+                        isAuthenticated: false,
+                        });
+                    })
+            )
+        } else {
+            this.setState({
                 isAuthenticating: false,
                 isAuthenticated: false,
                 });
-            });
         }
+
     }
 
     render() {

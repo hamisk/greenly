@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom';
 import Input from '../../components/Input/Input'
 import { API_URL } from '../../config';
-import './SignUp.scss'
+import './AddNewActivity.scss'
 
 function SignUp(props) {
 
@@ -47,6 +47,13 @@ function SignUp(props) {
         if (signupPassword !== signupConfirmPassword) {
             return setPasswordMatch(false)
         }
+        // console.log(signupName)
+        // console.log(signupUsername)
+        // console.log(signupPassword)
+        // console.log(signupConfirmPassword)
+        // console.log(signupCity)
+        // console.log(signupCountry)
+        // console.log(signupCarbon)
 
         axios.post(API_URL + '/auth/register', {
             name: signupName,
@@ -66,32 +73,32 @@ function SignUp(props) {
 
     return (
         <>
-        <section className="signup">
-            <div className="signup__container">
-                <h1 className="signup__header">Sign Up</h1>
+        <section className="new-activity">
+            <div className="new-activity__container">
+                <h1 className="new-activity__header">Sign Up</h1>
                 <form onSubmit={handleSignUp}>
-                    <div className="signup__columns-wrapper">
-                        <div className="signup__column">
+                    <div className="new-activity__columns-wrapper">
+                        <div className="new-activity__column">
                             <Input label="Name" name="name" type="text" invalid={invalid} placeholder="Required"/>
                             <Input label="Username" name="username" type="text" invalid={invalid || usernameTaken} placeholder="Required"/>
                             <Input label="Password" name="password" type="password" invalid={invalid || !passwordMatch} placeholder="Required"/>
                             <Input label="Confirm Password" name="confirmPassword" type="password" invalid={invalid || !passwordMatch} placeholder="Required"/>
                         </div>
-                        <div className="signup__column">
+                        <div className="new-activity__column">
                             <Input label="Carbon target (kg per year)" name="carbon" type="number" value="10" defaultValue={10000} invalid={invalid} placeholder="Required"/>
                             <Input label="City" name="city" type="text" placeholder="Optional"/>
                             <Input label="Country" name="country" type="text" placeholder="Optional" />
-                            {invalid ? <p className="signup__invalid">Please provide all required fields</p> : <></> }
-                            {usernameTaken ? <p className="signup__invalid">Username already in use, please provide another</p> : <></> }
-                            {passwordMatch ? <></> : <p className="signup__invalid">Passwords did not match</p> }
+                            {invalid ? <p className="new-activity__invalid">Please provide all required fields</p> : <></> }
+                            {usernameTaken ? <p className="new-activity__invalid">Username already in use, please provide another</p> : <></> }
+                            {passwordMatch ? <></> : <p className="new-activity__invalid">Passwords did not match</p> }
                         </div>
                     </div>
-                    <div className="signup__links">
-                        <button className="signup__button" type="submit">Sign Up</button>
+                    <div className="new-activity__links">
+                        <button className="new-activity__button" type="submit">Sign Up</button>
                     </div>
                 </form>
-                <div className="signup__login">
-                    <Link className="signup__link" to="/login">Already have an account? <span className="signup__login-link">Log In</span></Link>
+                <div className="new-activity__login">
+                    <Link className="new-activity__link" to="/login">Already have an account? <span className="new-activity__login-link">Log In</span></Link>
                 </div>
             </div>
         </section>

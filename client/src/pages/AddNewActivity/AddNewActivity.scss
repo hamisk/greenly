@@ -1,0 +1,81 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/keyframes' as *;
+
+.new-activity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: $color-strong-green;
+
+    &__container {
+        width: 60%;
+        animation: fadein 1s;
+    }
+
+    &__header {
+        margin-left: 0.5rem;
+    }
+
+    &__columns-wrapper {
+        width: 100%;
+        display: flex;
+    }
+
+    &__column {
+        width: 50%;
+        margin: 0.5rem;
+    }
+
+    &__invalid {
+        height: 3rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    &__links {
+        display: flex;
+        justify-content: space-between;
+        color: $color-strong-green;
+    }
+
+    &__link {
+        color: $color-strong-green;
+    }
+
+    &__button {
+        background-color: $color-strong-green;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        color: $color-light;
+        padding: 0.5rem;
+        border-radius: 4px;
+        width: 6rem;
+        margin: 0 0.5rem;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        transition: all 0.2s;
+        position: relative;
+
+        &:hover {
+            // font-weight: 600;
+            background-color: $color-light-green;
+        }
+
+        &:active {
+            top: 0.1rem;
+        }
+    }
+
+    &__login {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    &__login-link {
+        font-weight: 600;
+    }
+}
