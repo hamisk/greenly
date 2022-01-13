@@ -1,15 +1,22 @@
-import axios from 'axios';
+// modules
 import { Component } from 'react'
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import axios from 'axios';
+
+// utils
 import { epochToYYYYMMDD, getWeekCommencing, groupArrayBy, round} from '../../utils/utils';
-import DoughnutChart from '../../components/DoughnutChart/DoughnutChart';
 import { API_URL } from '../../config';
-import Loading from '../../components/Loading/Loading';
-import SummaryTable from '../../components/SummaryTable/SummaryTable';
+
+// components
+import DoughnutChart from '../../components/DoughnutChart/DoughnutChart';
 import ProgressChart from '../../components/ProgressChart/ProgressChart';
-import './Dashboard.scss';
+import SummaryTable from '../../components/SummaryTable/SummaryTable';
 import Calendar from '../../components/Calendar/Calendar';
+import Loading from '../../components/Loading/Loading';
+
+// styles
+import './Dashboard.scss';
   
 ChartJS.register(
     CategoryScale,
@@ -24,12 +31,15 @@ ChartJS.defaults.plugins.title.font.size = 16
 ChartJS.defaults.plugins.title.font.weight = 400
 
 export const options = {
+    maintainAspectRatio: false,
     responsive: true,
     plugins: {
         legend: {display:false},
         title: {
             display: true,
             text: 'Weekly Consumption Over Time',
+            padding: {bottom: 24},
+            font: {weight: 'bold'}  
         },
     },
     scales: {x: {grid: {display:false}, title: {text:"Week Commencing", display:true} },

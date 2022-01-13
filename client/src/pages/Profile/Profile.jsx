@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react'
 
+import Loading from '../../components/Loading/Loading';
 import Input from '../../components/Input/Input'
 import treeIcon from '../../assets/icons/icons8-tree-100-2.png'
 
@@ -8,7 +9,6 @@ import { epochToMMDDYYYY } from '../../utils/utils';
 import { API_URL } from '../../config';
 
 import './Profile.scss';
-import Loading from '../../components/Loading/Loading';
 
 export class Profile extends Component {
 
