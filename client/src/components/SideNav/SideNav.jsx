@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import logo from '../../assets/icons/icons8-earth-100.png';
+import menu from '../../assets/icons/menu.png';
 import { API_URL } from '../../config';
 import './SideNav.scss'
 
@@ -10,7 +11,8 @@ export class SideNav extends Component {
 
     state = {
         isAuthenticated: false,
-        user: null
+        user: null,
+        sideNavToggle: false
     };
 
     componentDidMount() {
@@ -45,9 +47,24 @@ export class SideNav extends Component {
         window.location = `${API_URL}/auth/logout?from=${url}`;
     };
 
+    toggleSideNav= () => {
+        let currentToggle = this.state.sideNavToggle
+        this.setState({
+            sideNavToggle: !currentToggle
+        })
+    }
+
     render() {
         return (
-            <div className="sidenav">
+            <>
+            <div className='side-toggle'>
+                <div className="side-toggle__title-logo">
+                    <img src={logo} alt="logo" className="side-toggle__logo" />
+                    <h2 className="side-toggle__title">Greenly</h2>
+                </div>
+                <img src={menu} alt='menu icon' className={!this.state.sideNavToggle ? 'side-toggle__icon' : 'side-toggle__icon--active'} onClick={this.toggleSideNav}/>
+            </div>
+            <div className={this.state.sideNavToggle ? "sidenav" : "sidenav__hide"}>
                 <div className="sidenav__title-logo">
                     <img src={logo} alt="logo" className="sidenav__logo" />
                     <h2 className="sidenav__title">Greenly</h2>
@@ -55,22 +72,23 @@ export class SideNav extends Component {
                 <div className="sidenav__links-wrapper"> 
                     {this.state.isAuthenticated ? 
                     <>
-                        <Link to='/home/profile'><p className="sidenav__link">hi {this.state.user.name}</p></Link>
+                        <Link to='/home/profile' onClick={() => {this.setState({sideNavToggle: false})}}><p className="sidenav__link">hi {this.state.user.name}</p></Link>
                         <p onClick={this.signOut} className="sidenav__logout">logout</p>
                     </>
                     : <>
-                        <Link to='/login'><p className="sidenav__link">login</p></Link>
-                        <Link to='/signup'><p className="sidenav__link">signup</p></Link>
+                        <Link to='/login' onClick={() => {this.setState({sideNavToggle: false})}}><p className="sidenav__link">login</p></Link>
+                        <Link to='/signup' onClick={() => {this.setState({sideNavToggle: false})}}><p className="sidenav__link">signup</p></Link>
                     </>
                     }
                 </div>
                 <div className="sidenav__nav-links-wrapper">
-                    <Link to='/'><div className="sidenav__link">home</div></Link>
-                    <Link to='/home/profile'><div className="sidenav__link">profile</div></Link>
-                    <Link to='/activities'><div className="sidenav__link">activities</div></Link>
+                    <Link to='/' onClick={() => {this.setState({sideNavToggle: false})}}><div className="sidenav__link">home</div></Link>
+                    <Link to='/home/profile' onClick={() => {this.setState({sideNavToggle: false})}}><div className="sidenav__link">profile</div></Link>
+                    <Link to='/activities' onClick={() => {this.setState({sideNavToggle: false})}}><div className="sidenav__link">activities</div></Link>
                     {/* <Link to='/about'><div className="sidenav__link">about</div></Link> */}
                 </div>
             </div>
+            </>
         )
     }
 }

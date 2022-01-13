@@ -1,5 +1,6 @@
 @use './styles/partials/colors' as *;
 @use './styles/partials/typography' as *;
+@use './styles/partials/mixins' as *;
 
 html {
     font-size: 16px;
@@ -18,15 +19,15 @@ body {
 }
 
 .main {
-    margin-left: 200px; /* Same as the width of the sidenav */
-    width: calc(100% - 200px);
+    // margin-left: 200px; /* Same as the width of the sidenav */
+    width: 100%;
     height: 100vh;
+    @include tablet {
+        margin-left: 200px; /* Same as the width of the sidenav */
+        width: calc(100% - 200px);
+    }
 }
 
 a {
     text-decoration: none;
 }
-
-// .app {
-//     height: 8rem;
-// }

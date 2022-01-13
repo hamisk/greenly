@@ -1,5 +1,6 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/keyframes' as *;
+@use '../../styles/partials/mixins' as *;
 
 .login {
     display: flex;
@@ -9,7 +10,10 @@
     color: $color-strong-green;
 
     &__container {
-        width: 30%;
+        width: 60%;
+        @include tablet {
+            width: 30%;
+        }
         animation: fadein 1s;
     }
 
