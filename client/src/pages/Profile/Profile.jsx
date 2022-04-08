@@ -30,7 +30,7 @@ export class Profile extends Component {
                         headers: {Authorization: `Bearer ${token}`}}),
                         axios.get(API_URL + '/users/get-users')
                     ])
-                    
+                    // get user list in case of change of username
                 .then(axios.spread((response1, response2) => {
                     const usernameListArr = [...new Set(response2.data.map(item => item.username))]
                     this.setState({

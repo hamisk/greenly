@@ -48,3 +48,23 @@ exports.getActivities = (_req, res) => {
             res.status(400).send(`Error retrieving activities: ${err}`)
         );
 };
+
+exports.addNewActivity = (req, res) => {
+    const newActivity = req.body;
+
+    if (!newActivity) {
+            return res.status(400).json({
+            message: "add-activity requires activity"
+        })
+    }
+
+    knex('activities')
+        // .where({ username: usernameFromToken })
+        .insert(newActivity)
+        .then(() => {
+            res.sendStatus(200);
+        })
+        .catch((err) =>
+            res.status(400).send(`Error adding entry: ${err}`)
+        );
+}
