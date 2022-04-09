@@ -10,7 +10,7 @@ import Profile from './pages/Profile/Profile';
 import SignUp from './pages/SignUp/SignUp';
 import Dashboard from './pages/Dashboard/Dashboard';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-// import About from './pages/About/About';
+import About from './pages/About/About';
 import SideNav from './components/SideNav/SideNav';
 import AddNewActivity from './pages/AddNewActivity/AddNewActivity';
 
@@ -30,9 +30,9 @@ class App extends Component {
                         <Switch>
                             <PrivateRoute path="/" exact component={Dashboard} />
                             <PrivateRoute path="/home/profile" component={Profile} />
-                            <Route path="/activities" component={Activities} />
                             <PrivateRoute path="/new-activity" component={AddNewActivity} />
-                            {/* <Route path="/about" component={About} /> */}
+                            <Route path="/activities" component={Activities} />
+                            <Route path="/about" component={About} />
                             <Route path="/signup" component={SignUp} />
                             <Route path="/login" component={LogIn} />
                         </Switch>

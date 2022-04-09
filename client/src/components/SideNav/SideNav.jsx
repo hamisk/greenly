@@ -8,7 +8,7 @@ import './SideNav.scss'
 
 export class SideNav extends Component {
     // routerProps passed through for active page styling
-
+    
     state = {
         isAuthenticated: false,
         user: null,
@@ -86,7 +86,7 @@ export class SideNav extends Component {
                     <Link to='/home/profile' onClick={() => {this.setState({sideNavToggle: false})}}><div className="sidenav__link">profile</div></Link>
                     <Link to='/activities' onClick={() => {this.setState({sideNavToggle: false})}}><div className="sidenav__link">activities</div></Link>
                     <Link to='/new-activity' onClick={() => {this.setState({sideNavToggle: false})}}><div className="sidenav__link">add new activity</div></Link>
-                    {/* <Link to='/about'><div className="sidenav__link">about</div></Link> */}
+                    <Link to='/about' onClick={() => {this.setState({sideNavToggle: false})}}><div className="sidenav__link">about</div></Link>
                 </div>
             </div>
             </>
