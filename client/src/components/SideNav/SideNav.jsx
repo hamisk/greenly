@@ -8,7 +8,7 @@ import './SideNav.scss'
 
 export class SideNav extends Component {
     // routerProps passed through for active page styling
-    
+
     state = {
         isAuthenticated: false,
         user: null,
@@ -55,6 +55,7 @@ export class SideNav extends Component {
     }
 
     render() {
+        const pathName = this.props.location.pathname
         return (
             <>
             <div className='side-toggle'>
@@ -82,11 +83,11 @@ export class SideNav extends Component {
                     }
                 </div>
                 <div className="sidenav__nav-links-wrapper">
-                    <Link to='/' onClick={() => {this.setState({sideNavToggle: false})}}><div className="sidenav__link">home</div></Link>
-                    <Link to='/home/profile' onClick={() => {this.setState({sideNavToggle: false})}}><div className="sidenav__link">profile</div></Link>
-                    <Link to='/activities' onClick={() => {this.setState({sideNavToggle: false})}}><div className="sidenav__link">activities</div></Link>
-                    <Link to='/new-activity' onClick={() => {this.setState({sideNavToggle: false})}}><div className="sidenav__link">add new activity</div></Link>
-                    <Link to='/about' onClick={() => {this.setState({sideNavToggle: false})}}><div className="sidenav__link">about</div></Link>
+                    <Link to='/' onClick={() => {this.setState({sideNavToggle: false})}}><div className={pathName === "/" ? "sidenav__link--active" : "sidenav__link"}>home</div></Link>
+                    <Link to='/home/profile' onClick={() => {this.setState({sideNavToggle: false})}}><div className={pathName === "/home/profile" ? "sidenav__link--active" : "sidenav__link"}>profile</div></Link>
+                    <Link to='/activities' onClick={() => {this.setState({sideNavToggle: false})}}><div className={pathName === "/activities" ? "sidenav__link--active" : "sidenav__link"}>activities</div></Link>
+                    <Link to='/new-activity' onClick={() => {this.setState({sideNavToggle: false})}}><div className={pathName === "/new-activity" ? "sidenav__link--active" : "sidenav__link"}>add new activity</div></Link>
+                    <Link to='/about' onClick={() => {this.setState({sideNavToggle: false})}}><div className={pathName === "/about" ? "sidenav__link--active" : "sidenav__link"}>about</div></Link>
                 </div>
             </div>
             </>
